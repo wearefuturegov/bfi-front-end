@@ -1,0 +1,25 @@
+nav {
+    background: #000;
+    text-align: center;
+    margin-bottom: 25px;
+
+    .inner {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        color: #fff;
+        padding: 10px 0;
+    }
+
+    a {
+        color: #fff;
+    }
+    ul {
+        list-style-type: none;
+        padding: 0;
+        li {
+            display: inline;
+            padding: 0 10px;
+        }
+    }
+}
