@@ -1,9 +1,14 @@
 import React, { Component } from 'react'
 import styled from 'styled-components';
+import * as vars from '../../variables.js';
 
 const StyledContainer = styled.div`
-    max-width: 960px;
+    max-width: ${vars.size.desktop};
     margin: 0 auto;
+    padding: 0 15px;
+    @media ${vars.breakpoint.desktop} {
+        padding: 0;
+    }
 `
 
 

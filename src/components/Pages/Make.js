@@ -4,14 +4,14 @@ import Proptypes from 'prop-types';
 import Container from '../bfi-components/Container'
 import Heading from '../bfi-components/Heading'
  
-class Design extends Component {
+class Make extends Component {
     render () {
         return (
             <Container>
-                <Heading as="h2">Design</Heading>
+                <Heading as="h2">Make</Heading>
             </Container>
         )
     }
 }
 
-export default Design;
+export default Make;

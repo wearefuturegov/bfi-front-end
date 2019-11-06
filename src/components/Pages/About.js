@@ -5,7 +5,7 @@ import Container from '../bfi-components/Container'
 import Heading from '../bfi-components/Heading'
 import ComponentDescription from '../ComponentDescription' 
 
-class Components extends Component {
+class About extends Component {
     state = {
         components: [
           {
@@ -36,4 +36,4 @@ class Components extends Component {
     }
 }
 
-export default Components;
+export default About;

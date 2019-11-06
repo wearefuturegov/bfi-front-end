@@ -1,17 +1,18 @@
 import React, { Component } from 'react';
 import Proptypes from 'prop-types';
+import { Link } from 'react-router-dom'
 
 import Container from '../bfi-components/Container'
 import Heading from '../bfi-components/Heading'
  
-class Content extends Component {
+class Explore extends Component {
     render () {
         return (
             <Container>
-                <Heading as="h2">Content</Heading>
+                <Heading as="h2">Explore</Heading>
             </Container>
         )
     }
 }
 
-export default Content;
+export default Explore;

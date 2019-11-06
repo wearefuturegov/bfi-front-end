@@ -4,14 +4,14 @@ import Proptypes from 'prop-types';
 import Container from '../bfi-components/Container'
 import Heading from '../bfi-components/Heading'
  
-class Home extends Component {
+class Support extends Component {
     render () {
         return (
             <Container>
-                <Heading as="h2">Hello World</Heading>
+                <Heading as="h2">Support</Heading>
             </Container>
         )
     }
 }
 
-export default Home;
+export default Support;

@@ -1,0 +1,147 @@
+header {
+    -webkit-box-shadow: 0px 5px 20px -2px rgba(105,105,105,0.15);
+    -moz-box-shadow: 0px 5px 20px -2px rgba(105,105,105,0.15);
+    box-shadow: 0px 5px 20px -2px rgba(105,105,105,0.15);
+    margin-bottom: 40px;
+}
+nav {
+    text-align: center;
+    background: #fff;
+
+    .inner {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        color: #fff;
+        padding: 0;
+    }
+
+    ul {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+        li {
+            display: inline-block;
+            padding: 0;
+        }
+    }
+
+    a {
+        display: block;
+        text-decoration: none;
+        color: #333;
+        padding: 20px 15px;
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}
+
+nav.top-nav {
+    background: #333;
+
+    a {
+        color: #fff;
+        padding: 15px;
+        &:hover {
+            text-decoration: none;
+            background: rgba(#fff, 0.1)
+        }
+    }
+}
+
+nav.mid-nav {
+    .header_brand {
+        width: 20%;
+        display: inline-block;
+        text-align: left;
+        color: #333;
+    }
+    ul {
+        display: inline-block;
+        width: 80%;
+        text-align: right;
+        li {
+            &:last-child {
+                a {
+                    padding-right: 0;
+                }
+            }
+        }
+    }
+    .inner {
+        border-bottom: rgba(#333, 0.2) solid 1px;
+    }
+}
+
+nav.sub-nav {
+    li {
+        &:first-child {
+            a {
+                padding-left: 0;
+            }
+        }
+    }
+}
+
+
+body.watch {
+    nav.top-nav {
+        .top-nav_watch {
+            a {
+                background: #fff;
+                color: #333;
+            }
+        }
+    }
+}
+body.explore {
+    nav.top-nav {
+        .top-nav_explore {
+            a {
+                background: #fff;
+                color: #333;
+            }
+        }
+    }
+}
+body.make {
+    nav.top-nav {
+        .top-nav_make {
+            a {
+                background: #fff;
+                color: #333;
+            }
+        }
+    }
+}
+body.education {
+    nav.top-nav {
+        .top-nav_education {
+            a {
+                background: #fff;
+                color: #333;
+            }
+        }
+    }
+}
+body.about-us {
+    nav.top-nav {
+        .top-nav_about-us {
+            a {
+                background: #fff;
+                color: #333;
+            }
+        }
+    }
+}
+body.support-and-join {
+    nav.top-nav {
+        .top-nav_support-and-join {
+            a {
+                background: #fff;
+                color: #333;
+            }
+        }
+    }
+}
