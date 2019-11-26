@@ -1,14 +1,15 @@
 import React, { Component, useState, useEffect } from 'react';
 import { Switch, Route, withRouter } from 'react-router-dom';
 import { createBrowserHistory } from "history";
+import { createGlobalStyle } from 'styled-components'
 
 import Nav from './components/Nav/Nav';
 import Container from './components/bfi-components/Container';
 import Heading from './components/bfi-components/Heading';
-import './App.scss';
 
 import Watch from './components/Pages/Watch';
   import BFIPlayer from './components/Pages/watch/BFIPlayer';
+
 import Explore from './components/Pages/Explore';
 import Education from './components/Pages/Education';
 import Make from './components/Pages/Make';
@@ -17,6 +18,14 @@ import Support from './components/Pages/Support';
 
 
 export default withRouter(function App({ location }) {
+
+  const GlobalStyle = createGlobalStyle`
+    @import url('https://fonts.googleapis.com/css?family=Archivo+Black|Open+Sans:400,600,700&display=swap');
+
+    body {
+      font-family: 'Open Sans', sans-serif;
+    }
+  `
   const history = createBrowserHistory();
   const rootElement = document.getElementById("root");
   const [currentHome, setCurrentHome] = useState(location.pathname);
@@ -42,6 +51,7 @@ export default withRouter(function App({ location }) {
 
   return(
     <>
+    <GlobalStyle />
     <Nav currentHome={currentHome} />
     <Switch>
       <Route path="/" exact component={Watch} />

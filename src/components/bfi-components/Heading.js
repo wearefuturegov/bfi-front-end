@@ -1,10 +1,13 @@
 import React, { Component } from 'react'
 import styled from 'styled-components';
+import * as vars from '../../variables.js';
 import PropTypes from 'prop-types';
+
 
 const Heading = (props) => {
     const StyledHeading = styled(props.as)`
-        
+        font-family: ${vars.font.heading};
+        text-transform: uppercase;
     `
 
     return (
