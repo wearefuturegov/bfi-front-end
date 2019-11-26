@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React from 'react'
 import { Link } from 'react-router-dom'
 import styled from 'styled-components';
 import * as vars from '../../variables.js';
@@ -153,10 +153,10 @@ const Nav = ({currentHome}) => {
                     <NavInner>
                         <div className="header_brand">logo</div>
                         <NavList>
-                            <li><a href="https://whatson.bfi.org.uk/Online/" target="_blank">Buy tickets</a></li>
-                            <li><a href="https://shop.bfi.org.uk" target="_blank">Shop</a></li>
-                            <li><a href="https://whatson.bfi.org.uk/Online/login.asp?targetPage=maintainAccount.asp" target="_blank">Log in</a></li>
-                            <li><a href="https://www.bfi.org.uk/search/search-bfi/I'm%20looking%20for..." target="_blank">Search</a></li>
+                            <li><a href="https://whatson.bfi.org.uk/Online/" target="_blank" rel="noopener noreferrer">Buy tickets</a></li>
+                            <li><a href="https://shop.bfi.org.uk" target="_blank" rel="noopener noreferrer">Shop</a></li>
+                            <li><a href="https://whatson.bfi.org.uk/Online/login.asp?targetPage=maintainAccount.asp" target="_blank" rel="noopener noreferrer">Log in</a></li>
+                            <li><a href="https://www.bfi.org.uk/search/search-bfi/I'm%20looking%20for..." target="_blank" rel="noopener noreferrer">Search</a></li>
                         </NavList>
                     </NavInner>
                 </Container>

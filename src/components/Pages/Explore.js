@@ -1,6 +1,4 @@
 import React, { Component } from 'react';
-import Proptypes from 'prop-types';
-import { Link } from 'react-router-dom'
 import Skeleton from '../bfi-components/Skeleton'
 
 import Container from '../bfi-components/Container'

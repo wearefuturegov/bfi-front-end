@@ -6,7 +6,7 @@ const StyledContainer = styled.div`
     max-width: ${vars.size.desktop};
     margin: 0 auto;
     padding: 0 15px;
-    @media ${vars.breakpoint.desktop} {
+    @media ${vars.breakpoint.hd} {
         padding: 0;
     }
 `

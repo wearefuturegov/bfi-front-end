@@ -1,4 +1,4 @@
-import React, { Component, useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Switch, Route, withRouter } from 'react-router-dom';
 import { createBrowserHistory } from "history";
 import { createGlobalStyle } from 'styled-components'
@@ -32,7 +32,7 @@ export default withRouter(function App({ location }) {
 
   useEffect(() => {
     const { pathname } = location;
-    if (pathname.split('/')[1] == '') {
+    if (pathname.split('/')[1] === '') {
       setCurrentHome('watch');
       document.body.classList = ('watch')
     } else {

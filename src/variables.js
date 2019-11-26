@@ -13,17 +13,16 @@ export const font = {
 };
 
 export const size = {
-    mobile: '425px',
-    tablet: '768px',
+    mobile: '568px',
+    tablet: '834px',
     desktop: '1024px',
     desktopL: '1440px',
     hd: '2560px'
 };
 
 export const breakpoint = {
-    mobile: `(min-width: ${size.mobile})`,
-    tablet: `(min-width: ${size.tablet})`,
-    desktop: `(min-width: ${size.desktop})`,
-    desktopL: `(min-width: ${size.desktopL})`,
-    hd: `(min-width: ${size.hd})`
+    tablet: `(min-width: ${size.mobile})`,
+    desktop: `(min-width: ${size.tablet})`,
+    desktopL: `(min-width: ${size.desktop})`,
+    hd: `(min-width: ${size.desktopL})`
 };

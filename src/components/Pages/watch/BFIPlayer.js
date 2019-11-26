@@ -1,5 +1,4 @@
-import React, { Component } from 'react';
-import Proptypes from 'prop-types';
+import React from 'react';
 
 import Container from '../../bfi-components/Container'
 import Heading from '../../bfi-components/Heading'
