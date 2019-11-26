@@ -16,6 +16,7 @@ export class ArticleGrid extends Component {
             <StyledArticleGrid>
                 <ArticleSummary 
                     as="large" 
+                    link="https://www.bfi.org.uk/news-opinion/sight-sound-magazine/reviews-recommendations/sorry-we-missed-you-ken-loach-gig-economy-paul-laverty"
                     title="Sorry We Missed You review: Ken Loach counts the cost of striving in austerity Britain"
                     desc="When a father of two takes a job as a courier, the iniquities of the gig economy push him and his family to breaking point in the latest, considerably accomplished drama from Loach and Paul Laverty."
                     date="31.10.19"
@@ -23,30 +24,35 @@ export class ArticleGrid extends Component {
                 />
                 <ArticleSummary 
                     as="small" 
+                    link="https://www.bfi.org.uk/news-opinion/sight-sound-magazine/reviews-recommendations/brittany-runs-a-marathon-jillian-bell-paul-downs-colaizzo-running-dramedy-female-trainwreck"
                     title="Brittany Runs a Marathon review: Jillian Bell shapes up in a dramedy that goes the distance"
                     date="31.10.19"
                     author="Trevor Johnston"
                 />
                 <ArticleSummary 
                     as="small" 
+                    link="https://www.bfi.org.uk/news-opinion/sight-sound-magazine/reviews-recommendations/brittany-runs-a-marathon-jillian-bell-paul-downs-colaizzo-running-dramedy-female-trainwreck"
                     title="Brittany Runs a Marathon review: Jillian Bell shapes up in a dramedy that goes the distance"
                     date="31.10.19"
                     author="Trevor Johnston"
                 />
                 <ArticleSummary 
                     as="small" 
+                    link="https://www.bfi.org.uk/news-opinion/sight-sound-magazine/reviews-recommendations/brittany-runs-a-marathon-jillian-bell-paul-downs-colaizzo-running-dramedy-female-trainwreck"
                     title="Brittany Runs a Marathon review: Jillian Bell shapes up in a dramedy that goes the distance"
                     date="31.10.19"
                     author="Trevor Johnston"
                 />
                 <ArticleSummary 
                     as="small" 
+                    link="https://www.bfi.org.uk/news-opinion/sight-sound-magazine/reviews-recommendations/brittany-runs-a-marathon-jillian-bell-paul-downs-colaizzo-running-dramedy-female-trainwreck"
                     title="Brittany Runs a Marathon review: Jillian Bell shapes up in a dramedy that goes the distance"
                     date="31.10.19"
                     author="Trevor Johnston"
                 />
                 <ArticleSummary 
                     as="small" 
+                    link="https://www.bfi.org.uk/news-opinion/sight-sound-magazine/reviews-recommendations/brittany-runs-a-marathon-jillian-bell-paul-downs-colaizzo-running-dramedy-female-trainwreck"
                     title="Brittany Runs a Marathon review: Jillian Bell shapes up in a dramedy that goes the distance"
                     date="31.10.19"
                     author="Trevor Johnston"

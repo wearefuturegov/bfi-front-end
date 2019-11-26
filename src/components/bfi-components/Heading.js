@@ -7,7 +7,8 @@ import PropTypes from 'prop-types';
 const Heading = (props) => {
     const StyledHeading = styled(props.as)`
         font-family: ${vars.font.heading};
-        text-transform: uppercase;
+        text-transform: ${props.as === 'h1' || props.as === 'h2' ? 'uppercase' : 'default'};
+
     `
 
     return (
