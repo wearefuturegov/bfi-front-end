@@ -3,14 +3,14 @@ import React, { Component } from 'react';
 import Container from '../bfi-components/Container'
 import Heading from '../bfi-components/Heading'
  
-class Support extends Component {
+class Member extends Component {
     render () {
         return (
             <Container>
-                <Heading as="h2">Support</Heading>
+                <Heading as="h2">Become a Member</Heading>
             </Container>
         )
     }
 }
 
-export default Support;
+export default Member;
