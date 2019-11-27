@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 
 import Container from '../bfi-components/Container';
+import Heading from '../bfi-components/Heading';
 import Skeleton from '../bfi-components/Skeleton';
 import FilmGrid from '../bfi-components/FilmGrid';
 
@@ -14,6 +15,7 @@ const Watch = () => {
     return (
         <Container>
             {!isLoading && 
+                <Heading as="h2">Watch with us</Heading>
                 <FilmGrid />
             }
             {isLoading && 
