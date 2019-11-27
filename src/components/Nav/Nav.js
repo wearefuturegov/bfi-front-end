@@ -2,6 +2,10 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import styled from 'styled-components';
 import * as vars from '../../variables.js';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faSearch } from '@fortawesome/free-solid-svg-icons'
+import LogoBlack from '../../images/logos/bfi-logo-black.svg'
+
 import Container from '../bfi-components/Container'
 
 import WatchSub from './WatchSub'
@@ -12,9 +16,7 @@ import AboutSub from './AboutSub'
 import SupportSub from './SupportSub'
 
 const StyledHeader = styled.header`
-    -webkit-box-shadow: 0px 5px 20px -2px rgba(105,105,105,0.15);
-    -moz-box-shadow: 0px 5px 20px -2px rgba(105,105,105,0.15);
-    box-shadow: 0px 5px 20px -2px rgba(105,105,105,0.15);
+    border-bottom: 1px solid ${vars.colour.lightgrey};
     margin-bottom: 40px;
 `
 
@@ -64,15 +66,10 @@ const StyledTopNav = styled.nav`
     }
 `
 const StyledMidNav = styled.nav`
-    text-align: center;
     background: ${vars.colour.white};
     font-weight: 600;
-    .header_brand {
-        width: 20%;
-        display: inline-block;
-        text-align: left;
-        color: ${vars.colour.black};
-    }
+    border-bottom: 1px solid ${vars.colour.lightgrey};
+    padding: 5px 0;
     ul {
         display: inline-block;
         width: 80%;
@@ -90,11 +87,19 @@ const StyledMidNav = styled.nav`
     }
 `
 
+const BFILogo = styled.img`
+    vertical-align: middle;
+    max-width: 47px;
+`
+
 const StyledSubNav = styled.nav`
     text-align: center;
     background: ${vars.colour.white};
     font-weight: 600;
     li {
+        a {
+            padding: 15px 15px;
+        }
         &:first-child {
             a {
                 padding-left: 0;
@@ -151,12 +156,12 @@ const Nav = ({currentHome}) => {
             <StyledMidNav>
                 <Container>
                     <NavInner>
-                        <div className="header_brand">logo</div>
+                        <BFILogo src={LogoBlack} alt="BFI Logo" />
                         <NavList>
                             <li><a href="https://whatson.bfi.org.uk/Online/" target="_blank" rel="noopener noreferrer">Buy tickets</a></li>
+                            <li><a href="https://whatson.bfi.org.uk/Online/" target="_blank" rel="noopener noreferrer">BFI Player</a></li>
                             <li><a href="https://shop.bfi.org.uk" target="_blank" rel="noopener noreferrer">Shop</a></li>
-                            <li><a href="https://whatson.bfi.org.uk/Online/login.asp?targetPage=maintainAccount.asp" target="_blank" rel="noopener noreferrer">Log in</a></li>
-                            <li><a href="https://www.bfi.org.uk/search/search-bfi/I'm%20looking%20for..." target="_blank" rel="noopener noreferrer">Search</a></li>
+                            <li><a href="https://www.bfi.org.uk/search/search-bfi/I'm%20looking%20for..." target="_blank" rel="noopener noreferrer"><FontAwesomeIcon icon={faSearch} /></a></li>
                         </NavList>
                     </NavInner>
                 </Container>

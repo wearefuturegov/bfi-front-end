@@ -13,13 +13,13 @@ const Watch = () => {
     }, [])
 
     return (
-        <Container>
-            {!isLoading && 
+        !isLoading ?  
+            <Container>
                 <Heading as="h2">Watch with us</Heading>
                 <FilmGrid />
-            }
-            {isLoading && 
-                <>
+            </Container>
+        :
+            <Container>
                 <Skeleton as="hero"/>
                 <Skeleton as="film"/>
                 <Skeleton as="film"/>
@@ -30,9 +30,7 @@ const Watch = () => {
                 <Skeleton as="film"/>
                 <Skeleton as="film"/>
                 <Skeleton as="hero"/>
-                </>
-            }
-        </Container>
+            </Container>
     )
 }
 
