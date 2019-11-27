@@ -8,6 +8,7 @@ import LogoBlack from '../../images/logos/bfi-logo-black.svg'
 
 import Container from '../bfi-components/Container'
 
+import SubNavItems from './SubNavItems'
 import WatchSub from './WatchSub'
 import ExploreSub from './ExploreSub'
 import MakeSub from './MakeSub'
@@ -121,17 +122,17 @@ const Nav = ({currentHome}) => {
     function subNav() {
         switch(currentHome) {
             case "watch":
-                return <WatchSub StyledSubNav={StyledSubNav} NavInner={NavInner} NavList={NavList} />;
+                return <WatchSub SubNavItems={SubNavItems} StyledSubNav={StyledSubNav} NavInner={NavInner} NavList={NavList} />;
             case "explore":
-                return <ExploreSub StyledSubNav={StyledSubNav} NavInner={NavInner} NavList={NavList} />;
+                return <ExploreSub SubNavItems={SubNavItems} StyledSubNav={StyledSubNav} NavInner={NavInner} NavList={NavList} />;
             case "make":
-                return <MakeSub StyledSubNav={StyledSubNav} NavInner={NavInner} NavList={NavList} />;
+                return <MakeSub SubNavItems={SubNavItems} StyledSubNav={StyledSubNav} NavInner={NavInner} NavList={NavList} />;
             case "education":
-                return <EducationSub StyledSubNav={StyledSubNav} NavInner={NavInner} NavList={NavList} />;
+                return <EducationSub SubNavItems={SubNavItems} StyledSubNav={StyledSubNav} NavInner={NavInner} NavList={NavList} />;
             case "about-us":
-                return <AboutSub StyledSubNav={StyledSubNav} NavInner={NavInner} NavList={NavList} />;
+                return <AboutSub SubNavItems={SubNavItems} StyledSubNav={StyledSubNav} NavInner={NavInner} NavList={NavList} />;
             case "support-and-join":
-                return <SupportSub StyledSubNav={StyledSubNav} NavInner={NavInner} NavList={NavList} />;
+                return <SupportSub SubNavItems={SubNavItems} StyledSubNav={StyledSubNav} NavInner={NavInner} NavList={NavList} />;
             default:
                 return null;
         }
