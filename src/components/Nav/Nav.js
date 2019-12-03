@@ -129,12 +129,14 @@ const SectionNavContainer = styled.div`
         display: none;
     }
 `
+const SubNavContainer = styled.div`
+
+`
 
 // CURRENTLY TODO - WORKING ON NAVIGATION
 // 1. Need to update styles of section nav now that it is in the middle
 // 2. on larger screens could section nav live inside the top nav similar to this site: https://www.cosstores.com/en_gbp/index.html
 //       - then on medium screens it would become a secondary and on mobile it would become the tab bar?
-// 3. nav hover is broken currently
 // 4. need to add in hover state to images on watch screen
 
 
@@ -142,10 +144,6 @@ const Nav = ({currentHome}) => {
 
     const [mobileMenuOpen, setmobileMenuOpen] = useState(false);
     const [navHover, setnavHover] = useState('');
-
-    useEffect(() => {
-        console.log(navHover)
-    }, [setnavHover, navHover])
 
     const handleMobileMenuClick = () => {
         if(mobileMenuOpen) {
@@ -179,8 +177,10 @@ const Nav = ({currentHome}) => {
             <MainNav currentHome={currentHome} NavInner={NavInner} NavList={NavList} setnavHover={setnavHover} navHover={navHover} />
             <SectionNavContainer>
                 <SectionNav currentHome={currentHome} NavInner={NavInner} NavList={NavList} setnavHover={setnavHover} navHover={navHover} /> 
-            </SectionNavContainer>           
-            { selectSubNav(navHover ? navHover : currentHome) } 
+            </SectionNavContainer>    
+            <SubNavContainer onMouseOut={() => setnavHover('')}>      
+                { selectSubNav(navHover ? navHover : currentHome) } 
+            </SubNavContainer> 
         </StyledHeader>
     )
 }
