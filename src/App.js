@@ -52,7 +52,7 @@ export default withRouter(function App({ location }) {
   return(
     <>
     <GlobalStyle />
-    <Nav currentHome={currentHome} />
+    <Nav currentHome={currentHome}/>
     <Switch>
       <Route path="/" exact component={Watch} />
         <Route path="/watch/bfi-player" exact component={BFIPlayer} />

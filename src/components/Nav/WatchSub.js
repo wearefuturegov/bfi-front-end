@@ -1,15 +1,13 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import Container from '../bfi-components/Container'
-import { slide as Menu } from 'react-burger-menu'
-import './mobileMenu.scss';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faBars } from '@fortawesome/free-solid-svg-icons'
 
-
-const WatchSub = ({SubNavItems, StyledSubNav, NavInner, NavList}) => {
-
+const WatchSub = ({subMenuName, SubNavItems, StyledSubNav, NavInner, NavList, MobileMenu, MobileMenuList, MobileMenuButton, mobileMenuOpen, handleMobileMenuClick, setnavHover}) => {
     return (
         <>
-            <StyledSubNav>
+            <StyledSubNav onMouseOver={() => setnavHover('watch')}>
                 <Container>
                     <NavInner>
                         <NavList>
@@ -20,11 +18,17 @@ const WatchSub = ({SubNavItems, StyledSubNav, NavInner, NavList}) => {
                     </NavInner>
                 </Container>
             </StyledSubNav>
-            {/* <Menu>
-                { SubNavItems.WatchLinks.map((link) => (
-                    <li key={ link.id }><Link to={link.url}>{link.title}</Link></li>
-                )) }
-            </Menu> */}
+            <MobileMenu>
+                <MobileMenuButton onClick={handleMobileMenuClick}>
+                    <FontAwesomeIcon icon={faBars} />
+                    <span>{subMenuName} Menu</span> 
+                </MobileMenuButton>
+                <MobileMenuList className={mobileMenuOpen ? 'open' : ''}>
+                    { SubNavItems.WatchLinks.map((link) => (
+                        <li key={ link.id } onClick={handleMobileMenuClick}><Link to={link.url}>{link.title}</Link></li>
+                    )) }
+                </MobileMenuList>
+            </MobileMenu>
         </>
     )
 }
