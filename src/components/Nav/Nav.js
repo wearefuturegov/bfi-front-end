@@ -178,7 +178,7 @@ const Nav = ({currentHome}) => {
             <SectionNavContainer>
                 <SectionNav currentHome={currentHome} NavInner={NavInner} NavList={NavList} setnavHover={setnavHover} navHover={navHover} /> 
             </SectionNavContainer>    
-            <SubNavContainer onMouseOut={() => setnavHover('')}>      
+            <SubNavContainer onMouseLeave={() => setnavHover('')}>      
                 { selectSubNav(navHover ? navHover : currentHome) } 
             </SubNavContainer> 
         </StyledHeader>
