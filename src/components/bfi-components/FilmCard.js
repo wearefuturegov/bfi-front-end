@@ -9,19 +9,20 @@ const FilmCard = (props) => {
         margin: auto;
         height: 225px;
         position: relative;
+        background: ${vars.colour.black} no-repeat center center fixed;
+        background: url(${props.image});
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+        background-position: 50% 50%;
 
-        a {
-            color: ${vars.colour.white};
+        a.filmCard_link {
+            color: ${vars.colour.pink_dark};
             text-decoration: none;
-        }
-
-        h4 {
-            margin: 0;
-            text-shadow: -1px 1px 0 #031D45;
             position: absolute;
-            bottom: 20px;
-            left: 15px;
-            right: 15px;
+            width: 100%;
+            height: 100%;
         }
 
         &:last-of-type {
@@ -33,29 +34,50 @@ const FilmCard = (props) => {
             height: 200px;
         }
         @media ${vars.breakpoint.desktop} {
-            width: 25%;
-            height: 175px;
+            width: 33.33%;
+            height: 200px;
+        }
+        @media ${vars.breakpoint.hd} {
+            height: 250px;
         }
     `
-    const Background = styled.div`
+    const FilmCardInformation = styled.div`
         position: absolute;
-        width: 100%;
-        height: 100%;
-        background: ${vars.colour.black} no-repeat center center fixed;
-        background: url(${props.image});
-        -webkit-background-size: cover;
-        -moz-background-size: cover;
-        -o-background-size: cover;
-        background-size: cover;
-        background-position: 50% 50%;
+        top: 15px;
+        right: 15px;
+        height: calc(100% - 65px);
+        width: calc(50% - 45px);
+        padding: 15px;
+        background-color: ${vars.colour.pink_light};
+        background-color: rgba(${vars.colour.pink_light}, 0.95);
+        overflow: hidden;
+        h4 {
+            margin: 0;
+            text-transform: uppercase;
+        }
     `
 
     return (
         <StyledFilmCard>
-            <a href="#" title={"Watch " + props.title}>
-                <Background>
+            <a href="#" className="filmCard_link" title={"Watch " + props.title}>
+                <FilmCardInformation>
+                    { props.subInfo && 
+                        <span>{props.subInfo}</span>
+                    }
                     <Heading as="h4">{props.title}</Heading>
-                </Background>
+
+                    { props.onSouthbank &&
+                        <>
+                            <a href={props.onSouthbank} title="Book a ticket to this film at BFI SouthBank">SouthBank</a>
+                            { props.onPlayer && 
+                                <span> | </span>
+                            }
+                        </>
+                    }
+                    { props.onPlayer && 
+                        <a href={props.onPlayer} title="Watch this film on BFI Player">Player</a>
+                    }
+                </FilmCardInformation>
             </a>
         </StyledFilmCard>
     )
@@ -64,6 +86,7 @@ const FilmCard = (props) => {
 FilmCard.defaultProps = {
     uuid: "null",
     title: "The film title",
+    subInfo: "Information",
     onPlayer: false,
     onSouthbank: false,
     image: "https://www.fillmurray.com/" + ((800) + Math.floor(Math.random() * Math.floor(10)) + "/" + (450 + Math.floor(Math.random() * Math.floor(10))))
