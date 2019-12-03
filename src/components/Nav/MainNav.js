@@ -13,7 +13,7 @@ const MainNav = ({currentHome, NavInner, NavList, setnavHover, navHover}) => {
     const StyledMainNav = styled.nav`
         background: ${vars.colour.white};
         font-weight: 600;
-        border-bottom: 1px solid ${vars.colour.lightgrey};
+        border-bottom: 1px solid ${vars.colour.grey_light};
         padding: 5px 0;
         ul {
             display: inline-block;

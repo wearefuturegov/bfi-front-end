@@ -63,7 +63,7 @@ const Skeleton = (props) => {
                 linear-gradient(${vars.colour.white} ${props.lineHeight}, transparent 0), 
                 radial-gradient(circle calc(${props.titleHeight} / 2), ${vars.colour.white} 0%, transparent 0), 
                 linear-gradient(${vars.colour.white} 0px, transparent 0), 
-                linear-gradient(${vars.colour.lightgrey} ${props.heroHeight}, 
+                linear-gradient(${vars.colour.grey_light} ${props.heroHeight}, 
                 transparent 0);
 
             background-size: 

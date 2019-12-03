@@ -9,7 +9,7 @@ const FilmCard = (props) => {
         margin: auto;
         height: 225px;
         position: relative;
-        background: ${vars.colour.black} no-repeat center center fixed;
+        background: ${vars.colour.white} no-repeat center center fixed;
         background: url(${props.image});
         -webkit-background-size: cover;
         -moz-background-size: cover;

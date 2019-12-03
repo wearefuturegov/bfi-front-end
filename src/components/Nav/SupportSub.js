@@ -5,10 +5,10 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBars } from '@fortawesome/free-solid-svg-icons'
 
 
-const SupportSub = ({subMenuName, SubNavItems, StyledSubNav, NavInner, NavList, MobileMenu, MobileMenuList, MobileMenuButton, mobileMenuOpen, handleMobileMenuClick, setnavHover}) => {
+const SupportSub = ({subMenuName, SubNavItems, StyledSubNav, NavInner, NavList, MobileMenu, MobileMenuList, MobileMenuButton, mobileMenuOpen, handleMobileMenuClick, navHover, setnavHover}) => {
     return (
         <>
-            <StyledSubNav onMouseOver={() => setnavHover('support')}>
+            <StyledSubNav onMouseOver={() => setnavHover('support')} className={navHover ? 'isHovered' : ''}>
                 <Container>
                     <NavInner>
                         <NavList>

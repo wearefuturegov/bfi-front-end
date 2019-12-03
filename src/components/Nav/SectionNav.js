@@ -29,8 +29,12 @@ const SectionNav = ({currentHome, NavInner, NavList, setnavHover, navHover}) => 
         li {
             &.active {
                 a {
-                    color: ${vars.colour.white};
-                    background: ${vars.colour.black};
+                    background: ${vars.colour.grey_light};
+                }
+            }
+            &.hovered { 
+                a {
+                    background: ${vars.colour.grey_light};
                 }
             }
         }
