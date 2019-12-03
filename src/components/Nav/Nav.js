@@ -175,7 +175,7 @@ const Nav = ({currentHome}) => {
     return (
         <StyledHeader>
             <MainNav currentHome={currentHome} NavInner={NavInner} NavList={NavList} setnavHover={setnavHover} navHover={navHover} />
-            <SectionNavContainer>
+            <SectionNavContainer onMouseLeave={() => window.innerWidth < parseInt(vars.screen_size.mobile) ? setnavHover('') : null}>
                 <SectionNav currentHome={currentHome} NavInner={NavInner} NavList={NavList} setnavHover={setnavHover} navHover={navHover} /> 
             </SectionNavContainer>    
             <SubNavContainer onMouseLeave={() => setnavHover('')}>      

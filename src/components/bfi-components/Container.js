@@ -3,12 +3,12 @@ import styled from 'styled-components';
 import * as vars from '../../variables.js';
 
 const StyledContainer = styled.div`
-    max-width: ${vars.size.desktop};
+    max-width: ${vars.screen_size.desktop};
     margin: 0 auto;
     padding: 0 15px;
     
     @media ${vars.breakpoint.hd} {
-        max-width: ${vars.size.desktopL};        
+        max-width: ${vars.screen_size.desktopL};        
     }
 `
 

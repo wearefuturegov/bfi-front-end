@@ -14,7 +14,7 @@ export const font = {
     body: "'Open Sans', sans-serif"
 };
 
-export const size = {
+export const screen_size = {
     mobile: '568px',
     tablet: '834px',
     desktop: '1024px',
@@ -23,8 +23,8 @@ export const size = {
 };
 
 export const breakpoint = {
-    tablet: `(min-width: ${size.mobile})`,
-    desktop: `(min-width: ${size.tablet})`,
-    desktopL: `(min-width: ${size.desktop})`,
-    hd: `(min-width: ${size.desktopL})`
+    tablet: `(min-width: ${screen_size.mobile})`,
+    desktop: `(min-width: ${screen_size.tablet})`,
+    desktopL: `(min-width: ${screen_size.desktop})`,
+    hd: `(min-width: ${screen_size.desktopL})`
 };
