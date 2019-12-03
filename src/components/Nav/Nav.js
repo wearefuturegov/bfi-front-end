@@ -14,6 +14,7 @@ import SupportSub from './SupportSub'
 
 const StyledHeader = styled.header`
     margin-bottom: 0px;
+    border-bottom: 1px solid ${vars.colour.grey};
 `
 
 const NavList = styled.ul`
@@ -60,17 +61,12 @@ const StyledSubNav = styled.nav`
         a {
             padding: 15px 15px;
         }
-        &:first-child {
-            a {
-                padding-left: 0;
-            }
-        }
     }
 
     
 
     @media ${vars.breakpoint.tablet} {
-        opacity: 0.5;
+        opacity: 0;
         &:hover, &.hovered  {
             opacity: 1;
         }
