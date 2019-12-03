@@ -5,10 +5,10 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBars } from '@fortawesome/free-solid-svg-icons'
 
 
-const MakeSub = ({subMenuName, SubNavItems, StyledSubNav, NavInner, NavList, MobileMenu, MobileMenuList, MobileMenuButton, mobileMenuOpen, handleMobileMenuClick, navHover, setnavHover}) => {
+const MakeSub = ({subMenuName, SubNavItems, StyledSubNav, NavInner, NavList, MobileMenu, MobileMenuList, MobileMenuButton, mobileMenuOpen, handleMobileMenuClick, navHover, setnavHover, currentHome}) => {
     return (
         <>
-            <StyledSubNav onMouseOver={() => setnavHover('make')} className={navHover ? 'isHovered' : ''}>
+            <StyledSubNav onMouseOver={() => setnavHover('make')} className={(currentHome === 'make' ? ' active' : '') + (navHover ? ' hovered' : '')}>
                 <Container>
                     <NavInner>
                         <NavList>

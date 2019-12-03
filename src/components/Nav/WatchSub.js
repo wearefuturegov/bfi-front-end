@@ -7,7 +7,7 @@ import { faBars } from '@fortawesome/free-solid-svg-icons'
 const WatchSub = ({subMenuName, SubNavItems, StyledSubNav, NavInner, NavList, MobileMenu, MobileMenuList, MobileMenuButton, mobileMenuOpen, handleMobileMenuClick, navHover, setnavHover}) => {
     return (
         <>
-            <StyledSubNav onMouseOver={() => setnavHover('watch')} className={navHover ? 'isHovered' : ''}>
+            <StyledSubNav onMouseOver={() => setnavHover('watch')} className={(navHover === 'watch' ? ' active' : '') + (navHover ? ' hovered' : '')}>
                 <Container>
                     <NavInner>
                         <NavList>

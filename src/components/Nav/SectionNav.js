@@ -27,14 +27,14 @@ const SectionNav = ({currentHome, NavInner, NavList, setnavHover, navHover}) => 
             }
         }
         li {
-            &.active {
+            &.hovered { 
                 a {
                     background: ${vars.colour.grey_light};
                 }
             }
-            &.hovered { 
+            &.active {
                 a {
-                    background: ${vars.colour.grey_light};
+                    background: ${vars.colour.grey};
                 }
             }
         }
