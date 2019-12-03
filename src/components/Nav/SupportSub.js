@@ -5,14 +5,14 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBars } from '@fortawesome/free-solid-svg-icons'
 
 
-const AboutSub = ({subMenuName, SubNavItems, StyledSubNav, NavInner, NavList, MobileMenu, MobileMenuList, MobileMenuButton, mobileMenuOpen, handleMobileMenuClick, setnavHover}) => {
+const SupportSub = ({subMenuName, SubNavItems, StyledSubNav, NavInner, NavList, MobileMenu, MobileMenuList, MobileMenuButton, mobileMenuOpen, handleMobileMenuClick, setnavHover}) => {
     return (
         <>
-            <StyledSubNav onMouseOver={() => setnavHover('about-us')}>
+            <StyledSubNav onMouseOver={() => setnavHover('support')}>
                 <Container>
                     <NavInner>
                         <NavList>
-                            { SubNavItems.AboutLinks.map((link) => (
+                            { SubNavItems.SupportLinks.map((link) => (
                                 <li key={ link.id }><Link to={link.url}>{link.title}</Link></li>
                             )) }
                         </NavList>
@@ -25,7 +25,7 @@ const AboutSub = ({subMenuName, SubNavItems, StyledSubNav, NavInner, NavList, Mo
                     <span>{subMenuName} Menu</span> 
                 </MobileMenuButton>
                 <MobileMenuList className={mobileMenuOpen ? 'open' : ''}>
-                    { SubNavItems.AboutLinks.map((link) => (
+                    { SubNavItems.SupportLinks.map((link) => (
                         <li key={ link.id } onClick={handleMobileMenuClick}><Link to={link.url}>{link.title}</Link></li>
                     )) }
                 </MobileMenuList>
@@ -34,4 +34,4 @@ const AboutSub = ({subMenuName, SubNavItems, StyledSubNav, NavInner, NavList, Mo
     )
 }
 
-export default AboutSub
+export default SupportSub

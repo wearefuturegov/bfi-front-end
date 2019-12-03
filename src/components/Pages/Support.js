@@ -7,7 +7,7 @@ class Member extends Component {
     render () {
         return (
             <Container>
-                <Heading as="h2">Become a Member</Heading>
+                <Heading as="h2">Support &amp; Join</Heading>
             </Container>
         )
     }

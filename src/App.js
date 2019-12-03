@@ -14,7 +14,9 @@ import Explore from './components/Pages/Explore';
 import Education from './components/Pages/Education';
 import Make from './components/Pages/Make';
 import About from './components/Pages/About';
-import Member from './components/Pages/Member';
+
+import Support from './components/Pages/Support';
+  import Member from './components/Pages/support/Member';
 
 
 export default withRouter(function App({ location }) {
@@ -60,7 +62,8 @@ export default withRouter(function App({ location }) {
       <Route path="/make" exact component={Make} />
       <Route path="/education" exact component={Education} />
       <Route path="/about-us" exact component={About} />
-      <Route path="/become-a-member" exact component={Member} />
+      <Route path="/support-and-join" exact component={Support} />
+        <Route path="/become-a-member" exact component={Member} />
 
       <Route component={NotFound} />
     </Switch>

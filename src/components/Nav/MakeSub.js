@@ -25,7 +25,7 @@ const MakeSub = ({subMenuName, SubNavItems, StyledSubNav, NavInner, NavList, Mob
                     <span>{subMenuName} Menu</span> 
                 </MobileMenuButton>
                 <MobileMenuList className={mobileMenuOpen ? 'open' : ''}>
-                    { SubNavItems.WatchLinks.map((link) => (
+                    { SubNavItems.MakeLinks.map((link) => (
                         <li key={ link.id } onClick={handleMobileMenuClick}><Link to={link.url}>{link.title}</Link></li>
                     )) }
                 </MobileMenuList>

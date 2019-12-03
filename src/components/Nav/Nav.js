@@ -10,6 +10,7 @@ import ExploreSub from './ExploreSub'
 import MakeSub from './MakeSub'
 import EducationSub from './EducationSub'
 import AboutSub from './AboutSub'
+import SupportSub from './SupportSub'
 
 const StyledHeader = styled.header`
     border-bottom: 1px solid ${vars.colour.lightgrey};
@@ -166,6 +167,8 @@ const Nav = ({currentHome}) => {
                 return <EducationSub subMenuName="Education" SubNavItems={SubNavItems} StyledSubNav={StyledSubNav} NavInner={NavInner} NavList={NavList} MobileMenu={MobileMenu} MobileMenuList={MobileMenuList} MobileMenuButton={MobileMenuButton} mobileMenuOpen={mobileMenuOpen} handleMobileMenuClick={handleMobileMenuClick} setnavHover={setnavHover} />;
             case "about-us":
                 return <AboutSub subMenuName="About Us" SubNavItems={SubNavItems} StyledSubNav={StyledSubNav} NavInner={NavInner} NavList={NavList} MobileMenu={MobileMenu} MobileMenuList={MobileMenuList} MobileMenuButton={MobileMenuButton} mobileMenuOpen={mobileMenuOpen} handleMobileMenuClick={handleMobileMenuClick} setnavHover={setnavHover} />;
+            case "support":
+                return <SupportSub subMenuName="About Us" SubNavItems={SubNavItems} StyledSubNav={StyledSubNav} NavInner={NavInner} NavList={NavList} MobileMenu={MobileMenu} MobileMenuList={MobileMenuList} MobileMenuButton={MobileMenuButton} mobileMenuOpen={mobileMenuOpen} handleMobileMenuClick={handleMobileMenuClick} setnavHover={setnavHover} />;
             default:
                 return null;
         }

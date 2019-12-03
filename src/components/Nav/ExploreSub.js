@@ -25,7 +25,7 @@ const ExploreSub = ({subMenuName, SubNavItems, StyledSubNav, NavInner, NavList, 
                     <span>{subMenuName} Menu</span> 
                 </MobileMenuButton>
                 <MobileMenuList className={mobileMenuOpen ? 'open' : ''}>
-                    { SubNavItems.WatchLinks.map((link) => (
+                    { SubNavItems.ExploreLinks.map((link) => (
                         <li key={ link.id } onClick={handleMobileMenuClick}><Link to={link.url}>{link.title}</Link></li>
                     )) }
                 </MobileMenuList>
