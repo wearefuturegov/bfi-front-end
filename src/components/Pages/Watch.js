@@ -29,6 +29,14 @@ const Watch = () => {
                 <Heading as="h2">Watch with us</Heading>
                 <FilmGrid />
             </Container>
+
+            <Container>
+                <Heading as="h2">Watch at home</Heading>
+            </Container>
+
+            <Container>
+                <Heading as="h2">Visit BFI Southbank</Heading>
+            </Container>
         </>
         :
             <Container>
