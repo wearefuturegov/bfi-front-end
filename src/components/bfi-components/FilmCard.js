@@ -1,6 +1,8 @@
 import React from 'react'
 import styled from 'styled-components';
 import * as vars from '../../variables.js';
+import { Link } from 'react-router-dom'
+
 import Heading from '../bfi-components/Heading';
 import DuoToneImage from '../bfi-components/DuoToneImage';
 
@@ -60,33 +62,35 @@ const FilmCard = (props) => {
 
     return (
         <StyledFilmCard title={"Find out more about " + props.title}>
-            <DuoToneImage image={props.image} />
-                
-            <FilmCardInformation>
-                { props.subInfo && 
-                    <span>{props.subInfo}</span>
-                }
+            <Link to={"/watch/film/" + props.uuid}>
+                <DuoToneImage image={props.image} />
+                    
+                <FilmCardInformation>
+                    { props.subInfo && 
+                        <span>{props.subInfo}</span>
+                    }
 
-                <Heading as="h4">{props.title}</Heading>
+                    <Heading as="h4">{props.title}</Heading>
 
-                { props.onSouthbank &&
-                    <>
-                        <a href={props.onSouthbank} title="Book a ticket to this film at BFI SouthBank">SouthBank</a>
-                        { props.onPlayer && 
-                            <span> | </span>
-                        }
-                    </>
-                }
-                { props.onPlayer && 
-                    <a href={props.onPlayer} title="Watch this film on BFI Player">Player</a>
-                }
-            </FilmCardInformation>
+                    { props.onSouthbank &&
+                        <>
+                            <a href={props.onSouthbank} title="Book a ticket to this film at BFI SouthBank">SouthBank</a>
+                            { props.onPlayer && 
+                                <span> | </span>
+                            }
+                        </>
+                    }
+                    { props.onPlayer && 
+                        <a href={props.onPlayer} title="Watch this film on BFI Player">Player</a>
+                    }
+                </FilmCardInformation>
+            </Link>
         </StyledFilmCard>
     )
 }
 
 FilmCard.defaultProps = {
-    uuid: "null",
+    uuid: "ccc481e1-f1c2-5b60-bbe7-77ad5645fb1a",
     title: "The film title",
     subInfo: "",
     onPlayer: false,

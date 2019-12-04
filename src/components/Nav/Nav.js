@@ -1,9 +1,9 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useLayoutEffect } from 'react'
 import styled from 'styled-components';
 import * as vars from '../../variables.js';
 
 import SectionNav from './SectionNav'
-import MainNav from './MainNav'
+import HeaderBar from './HeaderBar'
 import SubNavItems from './SubNavItems'
 import WatchSub from './WatchSub'
 import ExploreSub from './ExploreSub'
@@ -12,9 +12,17 @@ import EducationSub from './EducationSub'
 import AboutSub from './AboutSub'
 import SupportSub from './SupportSub'
 
+const HeaderBuffer = styled.div`
+    width: 100%;
+    height: 115px;
+`
+
 const StyledHeader = styled.header`
     margin-bottom: 0px;
     border-bottom: 1px solid ${vars.colour.grey};
+    position: fixed;
+    width: 100%;
+    z-index: 9999;
 `
 
 const NavList = styled.ul`
@@ -38,6 +46,19 @@ const NavList = styled.ul`
     
 `
 
+const NavigationContainer = styled.div`
+    transition: transform 0.6s;
+    transform: translateY(0px);
+    position: fixed;
+    width: 100%;
+    z-index: 999;
+
+
+    &.hideMenu {
+        transform: translateY(-200px);
+    }
+`
+
 const NavInner = styled.div`
     justify-content: space-between;
     align-items: center;
@@ -52,7 +73,6 @@ const StyledSubNav = styled.nav`
     opacity: 1;
     font-weight: 600;
     display: none;
-    z-index: 9999;
     position: absolute;
     width: 100%;
     border-bottom: 1px solid ${vars.colour.grey};
@@ -185,15 +205,20 @@ const Nav = ({currentHome}) => {
     }
 
     return (
+        <>
         <StyledHeader>
-            <MainNav currentHome={currentHome} NavInner={NavInner} NavList={NavList} setnavHover={setnavHover} navHover={navHover} />
-            <SectionNavContainer onMouseLeave={() => window.innerWidth < parseInt(vars.screen_size.mobile) ? setnavHover('') : null}>
-                <SectionNav currentHome={currentHome} NavInner={NavInner} NavList={NavList} setnavHover={setnavHover} navHover={navHover} /> 
-            </SectionNavContainer>    
-            <SubNavContainer onMouseLeave={() => setnavHover('')}>      
-                { selectSubNav(navHover ? navHover : currentHome) } 
-            </SubNavContainer> 
+            <HeaderBar currentHome={currentHome} NavInner={NavInner} NavList={NavList} setnavHover={setnavHover} navHover={navHover} />
+            <NavigationContainer>
+                <SectionNavContainer onMouseLeave={() => window.innerWidth < parseInt(vars.screen_size.mobile) ? setnavHover('') : null}>
+                    <SectionNav currentHome={currentHome} NavInner={NavInner} NavList={NavList} setnavHover={setnavHover} navHover={navHover} /> 
+                </SectionNavContainer>    
+                <SubNavContainer onMouseLeave={() => setnavHover('')}>      
+                    { selectSubNav(navHover ? navHover : currentHome) } 
+                </SubNavContainer> 
+            </NavigationContainer>
         </StyledHeader>
+        <HeaderBuffer/>
+        </>
     )
 }
 

@@ -9,6 +9,7 @@ import Heading from './components/bfi-components/Heading';
 
 import Watch from './components/Pages/Watch';
   import BFIPlayer from './components/Pages/watch/BFIPlayer';
+  import FilmPage from './components/Pages/watch/FilmPage';
 
 import Explore from './components/Pages/Explore';
 import Education from './components/Pages/Education';
@@ -58,6 +59,7 @@ export default withRouter(function App({ location }) {
     <Switch>
       <Route path="/" exact component={Watch} />
         <Route path="/watch/bfi-player" exact component={BFIPlayer} />
+        <Route path="/watch/film/:id" exact component={FilmPage}></Route>
       <Route path="/explore" exact component={Explore} />
       <Route path="/make" exact component={Make} />
       <Route path="/education" exact component={Education} />

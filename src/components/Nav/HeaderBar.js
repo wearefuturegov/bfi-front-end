@@ -8,9 +8,9 @@ import { faSearch } from '@fortawesome/free-solid-svg-icons'
 import LogoBlack from '../../images/logos/bfi-logo-black.svg'
 import SectionNav from './SectionNav'
 
-const MainNav = ({currentHome, NavInner, NavList, setnavHover, navHover}) => {
+const HeaderBar = ({currentHome, NavInner, NavList, setnavHover, navHover}) => {
 
-    const StyledMainNav = styled.nav`
+    const StyledHeaderBar = styled.nav`
         background: ${vars.colour.white};
         font-weight: 600;
         border-bottom: 1px solid ${vars.colour.grey};
@@ -38,10 +38,12 @@ const MainNav = ({currentHome, NavInner, NavList, setnavHover, navHover}) => {
     `
 
     return (
-        <StyledMainNav onMouseOver={() => window.innerWidth > vars.breakpoint.hd ? setnavHover('') : null}>
+        <StyledHeaderBar onMouseOver={() => window.innerWidth > vars.breakpoint.hd ? setnavHover('') : null}>
             <Container>
                 <NavInner>
-                    <BFILogo src={LogoBlack} alt="BFI Logo" onMouseOver={() => setnavHover('')} />
+                    <Link to="/">
+                        <BFILogo src={LogoBlack} alt="BFI Logo" onMouseOver={() => setnavHover('')} />
+                    </Link>
                     <AltSectionNavContainer>
                         <SectionNav currentHome={currentHome} NavInner={NavInner} NavList={NavList} setnavHover={setnavHover} navHover={navHover} />
                     </AltSectionNavContainer>
@@ -54,8 +56,8 @@ const MainNav = ({currentHome, NavInner, NavList, setnavHover, navHover}) => {
                     </NavList>
                 </NavInner>
             </Container>
-        </StyledMainNav>
+        </StyledHeaderBar>
     )
 }
 
-export default MainNav;
+export default HeaderBar;
