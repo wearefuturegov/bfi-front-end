@@ -24,7 +24,7 @@ const DuoToneImage = (props) => {
             transition: all ease 0.15s;
         }
 
-        &:hover, .hovered {
+        &:hover, &.hovered {
             img {
                 filter:              grayscale(100%) contrast(1) blur(0px);
                 mix-blend-mode:      multiply;

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState} from 'react'
 import styled from 'styled-components';
 import * as vars from '../../variables.js';
 import Heading from '../bfi-components/Heading';
@@ -29,11 +29,12 @@ const ArticleSummary = ({size, link, title, desc, author, date, image}) => {
             padding-right: 15px;
         } 
     `
+    const [hovered, sethovered] = useState(false)
 
     return (
         <StyledArticleSummary>
-            <a href={link} rel="noopener noreferrer" target="_blank" title={"View article about " + title}>
-                <DuoToneImage image={image} bgColour={vars.colour.blue_dark} highlightColour={vars.colour.blue_light} />
+            <a href={link} rel="noopener noreferrer" target="_blank" title={"View article about " + title} onMouseOver={() => sethovered(true)} onMouseLeave={() => sethovered(false)}>
+                <DuoToneImage image={image} isHovered={hovered} bgColour={vars.colour.blue_dark} highlightColour={vars.colour.blue_light} />
                 <Heading as="h4">{title}</Heading>
                 <p>{desc}</p>
                 {author && 
