@@ -53,7 +53,7 @@ const SectionNav = ({currentHome, NavInner, NavList, setnavHover, navHover}) => 
                         <li className={(currentHome === 'make' ? 'active' : '') + (navHover === 'make' ? ' hovered' : '') } onMouseOver={() => setnavHover('make')} ><Link to="/make">Make</Link></li>
                         <li className={(currentHome === 'education' ? 'active' : '') + (navHover === 'education' ? ' hovered' : '') } onMouseOver={() => setnavHover('education')} ><Link to="/education">Education</Link></li>
                         <li className={(currentHome === 'about-us' ? 'active' : '') + (navHover === 'about-us' ? ' hovered' : '') } onMouseOver={() => setnavHover('about-us')} ><Link to="/about-us">About Us</Link></li>
-                        <li className={(currentHome === 'support' ? 'active' : '') + (navHover === 'support' ? ' hovered' : '') } onMouseOver={() => setnavHover('support')} ><Link to="/support-and-join">Support &amp; Join</Link></li>
+                        <li className={(currentHome === 'support-and-join' ? 'active' : '') + (navHover === 'support-and-join' ? ' hovered' : '') } onMouseOver={() => setnavHover('support-and-join')} ><Link to="/support-and-join">Support &amp; Join</Link></li>
                     </NavList>
                 </NavInner>
             </Container>

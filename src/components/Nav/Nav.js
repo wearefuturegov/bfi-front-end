@@ -47,15 +47,18 @@ const NavList = styled.ul`
 `
 
 const NavigationContainer = styled.div`
-    transition: transform 0.6s;
-    transform: translateY(0px);
-    position: fixed;
-    width: 100%;
-    z-index: 999;
+
+    @media ${vars.breakpoint.tablet} {
+        transition: transform 0.6s;
+        transform: translateY(0px);
+        position: fixed;
+        width: 100%;
+        z-index: 999;
 
 
-    &.hideMenu {
-        transform: translateY(-200px);
+        &.hideMenu {
+            transform: translateY(-200px);
+        }
     }
 `
 
@@ -103,11 +106,13 @@ const StyledSubNav = styled.nav`
 `
 const MobileMenu = styled.nav`
     padding: 15px 15px;
+    background:  ${vars.colour.white};
+    display: block;
     span {
         margin-left: 10px;
     }
     @media ${vars.breakpoint.tablet} {
-        
+        display: none;
     }
     @media ${vars.breakpoint.desktop} {
         display: none;
@@ -197,7 +202,7 @@ const Nav = ({currentHome}) => {
                 return <EducationSub subMenuName="Education" SubNavItems={SubNavItems} StyledSubNav={StyledSubNav} NavInner={NavInner} NavList={NavList} MobileMenu={MobileMenu} MobileMenuList={MobileMenuList} MobileMenuButton={MobileMenuButton} mobileMenuOpen={mobileMenuOpen} handleMobileMenuClick={handleMobileMenuClick} navHover={navHover} setnavHover={setnavHover} currentHome={currentHome} />;
             case "about-us":
                 return <AboutSub subMenuName="About Us" SubNavItems={SubNavItems} StyledSubNav={StyledSubNav} NavInner={NavInner} NavList={NavList} MobileMenu={MobileMenu} MobileMenuList={MobileMenuList} MobileMenuButton={MobileMenuButton} mobileMenuOpen={mobileMenuOpen} handleMobileMenuClick={handleMobileMenuClick} navHover={navHover} setnavHover={setnavHover} currentHome={currentHome} />;
-            case "support":
+            case "support-and-join":
                 return <SupportSub subMenuName="About Us" SubNavItems={SubNavItems} StyledSubNav={StyledSubNav} NavInner={NavInner} NavList={NavList} MobileMenu={MobileMenu} MobileMenuList={MobileMenuList} MobileMenuButton={MobileMenuButton} mobileMenuOpen={mobileMenuOpen} handleMobileMenuClick={handleMobileMenuClick} navHover={navHover} setnavHover={setnavHover} currentHome={currentHome} />;
             default:
                 return null;

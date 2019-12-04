@@ -9,6 +9,9 @@ const Container = (props) => {
         margin: ${props.noMargin ? '0px' : '25px' } auto;
         padding: 0 15px;
         
+        @media ${vars.breakpoint.tablet} {
+            padding: 0 30px;
+        }
         @media ${vars.breakpoint.hd} {
             margin: ${props.noMargin ? '0px' : '40px' }  auto;
             max-width: ${vars.screen_size.desktopL};        

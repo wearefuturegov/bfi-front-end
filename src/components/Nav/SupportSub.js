@@ -8,7 +8,7 @@ import { faBars } from '@fortawesome/free-solid-svg-icons'
 const SupportSub = ({subMenuName, SubNavItems, StyledSubNav, NavInner, NavList, MobileMenu, MobileMenuList, MobileMenuButton, mobileMenuOpen, handleMobileMenuClick, navHover, setnavHover, currentHome}) => {
     return (
         <>
-            <StyledSubNav onMouseOver={() => setnavHover('support')} className={(currentHome === 'support' ? ' active' : '') + (navHover ? ' hovered' : '')}>
+            <StyledSubNav onMouseOver={() => setnavHover('support-and-join')} className={(currentHome === 'support-and-join' ? ' active' : '') + (navHover ? ' hovered' : '')}>
                 <Container noMargin={true}>
                     <NavInner>
                         <NavList>
