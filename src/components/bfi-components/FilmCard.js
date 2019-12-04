@@ -2,6 +2,7 @@ import React from 'react'
 import styled from 'styled-components';
 import * as vars from '../../variables.js';
 import Heading from '../bfi-components/Heading';
+import DuoToneImage from '../bfi-components/DuoToneImage';
 
 const FilmCard = (props) => {  
     const StyledFilmCard = styled.div`
@@ -9,18 +10,22 @@ const FilmCard = (props) => {
         margin: auto;
         height: 225px;
         position: relative;
-        background: ${vars.colour.white} no-repeat center center fixed;
-        background: url(${props.image});
-        -webkit-background-size: cover;
-        -moz-background-size: cover;
-        -o-background-size: cover;
-        background-size: cover;
-        background-position: 50% 50%;
+
+        &:hover {
+            cursor: pointer;
+        }
 
         &:last-of-type {
             margin-left: 0;
             margin-right: auto;
         }
+
+        img {
+            width: 100%;
+            height: auto;
+        }
+
+
         @media ${vars.breakpoint.tablet} {
             width: 50%;
             height: 200px;
@@ -55,6 +60,8 @@ const FilmCard = (props) => {
 
     return (
         <StyledFilmCard title={"Find out more about " + props.title}>
+            <DuoToneImage image={props.image} />
+                
             <FilmCardInformation>
                 { props.subInfo && 
                     <span>{props.subInfo}</span>
