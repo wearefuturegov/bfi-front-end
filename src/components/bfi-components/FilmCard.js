@@ -26,6 +26,9 @@ const FilmCard = (props) => {
             width: 100%;
             height: auto;
         }
+        a {
+            color: ${vars.colour.black}
+        }
 
 
         @media ${vars.breakpoint.tablet} {
@@ -50,6 +53,8 @@ const FilmCard = (props) => {
         background-color: ${vars.colour.pink_light};
         background-color: rgba(${vars.colour.pink_light}, 0.95);
         overflow: hidden;
+        display: flex;
+        flex-direction: column;
         h4 {
             margin: 0;
             text-transform: uppercase;
@@ -57,6 +62,16 @@ const FilmCard = (props) => {
         }
         a {
             color: ${vars.colour.pink_dark};
+        }
+        span {
+            font-size: 13px;
+        }
+        .filmcardinformation__subinfo {
+            margin-bottom: 5px;
+        }
+        .filmcardinformation__links {
+            align-self: flex-start;
+            margin-top: auto;
         }
     `
 
@@ -67,22 +82,26 @@ const FilmCard = (props) => {
                     
                 <FilmCardInformation>
                     { props.subInfo && 
-                        <span>{props.subInfo}</span>
+                        <span className="filmcardinformation__subinfo">{props.subInfo}</span>
                     }
 
                     <Heading as="h4">{props.title}</Heading>
 
-                    { props.onSouthbank &&
-                        <>
-                            <a href={props.onSouthbank} title="Book a ticket to this film at BFI SouthBank">SouthBank</a>
-                            { props.onPlayer && 
-                                <span> | </span>
-                            }
-                        </>
-                    }
-                    { props.onPlayer && 
-                        <a href={props.onPlayer} title="Watch this film on BFI Player">Player</a>
-                    }
+                    <div className="filmcardinformation__links">
+                        { props.onSouthbank &&
+                            <>
+                                <span>SouthBank</span>
+                                {/* <a href={props.onSouthbank} title="Book a ticket to this film at BFI SouthBank">SouthBank</a> */}
+                                { props.onPlayer && 
+                                    <span> | </span>
+                                }
+                            </>
+                        }
+                        { props.onPlayer && 
+                            // <a href={props.onPlayer} title="Watch this film on BFI Player">Player</a>
+                            <span>Player</span>
+                        }
+                    </div>
                 </FilmCardInformation>
             </Link>
         </StyledFilmCard>

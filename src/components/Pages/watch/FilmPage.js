@@ -20,7 +20,9 @@ const FilmPage = () => {
         <>
             <HeadingBuffer />
             { loading === true ? (
-                <p>Loading...</p>
+                <Container>
+                    <p>Loading...</p>
+                </Container>
             ) : (
                 <>
                 <Container>

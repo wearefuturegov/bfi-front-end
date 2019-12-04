@@ -6,7 +6,9 @@ import PropTypes from 'prop-types';
 export const Heading = (props) => {
     const StyledHeading = styled(props.as)`
         font-family: ${props.as === 'h1' ? vars.font.heading : vars.font.body};
-        text-transform: ${props.as === 'h1' ? 'uppercase' : 'default'};
+        text-transform: ${props.as === 'h1' ? 'uppercase' : 'none'};
+        font-size: ${props.as === 'h1' ? '30px' : (props.as === 'h2' ? '27px' : (props.as === 'h3' ? '22px' : '20px'))};
+        font-weight: ${props.as === 'h1' ? '800' : (props.as === 'h2' ? '400' : (props.as === 'h3' ? '600' : '800'))};
         margin-top: 0;
     `
 
