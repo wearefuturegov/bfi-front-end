@@ -39,7 +39,7 @@ const HeaderBar = ({currentHome, NavInner, NavList, setnavHover, navHover}) => {
 
     return (
         <StyledHeaderBar onMouseOver={() => window.innerWidth > vars.breakpoint.hd ? setnavHover('') : null}>
-            <Container>
+            <Container noMargin={true}>
                 <NavInner>
                     <Link to="/">
                         <BFILogo src={LogoBlack} alt="BFI Logo" onMouseOver={() => setnavHover('')} />

@@ -9,7 +9,7 @@ const AboutSub = ({subMenuName, SubNavItems, StyledSubNav, NavInner, NavList, Mo
     return (
         <>
             <StyledSubNav onMouseOver={() => setnavHover('about-us')} className={(currentHome === 'about-us' ? ' active' : '') + (navHover ? ' hovered' : '')}>
-                <Container>
+                <Container noMargin={true}>
                     <NavInner>
                         <NavList>
                             { SubNavItems.AboutLinks.map((link) => (

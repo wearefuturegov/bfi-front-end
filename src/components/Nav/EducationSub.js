@@ -9,7 +9,7 @@ const EducationSub = ({subMenuName, SubNavItems, StyledSubNav, NavInner, NavList
     return (
         <>
             <StyledSubNav onMouseOver={() => setnavHover('education')} className={(currentHome === 'education' ? ' active' : '') + (navHover ? ' hovered' : '')}>
-                <Container>
+                <Container noMargin={true}>
                     <NavInner>
                         <NavList>
                             { SubNavItems.EducationLinks.map((link) => (

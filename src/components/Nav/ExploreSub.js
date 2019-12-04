@@ -9,7 +9,7 @@ const ExploreSub = ({subMenuName, SubNavItems, StyledSubNav, NavInner, NavList, 
     return (
         <>
             <StyledSubNav onMouseOver={() => setnavHover('explore')} className={(currentHome === 'explore' ? ' active' : '') + (navHover ? ' hovered' : '')}>
-                <Container>
+                <Container noMargin={true}>
                     <NavInner>
                         <NavList>
                             { SubNavItems.ExploreLinks.map((link) => (

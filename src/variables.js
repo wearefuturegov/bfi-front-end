@@ -3,11 +3,19 @@ export const colour = {
     white: '#FFFFFF',
     grey: '#E8E5E5',
     grey_light: '#F6F6F6',
+    grey_dark: '#8D8B8C',
+
     green: '#004225',
+    green_light: '#75B599',
+    green_dark: '#172820',
+
     blue: '#031D45',
+    blue_light: '#8AB1EE',
+    blue_dark: '#1A2029',
+
     pink: '#F0C5C8',
     pink_light: '250, 239, 240',
-    pink_dark: '#995C5C'
+    pink_dark: '#895D60'
 };
 
 export const font = {

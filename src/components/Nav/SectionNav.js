@@ -45,7 +45,7 @@ const SectionNav = ({currentHome, NavInner, NavList, setnavHover, navHover}) => 
     `
     return (
         <StyledSectionNav>
-            <Container>
+            <Container noMargin={true}>
                 <NavInner>
                     <NavList>
                         <li className={(currentHome === 'watch' ? 'active' : '') + (navHover === 'watch' ? ' hovered' : '') } onMouseOver={() => setnavHover('watch')} ><Link to="/">Watch</Link></li>
