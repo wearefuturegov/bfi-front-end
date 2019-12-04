@@ -2,40 +2,53 @@ import React from 'react'
 import styled from 'styled-components';
 import * as vars from '../../variables.js';
 import Heading from '../bfi-components/Heading';
+import DuoToneImage from './DuoToneImage.js';
 
-const ArticleSummary = (props) => {  
+const ArticleSummary = ({size, link, title, desc, author, date, image}) => {  
     const StyledArticleSummary = styled.div`
         width: 100%;
-        margin: auto;
+        margin: 0px auto;
+        flex-grow: 1;
+        margin-bottom: 10px;
+        padding-bottom: 10px;
 
         a {
             color: ${vars.colour.black};
             text-decoration: none;
+            display: block;
         }
+        h4 {
+            margin-top: 10px;
+        }
+        
 
-        &:last-of-type {
-            margin-left: 0;
-            margin-right: auto;
-        }
-
-        @media ${vars.breakpoint.desktop} {
-            width: ${props.as === 'large' ? 'calc(74% - 20px)' : 'calc(24% - 20px)'};
-        }
+        @media ${vars.breakpoint.tablet} {
+            width: ${size === 'large' ? 'calc(75% - 30px)' : 'calc(25% - 30px)'};
+            max-width: ${size === 'large' ? 'calc(75% - 30px)' : 'calc(25% - 30px)'};
+            margin-right: 15px;
+            padding-right: 15px;
+        } 
     `
 
     return (
         <StyledArticleSummary>
-            <a href={props.link} rel="noopener noreferrer" target="_blank" title={"View article about " + props.title}>
-                <Heading as="h3">{props.title}</Heading>
-                <p>{props.desc}</p>
-                <p>{props.author} - {props.date}</p>
+            <a href={link} rel="noopener noreferrer" target="_blank" title={"View article about " + title}>
+                <DuoToneImage image={image} bgColour={vars.colour.blue_dark} highlightColour={vars.colour.blue_light} />
+                <Heading as="h4">{title}</Heading>
+                <p>{desc}</p>
+                {author && 
+                    <p>{author} - {date}</p>
+                }
             </a>
         </StyledArticleSummary>
     )
 }
 
 ArticleSummary.defaultProps = {
-    as: "small"
+    size: "small",
+    desc: "",
+    author: "",
+    date: ""
 }
 
 export default ArticleSummary

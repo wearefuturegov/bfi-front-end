@@ -1,7 +1,6 @@
 import React from 'react'
 import styled from 'styled-components';
 import * as vars from '../../variables.js';
-import PropTypes from 'prop-types';
 
 
 const DuoToneImage = (props) => {

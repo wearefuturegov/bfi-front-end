@@ -1,51 +1,55 @@
 import React, { useState, useEffect } from 'react';
-import styled from 'styled-components';
 
 import Container from '../../bfi-components/Container'
 import { Heading, HeadingBuffer } from '../../bfi-components/Heading'
 import FilmPageMeta from './FilmPageMeta'
+import ArticleSummary from '../../bfi-components/ArticleSummary'
+import ArticleGrid from '../../bfi-components/ArticleGrid';
 
 
 const FilmPage = () => {
-    const [filmData, setfilmData] = useState({
-        "uuid": "ccc481e1-f1c2-5b60-bbe7-77ad5645fb1a",
-        "priref": 150028636,
-        "type": "film",
-        "title": "Godfather",
-        "title_article": "The",
-        "display_title": "The Godfather",
-        "year": "1972",
-        "summary_credits": {
-            "production_countries": "USA",
-            "directed_by": "Francis Ford Coppola",
-            "featuring": "Marlon Brando, Al Pacino, James Caan"
-        },
-        "articles": []
-    });
+    const [filmData, setfilmData] = useState({ summary_credits: [], articles: [] });
     const [loading, setLoading] = useState(true);
     const [hasError, setErrors] =  useState(false);
 
     useEffect(() => {
-        // fetchData("https://films-tv-people.explore.bfi.digital/api/films/", window.location.pathname.substring(window.location.pathname.lastIndexOf('/') + 1), setfilmData, setLoading, setErrors)
+        fetchData("https://films-tv-people.explore.bfi.digital/api/films/", window.location.pathname.substring(window.location.pathname.lastIndexOf('/') + 1), setfilmData, setLoading, setErrors)
     }, []);
+
     return (
-        <Container>
+        <>
             <HeadingBuffer />
-            { loading === false && filmData ? (
+            { loading === true ? (
                 <p>Loading...</p>
             ) : (
                 <>
-                <Heading as="h1">{filmData.display_title}</Heading>
-                <Heading as="h4">Short description ({filmData.year})</Heading>
-                <p>Image goes here</p>
+                <Container>
+                    <Heading as="h1">{filmData.display_title}</Heading>
+                    <Heading as="h4">Short description ({filmData.year})</Heading>
+                    <p>Image goes here</p>
 
-                <FilmPageMeta director={filmData.summary_credits.directed_by} year={filmData.year} featuring={filmData.summary_credits.featuring} />
+                    <FilmPageMeta director={filmData.summary_credits.directed_by} year={filmData.year} featuring={filmData.summary_credits.featuring} />
+                </Container>
+
+                <Container>
+                    <Heading as="h2">Read more about {filmData.display_title}</Heading>
+                    <ArticleGrid>
+                        {filmData.articles.map((article, key) =>
+                            <ArticleSummary 
+                                key={key}
+                                link={article.url} 
+                                title={article.title} 
+                                image={article.primary_image.filter((e) => e.size === "full_4x3")[0].url} 
+                            />
+                        )}
+                    </ArticleGrid>
+                </Container>
                 </>
             )}
             { hasError && 
 				<p>Sorry there was an error fetching the film data, please try refreshing the page.</p>
 			}
-        </Container>
+        </>
     )
 }
 

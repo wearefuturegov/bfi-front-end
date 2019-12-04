@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import styled from 'styled-components';
-import * as vars from '../../variables.js';
 import FilmCard from './FilmCard';
 
 const StyledFilmGrid = styled.div`

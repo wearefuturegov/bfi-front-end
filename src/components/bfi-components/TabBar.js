@@ -31,7 +31,7 @@ const TabBar = ({options}) => {
     return (
         <StyledTabBar>
             {options.map((item, key) =>
-                <TabBarButton className={ item.active ? 'selected' : ''}>{item.title}</TabBarButton>
+                <TabBarButton key={key} className={ item.active ? 'selected' : ''}>{item.title}</TabBarButton>
             )}
         </StyledTabBar>   
     )
