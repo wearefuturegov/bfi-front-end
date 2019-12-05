@@ -1,7 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react'
 import styled from 'styled-components';
 import * as vars from '../../variables.js';
-import Sticky from 'react-sticky-el';
 
 import NavSections from './NavSections'
 import PromoBar from './PromoBar';
