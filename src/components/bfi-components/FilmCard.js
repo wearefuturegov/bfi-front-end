@@ -7,6 +7,9 @@ import Heading from '../bfi-components/Heading';
 import DuoToneImage from '../bfi-components/DuoToneImage';
 
 const FilmCard = (props) => {  
+
+    var titleLength = props.title.split(" ").length;
+
     const StyledFilmCard = styled.div`
         width: 100%;
         margin: auto;
@@ -49,7 +52,7 @@ const FilmCard = (props) => {
         right: 15px;
         height: calc(100% - 65px);
         width: calc(50% - 45px);
-        padding: 15px;
+        padding: 10px;
         background-color: ${vars.colour.pink_light};
         background-color: rgba(${vars.colour.pink_light}, 0.95);
         overflow: hidden;
@@ -59,19 +62,58 @@ const FilmCard = (props) => {
             margin: 0;
             text-transform: uppercase;
             color: ${vars.colour.pink_dark};
+            font-size: ${(titleLength <= 2 ? '45' : (titleLength <= 4 ? '35' : (titleLength <= 6 ? '27' : (titleLength <= 14 ? '24' : '18'))))}px;
         }
         a {
             color: ${vars.colour.pink_dark};
         }
-        span {
-            font-size: 13px;
-        }
         .filmcardinformation__subinfo {
             margin-bottom: 5px;
+            font-size: 13px;
+            font-weight: 600;
         }
         .filmcardinformation__links {
             align-self: flex-start;
             margin-top: auto;
+        }
+
+        @media ${vars.breakpoint.tablet} {
+            width: calc(60% - 45px);
+            h4 {
+                font-size: ${(titleLength <= 2 ? '27' : (titleLength <= 4 ? '25' : (titleLength <= 6 ? '22' : (titleLength <= 14 ? '16' : '14'))))}px;
+            }
+        }
+        @media ${vars.breakpoint.hd} {
+            width: calc(50% - 45px);
+            
+            h4 {
+                font-size: ${(titleLength <= 2 ? '45' : (titleLength <= 4 ? '35' : (titleLength <= 6 ? '27' : (titleLength <= 14 ? '24' : '18'))))}px;
+            }
+            .filmcardinformation__subinfo {
+                font-size: 16px;
+            }
+        }
+    `
+
+    const FilmTag = styled.span`
+        font-size: 13px;
+        padding: 2px 10px;
+        margin-right: 6px;
+        vertical-align: middle;
+        border-radius: 5px;
+        background: ${vars.colour.pink_dark};
+        color: ${vars.colour.white};
+
+        @media ${vars.breakpoint.tablet} {
+            font-size: 11px;
+            padding: 1px 5px;
+            margin-right: 4px;
+        }
+
+        @media ${vars.breakpoint.hd} {
+            font-size: 14px;
+            padding: 2px 10px;
+            margin-right: 6px;
         }
     `
 
@@ -79,7 +121,7 @@ const FilmCard = (props) => {
         <StyledFilmCard title={"Find out more about " + props.title}>
             <Link to={"/watch/film/" + props.uuid}>
                 <DuoToneImage image={props.image} />
-                    
+
                 <FilmCardInformation>
                     { props.subInfo && 
                         <span className="filmcardinformation__subinfo">{props.subInfo}</span>
@@ -90,16 +132,13 @@ const FilmCard = (props) => {
                     <div className="filmcardinformation__links">
                         { props.onSouthbank &&
                             <>
-                                <span>SouthBank</span>
+                                <FilmTag>SouthBank</FilmTag>
                                 {/* <a href={props.onSouthbank} title="Book a ticket to this film at BFI SouthBank">SouthBank</a> */}
-                                { props.onPlayer && 
-                                    <span> | </span>
-                                }
                             </>
                         }
                         { props.onPlayer && 
                             // <a href={props.onPlayer} title="Watch this film on BFI Player">Player</a>
-                            <span>Player</span>
+                            <FilmTag>Player</FilmTag>
                         }
                     </div>
                 </FilmCardInformation>

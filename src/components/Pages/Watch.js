@@ -20,10 +20,11 @@ const Watch = () => {
         !isLoading ? 
         <> 
             <HomeBanner title="Watch a new film, rediscover your old favourites, and get inspired." image={WatchBannerImg} />
-            <Container>
+            
+            {/* <Container>
                 <Heading as="h2">Now on Southbank</Heading>
                 <FilmShowingsGrid />
-            </Container>
+            </Container> */}
 
             <Container>
                 <Heading as="h2">Watch with us</Heading>

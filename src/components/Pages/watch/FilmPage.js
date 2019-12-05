@@ -33,19 +33,21 @@ const FilmPage = () => {
                     <FilmPageMeta director={filmData.summary_credits.directed_by} year={filmData.year} featuring={filmData.summary_credits.featuring} />
                 </Container>
 
-                <Container>
-                    <Heading as="h2">Read more about {filmData.display_title}</Heading>
-                    <ArticleGrid>
-                        {filmData.articles.map((article, key) =>
-                            <ArticleSummary 
-                                key={key}
-                                link={article.url} 
-                                title={article.title} 
-                                image={article.primary_image.filter((e) => e.size === "full_4x3")[0].url} 
-                            />
-                        )}
-                    </ArticleGrid>
-                </Container>
+                {filmData.articles.length > 0 &&
+                    <Container>
+                        <Heading as="h2">Read more about {filmData.display_title}</Heading>
+                        <ArticleGrid>
+                            {filmData.articles.map((article, key) =>
+                                <ArticleSummary 
+                                    key={key}
+                                    link={article.url} 
+                                    title={article.title} 
+                                    image={article.primary_image.filter((e) => e.size === "full_4x3")[0].url} 
+                                />
+                            )}
+                        </ArticleGrid>
+                    </Container>
+                }
                 </>
             )}
             { hasError && 

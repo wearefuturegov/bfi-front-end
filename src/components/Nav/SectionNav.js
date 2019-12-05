@@ -15,6 +15,7 @@ const SectionNav = ({currentHome, NavInner, NavList, setnavHover, navHover}) => 
         left: 0;
         width: 100%;
         z-index: 99999;
+        border-bottom: 1px solid ${vars.colour.grey}
 
         li { 
             a {

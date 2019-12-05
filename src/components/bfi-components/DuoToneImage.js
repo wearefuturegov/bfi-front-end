@@ -18,10 +18,10 @@ const DuoToneImage = (props) => {
             object-fit:          cover;
             flex:                1 0 100%;
             position:            relative;
-            -webkit-transition: all ease 0.15s;
-            -moz-transition: all ease 0.15s;
-            -o-transition: all ease 0.15s;
-            transition: all ease 0.15s;
+            -webkit-transition: all ease 0.25s;
+            -moz-transition: all ease 0.25s;
+            -o-transition: all ease 0.25s;
+            transition: all ease 0.25s;
         }
 
         &:hover, &.hovered {
