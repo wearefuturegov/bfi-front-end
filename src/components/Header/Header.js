@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import styled from 'styled-components';
 import * as vars from '../../variables.js';
+import Sticky from 'react-stickynode';
 
 import NavSections from './NavSections'
 import PromoBar from './PromoBar';
@@ -11,6 +12,7 @@ import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSearch } from '@fortawesome/free-solid-svg-icons'
 import LogoBlack from '../../images/logos/bfi-logo-black.svg'
+import LogoWhite from '../../images/logos/bfi-logo-white.svg'
 
 const HeaderBuffer = styled.div`
     width: 100%;
@@ -24,9 +26,18 @@ const HeaderContainer = styled.div`
 const StyledHeader= styled.header`
     background: transparent;
     font-weight: 600;
+    position: absolute;
+    width: 100%;
 
-    &:hover {
+    a {
+        color: ${vars.colour.white}
+    }
+
+    &:hover, &.hovered {
         background: ${vars.colour.white};
+        a {
+            color: ${vars.colour.black}
+        }
     }
 `
 
@@ -34,6 +45,7 @@ const StyledHeader= styled.header`
 const BFILogo = styled.img`
     vertical-align: middle;
     max-width: 47px;
+    margin-right: 50px;
 `
 const NavSectionContainer = styled.div`
     display: inline-block;
@@ -71,7 +83,6 @@ const NavList = styled.ul`
         a {
             display: block;
             text-decoration: none;
-            color: ${vars.colour.black};
             padding: 20px 15px;
             &:hover {
                 text-decoration: underline;
@@ -102,31 +113,41 @@ const NavigationContainer = styled.div`
 
 const Header = ({currentHome}) => {
 
-    const [navHover, setnavHover] = useState('');    
+    const [navHover, setnavHover] = useState('');  
+    const [isSticky, setisSticky] = useState(false);  
 
+    const handleStickyChange = (status) => {
+        if (status.status === Sticky.STATUS_FIXED) {
+            setisSticky(true);
+        } else {
+            setisSticky(false);
+        }
+    }
     return (
         <>
         <HeaderContainer>
             <PromoBar NavInner={NavInner} NavList={NavList} setnavHover={setnavHover} />
-            <StyledHeader>
-                <Container noMargin={true}>
-                    <NavInner>
-                        <Link to="/">
-                            <BFILogo src={LogoBlack} alt="BFI Logo" onMouseOver={() => setnavHover('')} />
-                        </Link>
-                        <NavSectionContainer>
-                            <NavSections currentHome={currentHome} NavInner={NavInner} NavList={NavList} setnavHover={setnavHover} navHover={navHover} />
-                        </NavSectionContainer>
-                        <SearchButton>
-                            <a href="https://www.bfi.org.uk/search/search-bfi/I'm%20looking%20for..." target="_blank" rel="noopener noreferrer">
-                                <FontAwesomeIcon icon={faSearch} />
-                            </a>
-                        </SearchButton>
-                    </NavInner>
-                </Container>
-            </StyledHeader>
-            <SubNav currentHome={currentHome} setnavHover={setnavHover} navHover={navHover} NavInner={NavInner} NavList={NavList} />
-                        
+            <Sticky onStateChange={handleStickyChange}>
+                <StyledHeader className={navHover || isSticky ? 'hovered' : ''}>
+                    {console.log(Sticky.STATUS_FIXED )}
+                    <Container noMargin={true}>
+                        <NavInner>
+                            <Link to="/">
+                                <BFILogo src={navHover || isSticky ? LogoBlack : LogoWhite} alt="BFI Logo" />
+                            </Link>
+                            <NavSectionContainer>
+                                <NavSections currentHome={currentHome} NavInner={NavInner} NavList={NavList} setnavHover={setnavHover} navHover={navHover} />
+                            </NavSectionContainer>
+                            <SearchButton>
+                                <a href="https://www.bfi.org.uk/search/search-bfi/I'm%20looking%20for..." target="_blank" rel="noopener noreferrer">
+                                    <FontAwesomeIcon icon={faSearch} />
+                                </a>
+                            </SearchButton>
+                        </NavInner>
+                    </Container>
+                </StyledHeader>
+                <SubNav currentHome={currentHome} setnavHover={setnavHover} navHover={navHover} NavInner={NavInner} NavList={NavList} />
+            </Sticky>      
             
             {/* <NavigationContainer>
                 <NavSectionsContainer onMouseLeave={() => window.innerWidth < parseInt(vars.screen_size.mobile) ? setnavHover('') : null}>

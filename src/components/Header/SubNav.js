@@ -23,6 +23,7 @@ const SubNav = ({currentHome, setnavHover, navHover, NavInner, NavList}) => {
         font-weight: 600;
         display: none;
         position: absolute;
+        top: 48px;
         width: 100%;
         border-bottom: 1px solid ${vars.colour.grey};
         
