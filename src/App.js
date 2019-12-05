@@ -3,7 +3,7 @@ import { Switch, Route, withRouter } from 'react-router-dom';
 import { createBrowserHistory } from "history";
 import { createGlobalStyle } from 'styled-components'
 
-import Nav from './components/Nav/Nav';
+import Header from './components/Header/Header';
 import Container from './components/bfi-components/Container';
 import Heading from './components/bfi-components/Heading';
 
@@ -55,7 +55,7 @@ export default withRouter(function App({ location }) {
   return(
     <>
     <GlobalStyle />
-    <Nav currentHome={currentHome}/>
+    <Header currentHome={currentHome}/>
     <Switch>
       <Route path="/" exact component={Watch} />
         <Route path="/watch/bfi-player" exact component={BFIPlayer} />

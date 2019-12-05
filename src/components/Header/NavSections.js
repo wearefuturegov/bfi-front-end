@@ -4,9 +4,9 @@ import styled from 'styled-components';
 import * as vars from '../../variables.js';
 import Container from '../bfi-components/Container';
 
-const SectionNav = ({currentHome, NavInner, NavList, setnavHover, navHover}) => {
+const NavSections = ({currentHome, NavInner, NavList, setnavHover, navHover}) => {
 
-    const StyledSectionNav = styled.nav`
+    const StyledNavSections = styled.nav`
         background: ${vars.colour.white};
         text-align: center;
         font-weight: 600;
@@ -15,7 +15,6 @@ const SectionNav = ({currentHome, NavInner, NavList, setnavHover, navHover}) => 
         left: 0;
         width: 100%;
         z-index: 99999;
-        border-bottom: 1px solid ${vars.colour.grey}
 
         li { 
             a {
@@ -45,7 +44,7 @@ const SectionNav = ({currentHome, NavInner, NavList, setnavHover, navHover}) => 
         }
     `
     return (
-        <StyledSectionNav>
+        <StyledNavSections>
             <Container noMargin={true}>
                 <NavInner>
                     <NavList>
@@ -58,8 +57,8 @@ const SectionNav = ({currentHome, NavInner, NavList, setnavHover, navHover}) => 
                     </NavList>
                 </NavInner>
             </Container>
-        </StyledSectionNav>
+        </StyledNavSections>
     )
 }
 
-export default SectionNav;
+export default NavSections;
