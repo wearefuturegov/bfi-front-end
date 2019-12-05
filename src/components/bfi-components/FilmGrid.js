@@ -36,7 +36,7 @@ export class FilmGrid extends Component {
                     uuid="964d122a-13a9-50c6-ba7b-efe146a230b6"
                 />
                 <FilmCard 
-                    uuid="06347a64-5abd-59de-a6b9-be0d4a9e31e"
+                    uuid="06347a64-5abd-59de-a6b9-be0d4a9e31e1"
                     title="West Side Story"
                     subInfo="Newly added"
                     onPlayer="https://player.bfi.org.uk/rentals/film/watch-singin-in-the-rain-1951-online"
