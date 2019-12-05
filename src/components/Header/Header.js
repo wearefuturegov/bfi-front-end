@@ -129,7 +129,6 @@ const Header = ({currentHome}) => {
             <PromoBar NavInner={NavInner} NavList={NavList} setnavHover={setnavHover} />
             <Sticky onStateChange={handleStickyChange}>
                 <StyledHeader className={navHover || isSticky ? 'hovered' : ''}>
-                    {console.log(Sticky.STATUS_FIXED )}
                     <Container noMargin={true}>
                         <NavInner>
                             <Link to="/">
