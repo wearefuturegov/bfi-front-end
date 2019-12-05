@@ -23,10 +23,10 @@ const PromoBar = ({NavInner, NavList, setnavHover}) => {
     `
 
     return (
-        <StyledPromoBar onMouseOver={() => window.innerWidth > vars.breakpoint.hd ? setnavHover('') : null}>
+        <StyledPromoBar onMouseOver={() => setnavHover('')}>
             <Container noMargin={true}>
                 <NavInner>
-                    <NavList onMouseOver={() => setnavHover('')}>
+                    <NavList>
                         <li><a href="https://whatson.bfi.org.uk/Online/" target="_blank" rel="noopener noreferrer">Buy tickets</a></li>
                         <li><a href="https://whatson.bfi.org.uk/Online/" target="_blank" rel="noopener noreferrer">BFI Player</a></li>
                         {/* <li><a href="https://shop.bfi.org.uk" target="_blank" rel="noopener noreferrer">Shop</a></li> */}

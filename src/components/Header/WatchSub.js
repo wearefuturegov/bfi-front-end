@@ -4,10 +4,10 @@ import Container from '../bfi-components/Container'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBars } from '@fortawesome/free-solid-svg-icons'
 
-const WatchSub = ({subMenuName, SubNavItems, StyledSubNav, NavInner, NavList, MobileMenu, MobileMenuList, MobileMenuButton, mobileMenuOpen, handleMobileMenuClick, navHover, setnavHover}) => {
+const WatchSub = ({subMenuName, SubNavItems, StyledSubNav, NavInner, NavList, MobileMenu, MobileMenuList, MobileMenuButton, mobileMenuOpen, handleMobileMenuClick, navHover, setnavHover, currentHome}) => {
     return (
         <>
-            <StyledSubNav onMouseOver={() => setnavHover('watch')} className={(navHover === 'watch' ? ' active' : '') + (navHover ? ' hovered' : '')}>
+            <StyledSubNav onMouseOver={() => setnavHover('watch')} className={(currentHome === 'watch' ? ' active' : '') + (navHover ? ' hovered' : '')}>
                 <Container noMargin={true}>
                     <NavInner>
                         <NavList>

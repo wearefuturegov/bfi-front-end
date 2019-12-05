@@ -11,11 +11,7 @@ import AboutSub from './AboutSub'
 import SupportSub from './SupportSub'
 
 
-const SubNav = ({currentHome, setnavHover, navHover, NavInner, NavList}) => {
-    const SubNavContainer = styled.div`
-
-    `
-
+const SubNav = ({currentHome, setnavHover, navHover, NavInner, NavList, setheadingHover}) => {
     const StyledSubNav = styled.nav`
         text-align: center;
         background: ${vars.colour.grey};
@@ -23,13 +19,18 @@ const SubNav = ({currentHome, setnavHover, navHover, NavInner, NavList}) => {
         font-weight: 600;
         display: none;
         position: absolute;
-        top: 48px;
+        top: 78px;
         width: 100%;
-        border-bottom: 1px solid ${vars.colour.grey};
-        
+        transform: translateY(0px);
+        -webkit-transition: all ease 1.25s;
+        -moz-transition: all ease 1.25s;
+        -o-transition: all ease 1.25s;
+        transition: all ease 1.25s;
+        z-index: 10;
         li {
             a {
                 padding: 15px 15px;
+                color: ${vars.colour.black};
             }
         }
 
@@ -37,10 +38,11 @@ const SubNav = ({currentHome, setnavHover, navHover, NavInner, NavList}) => {
 
         @media ${vars.breakpoint.tablet} {
             opacity: 0;
-            &:hover, &.hovered  {
-                opacity: 1;
-            }
+            transform: translateY(-48px);
+            
             &.hovered  {
+                opacity: 1;
+                transform: translateY(0px);
                 background-color: ${vars.colour.grey_light}
             }
             &.active  {
@@ -133,11 +135,15 @@ const SubNav = ({currentHome, setnavHover, navHover, NavInner, NavList}) => {
             setmobileMenuOpen(true);
         }
     }
+    function HandleLeave() {
+        setheadingHover(false);
+        setnavHover(false);
+    }
 
     return (
-        <SubNavContainer onMouseLeave={() => setnavHover('')}>      
-            { selectSubNav(navHover ? navHover : currentHome) } 
-        </SubNavContainer>
+        <div onMouseOver={() => setheadingHover(true)} onMouseLeave={() => HandleLeave()}>
+            {selectSubNav(navHover ? navHover : currentHome)}
+        </div>
     )
 }
 

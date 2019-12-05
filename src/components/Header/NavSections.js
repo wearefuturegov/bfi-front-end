@@ -4,35 +4,23 @@ import styled from 'styled-components';
 import * as vars from '../../variables.js';
 import Container from '../bfi-components/Container';
 
-const NavSections = ({currentHome, NavInner, NavList, setnavHover, navHover}) => {
+const NavSections = ({currentHome, NavInner, NavList, setnavHover, navHover, navSidePadding, navTopPadding}) => {
 
     const StyledNavSections = styled.nav`
         text-align: center;
         font-weight: 600;
-        position: fixed;
-        bottom: 0;
-        left: 0;
         width: 100%;
         z-index: 99999;
 
         li { 
             a {
-                padding: 15px;
+                padding: ${navSidePadding}px ${navTopPadding}px;
+                -webkit-transition: background-color ease 0.25s;
+                -moz-transition: background-color ease 0.25s;
+                -o-transition: background-color ease 0.25s;
+                transition: background-color ease 0.25s;
                 &:hover {
                     text-decoration: none;
-                    background: rgba(${vars.colour.black}, 0.1)
-                }
-            }
-        }
-        li {
-            &.hovered { 
-                a {
-                    background: ${vars.colour.grey_light};
-                }
-            }
-            &.active {
-                a {
-                    background: ${vars.colour.grey};
                 }
             }
         }
