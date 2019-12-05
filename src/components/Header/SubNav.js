@@ -19,7 +19,7 @@ const SubNav = ({currentHome, setnavHover, navHover, NavInner, NavList, setheadi
         font-weight: 600;
         display: none;
         position: absolute;
-        top: 78px;
+        top: 58px;
         width: 100%;
         transform: translateY(0px);
         -webkit-transition: all ease 1.25s;
@@ -38,7 +38,7 @@ const SubNav = ({currentHome, setnavHover, navHover, NavInner, NavList, setheadi
 
         @media ${vars.breakpoint.tablet} {
             opacity: 0;
-            transform: translateY(-48px);
+            transform: translateY(-58px);
             
             &.hovered  {
                 opacity: 1;
@@ -55,7 +55,7 @@ const SubNav = ({currentHome, setnavHover, navHover, NavInner, NavList, setheadi
     `
     const MobileMenu = styled.nav`
         padding: 15px 15px;
-        background:  ${vars.colour.white};
+        background:  rgb(${vars.colour.white});
         display: block;
         span {
             margin-left: 10px;

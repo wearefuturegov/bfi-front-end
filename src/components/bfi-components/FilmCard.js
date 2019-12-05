@@ -102,7 +102,7 @@ const FilmCard = (props) => {
         vertical-align: middle;
         border-radius: 5px;
         background: ${vars.colour.pink_dark};
-        color: ${vars.colour.white};
+        color: rgb(${vars.colour.white});
 
         @media ${vars.breakpoint.tablet} {
             font-size: 11px;

@@ -57,12 +57,12 @@ const Skeleton = (props) => {
 
             background-image: 
                 linear-gradient(90deg, rgba(211, 211, 211, 0) 0, rgba(211, 211, 211, 0.8) 50%, rgba(211, 211, 211, 0) 100%), 
-                linear-gradient(${vars.colour.white} ${props.titleHeight}, transparent 0), 
-                linear-gradient(${vars.colour.white} ${props.lineHeight}, transparent 0), 
-                linear-gradient(${vars.colour.white} ${props.lineHeight}, transparent 0), 
-                linear-gradient(${vars.colour.white} ${props.lineHeight}, transparent 0), 
-                radial-gradient(circle calc(${props.titleHeight} / 2), ${vars.colour.white} 0%, transparent 0), 
-                linear-gradient(${vars.colour.white} 0px, transparent 0), 
+                linear-gradient(rgb(${vars.colour.white}) ${props.titleHeight}, transparent 0), 
+                linear-gradient(rgb(${vars.colour.white}) ${props.lineHeight}, transparent 0), 
+                linear-gradient(rgb(${vars.colour.white}) ${props.lineHeight}, transparent 0), 
+                linear-gradient(rgb(${vars.colour.white}) ${props.lineHeight}, transparent 0), 
+                radial-gradient(circle calc(${props.titleHeight} / 2), rgb(${vars.colour.white}) 0%, transparent 0), 
+                linear-gradient(rgb(${vars.colour.white}) 0px, transparent 0), 
                 linear-gradient(${vars.colour.grey} ${props.heroHeight}, 
                 transparent 0);
 
@@ -102,7 +102,7 @@ const Skeleton = (props) => {
             border-radius: 0px;
             border: 1px solid #999;
 
-            background-image: linear-gradient(90deg, rgba(211, 211, 211, 0) 0, rgba(211, 211, 211, 0.8) 50%, rgba(211, 211, 211, 0) 100%), linear-gradient(${vars.colour.white} ${props.titleHeight}, transparent 0), linear-gradient(${vars.colour.white} ${props.lineHeight}, transparent 0), linear-gradient(${vars.colour.white} ${props.lineHeight}, transparent 0), radial-gradient(circle calc(${props.titleHeight} / 2), ${vars.colour.white} 99%, transparent 0), linear-gradient(${vars.colour.white} 0px, transparent 0), linear-gradient(${vars.colour.lightgrey} ${props.cardHeight}, transparent 0);
+            background-image: linear-gradient(90deg, rgba(211, 211, 211, 0) 0, rgba(211, 211, 211, 0.8) 50%, rgba(211, 211, 211, 0) 100%), linear-gradient(rgb(${vars.colour.white}) ${props.titleHeight}, transparent 0), linear-gradient(rgb(${vars.colour.white}) ${props.lineHeight}, transparent 0), linear-gradient(rgb(${vars.colour.white}) ${props.lineHeight}, transparent 0), radial-gradient(circle calc(${props.titleHeight} / 2), rgb(${vars.colour.white}) 99%, transparent 0), linear-gradient(rgb(${vars.colour.white}) 0px, transparent 0), linear-gradient(${vars.colour.lightgrey} ${props.cardHeight}, transparent 0);
 
             background-size: ${props.titleWidth} ${props.cardHeight}, ${props.titleWidth} ${props.titleHeight}, ${props.line1Width} ${props.lineHeight}, ${props.line2Width} ${props.lineHeight}, ${props.titleHeight} ${props.titleHeight}, 100% 0px, 100% 100%;
             background-position:

@@ -17,7 +17,7 @@ const PromoBar = ({NavInner, NavList, setnavHover}) => {
             justify-content: center;
             a {
                 padding: 5px 20px;
-                color: ${vars.colour.white};
+                color: rgb(${vars.colour.white});
             }
         }
     `

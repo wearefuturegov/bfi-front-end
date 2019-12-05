@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import * as vars from '../../variables.js';
 import Container from '../bfi-components/Container';
 
-const NavSections = ({currentHome, NavInner, NavList, setnavHover, navHover, navSidePadding, navTopPadding}) => {
+const NavSections = ({currentHome, NavInner, NavList, setnavHover, navHover, navPadding, navSidePadding}) => {
 
     const StyledNavSections = styled.nav`
         text-align: center;
@@ -14,7 +14,7 @@ const NavSections = ({currentHome, NavInner, NavList, setnavHover, navHover, nav
 
         li { 
             a {
-                padding: ${navSidePadding}px ${navTopPadding}px;
+                padding: ${navPadding}px ${navSidePadding}px;
                 -webkit-transition: background-color ease 0.25s;
                 -moz-transition: background-color ease 0.25s;
                 -o-transition: background-color ease 0.25s;
