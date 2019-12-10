@@ -6,10 +6,10 @@ import Skeleton from '../bfi-components/Skeleton';
 import FilmGrid from '../bfi-components/FilmGrid';
 import FilmShowingsGrid from '../bfi-components/FilmShowingsGrid';
 import HomeBanner from '../bfi-components/HomeBanner'
+import BFIPlayerBanner from "./watch/BFIPlayerBanner/BFIPlayerBanner";
+import SouthBankBanner from "./watch/SouthBankBanner/SouthBankBanner";
 
 import WatchBannerImg from '../../images/home-banners/watch-banner.jpg';
-
-import BFIPlayerBanner from "./watch/BFIPlayerBanner/BFIPlayerBanner";
 
 const Watch = () => {
     const [isLoaded, setisLoaded] = useState(false);
@@ -40,6 +40,7 @@ const Watch = () => {
 
             <Container>
                 <Heading as="h2">Visit BFI Southbank</Heading>
+                <SouthBankBanner />
             </Container>
         </>
         :
