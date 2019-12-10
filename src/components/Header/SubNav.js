@@ -9,7 +9,7 @@ import { fadeInDown } from 'react-animations'
 
 const fadeInDownAnimation = keyframes`${fadeInDown}`;
 
-const SubNav = ({currentHome, setnavHover, navHover, NavInner, NavList, setheadingHover}) => {
+const SubNav = ({currentHome, navHover, NavInner, NavList}) => {
     const StyledSubNav = styled.nav`
         text-align: center;
         background: ${vars.colour.grey};
@@ -112,17 +112,17 @@ const SubNav = ({currentHome, setnavHover, navHover, NavInner, NavList, setheadi
     function selectSubNav(nav) {
         switch(nav) {
             case "watch":
-                return <SubNavInner subMenuID="watch" subMenuName="Watch" SubNavItems={SubNavItems.WatchLinks} StyledSubNav={StyledSubNav} NavInner={NavInner} NavList={NavList} MobileMenu={MobileMenu} MobileMenuList={MobileMenuList} MobileMenuButton={MobileMenuButton} mobileMenuOpen={mobileMenuOpen} handleMobileMenuClick={handleMobileMenuClick} navHover={navHover} setnavHover={setnavHover} currentHome={currentHome} />;
+                return <SubNavInner subMenuName="Watch" SubNavItems={SubNavItems.WatchLinks} StyledSubNav={StyledSubNav} NavInner={NavInner} NavList={NavList} MobileMenu={MobileMenu} MobileMenuList={MobileMenuList} MobileMenuButton={MobileMenuButton} mobileMenuOpen={mobileMenuOpen} handleMobileMenuClick={handleMobileMenuClick} navHover={navHover} currentHome={currentHome} />;
             case "explore":
-                return <SubNavInner subMenuID="explore" subMenuName="Explore" SubNavItems={SubNavItems.ExploreLinks} StyledSubNav={StyledSubNav} NavInner={NavInner} NavList={NavList} MobileMenu={MobileMenu} MobileMenuList={MobileMenuList} MobileMenuButton={MobileMenuButton} mobileMenuOpen={mobileMenuOpen} handleMobileMenuClick={handleMobileMenuClick} navHover={navHover} setnavHover={setnavHover} currentHome={currentHome} />;
+                return <SubNavInner subMenuName="Explore" SubNavItems={SubNavItems.ExploreLinks} StyledSubNav={StyledSubNav} NavInner={NavInner} NavList={NavList} MobileMenu={MobileMenu} MobileMenuList={MobileMenuList} MobileMenuButton={MobileMenuButton} mobileMenuOpen={mobileMenuOpen} handleMobileMenuClick={handleMobileMenuClick} navHover={navHover} currentHome={currentHome} />;
             case "make":
-                return <SubNavInner subMenuID="make" subMenuName="Make" SubNavItems={SubNavItems.MakeLinks} StyledSubNav={StyledSubNav} NavInner={NavInner} NavList={NavList} MobileMenu={MobileMenu} MobileMenuList={MobileMenuList} MobileMenuButton={MobileMenuButton} mobileMenuOpen={mobileMenuOpen} handleMobileMenuClick={handleMobileMenuClick} navHover={navHover} setnavHover={setnavHover} currentHome={currentHome} />;
+                return <SubNavInner subMenuName="Make" SubNavItems={SubNavItems.MakeLinks} StyledSubNav={StyledSubNav} NavInner={NavInner} NavList={NavList} MobileMenu={MobileMenu} MobileMenuList={MobileMenuList} MobileMenuButton={MobileMenuButton} mobileMenuOpen={mobileMenuOpen} handleMobileMenuClick={handleMobileMenuClick} navHover={navHover} currentHome={currentHome} />;
             case "education":
-                return <SubNavInner subMenuID="education" subMenuName="Education" SubNavItems={SubNavItems.EducationLinks} StyledSubNav={StyledSubNav} NavInner={NavInner} NavList={NavList} MobileMenu={MobileMenu} MobileMenuList={MobileMenuList} MobileMenuButton={MobileMenuButton} mobileMenuOpen={mobileMenuOpen} handleMobileMenuClick={handleMobileMenuClick} navHover={navHover} setnavHover={setnavHover} currentHome={currentHome} />;
+                return <SubNavInner subMenuName="Education" SubNavItems={SubNavItems.EducationLinks} StyledSubNav={StyledSubNav} NavInner={NavInner} NavList={NavList} MobileMenu={MobileMenu} MobileMenuList={MobileMenuList} MobileMenuButton={MobileMenuButton} mobileMenuOpen={mobileMenuOpen} handleMobileMenuClick={handleMobileMenuClick} navHover={navHover} currentHome={currentHome} />;
             case "about-us":
-                return <SubNavInner subMenuID="about-us" subMenuName="About Us" SubNavItems={SubNavItems.AboutLinks} StyledSubNav={StyledSubNav} NavInner={NavInner} NavList={NavList} MobileMenu={MobileMenu} MobileMenuList={MobileMenuList} MobileMenuButton={MobileMenuButton} mobileMenuOpen={mobileMenuOpen} handleMobileMenuClick={handleMobileMenuClick} navHover={navHover} setnavHover={setnavHover} currentHome={currentHome} />;
+                return <SubNavInner subMenuName="About Us" SubNavItems={SubNavItems.AboutLinks} StyledSubNav={StyledSubNav} NavInner={NavInner} NavList={NavList} MobileMenu={MobileMenu} MobileMenuList={MobileMenuList} MobileMenuButton={MobileMenuButton} mobileMenuOpen={mobileMenuOpen} handleMobileMenuClick={handleMobileMenuClick} navHover={navHover} currentHome={currentHome} />;
             case "support-and-join":
-                return <SubNavInner subMenuID="support-and-join" subMenuName="Support & Join" SubNavItems={SubNavItems.SupportLinks} StyledSubNav={StyledSubNav} NavInner={NavInner} NavList={NavList} MobileMenu={MobileMenu} MobileMenuList={MobileMenuList} MobileMenuButton={MobileMenuButton} mobileMenuOpen={mobileMenuOpen} handleMobileMenuClick={handleMobileMenuClick} navHover={navHover} setnavHover={setnavHover} currentHome={currentHome} />;
+                return <SubNavInner subMenuName="Support & Join" SubNavItems={SubNavItems.SupportLinks} StyledSubNav={StyledSubNav} NavInner={NavInner} NavList={NavList} MobileMenu={MobileMenu} MobileMenuList={MobileMenuList} MobileMenuButton={MobileMenuButton} mobileMenuOpen={mobileMenuOpen} handleMobileMenuClick={handleMobileMenuClick} navHover={navHover} currentHome={currentHome} />;
             default:
                 return null;
         }
