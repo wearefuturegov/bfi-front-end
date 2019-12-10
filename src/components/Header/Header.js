@@ -15,6 +15,14 @@ import LogoWhite from '../../images/logos/bfi-logo-white.svg'
 
 const Header = ({currentHome}) => {
 
+    const headerAnimation = keyframes`
+        0% {
+            background: rgba(${vars.colour.white}, 0);
+        }
+        100% {
+            background: rgba(${vars.colour.white}, 1);
+        }
+    `;
 
     const [navPadding, setnavPadding] = useState(20);  
     const [navSidePadding, setnavSidePadding] = useState(20);  
@@ -57,8 +65,8 @@ const Header = ({currentHome}) => {
         font-weight: 600;
         position: absolute;
         width: 100%;
-        background: transparent;
         z-index: 99999;
+        background: rgba(${vars.colour.white}, 0);
 
         a {
             color: rgb(${vars.colour.white});
@@ -88,7 +96,9 @@ const Header = ({currentHome}) => {
         }
 
         &.hovered {
-            background: white;
+            animation: 0.5s ${headerAnimation};
+            border-bottom: 1px solid ${vars.colour.grey};
+            background: rgba(${vars.colour.white}, 1);
 
             a {
                 color: ${vars.colour.black};

@@ -9,7 +9,6 @@ import { fadeInDown } from 'react-animations'
 
 const fadeInDownAnimation = keyframes`${fadeInDown}`;
 
-
 const SubNav = ({currentHome, setnavHover, navHover, NavInner, NavList, setheadingHover}) => {
     const StyledSubNav = styled.nav`
         text-align: center;
