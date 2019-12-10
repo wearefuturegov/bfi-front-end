@@ -28,7 +28,7 @@ export class FilmGrid extends Component {
                 />
                 <FilmCard 
                     uuid="c4de98c5-d1af-5671-a66f-6d2dd6ebf999"
-                    title="Singin’ in the Rain 2; electric bugaloo" 
+                    title="Singin’ in the Rain 2; electric boogaloo" 
                     image={"https://www.fillmurray.com/" + ((800) + Math.floor(Math.random() * Math.floor(10)) + "/" + (450 + Math.floor(Math.random() * Math.floor(10))))}
                 />
                 <FilmCard 
