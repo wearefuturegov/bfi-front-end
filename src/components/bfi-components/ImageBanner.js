@@ -14,6 +14,9 @@ const ImageBanner = (props) => {
         h2 {
             line-height: 1.3;
         }
+        button {
+            margin-top: 20px;
+        }
         
         @media ${vars.breakpoint.tablet} {
             h2 {
@@ -21,19 +24,19 @@ const ImageBanner = (props) => {
             }
         }
         @media ${vars.breakpoint.desktop} {
-            min-height: 250px;
+            min-height: 225px;
 
-            button {
-                position: absolute; 
-                bottom: ${props.padding}px;
-            }
+            // button {
+            //     position: absolute; 
+            //     bottom: ${props.padding}px;
+            // }
         }
         @media ${vars.breakpoint.hd} {
             padding: ${(props.padding*2)}px;
 
-            button {
-                bottom: ${(props.padding*2)}px;
-            }
+            // button {
+            //     bottom: ${(props.padding*2)}px;
+            // }
         }
     `
     const InnerContainer = styled.div`
@@ -54,7 +57,7 @@ const ImageBanner = (props) => {
         right: ${props.text_right ? 'inherit' : '0'};
         left: ${props.text_right ? '0' : 'inherit'};
         top: 0;
-        width: 50%;    
+        width: 50%;
     `
     const SideImage = styled.img`
         width: 100%;
