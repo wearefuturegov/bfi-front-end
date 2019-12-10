@@ -53,7 +53,7 @@ const Header = ({currentHome}) => {
         }
     `
     const animateHeader = useSpring({
-            background: isSticky ? 'rgba('+ vars.colour.white +', 1)' : 'rgba('+ vars.colour.white +', 0)'
+            background: isSticky || headingHover || navHover ? 'rgba('+ vars.colour.white +', 1)' : 'rgba('+ vars.colour.white +', 0)'
         })
     const StyledHeader= styled(animated.header)`
         font-weight: 600;
