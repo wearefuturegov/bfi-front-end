@@ -1,7 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react'
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 import * as vars from '../../variables.js';
-import {useSpring, animated} from 'react-spring';
 
 import NavSections from './NavSections'
 import PromoBar from './PromoBar';
@@ -14,10 +13,7 @@ import { faSearch } from '@fortawesome/free-solid-svg-icons'
 import LogoBlack from '../../images/logos/bfi-logo-black.svg'
 import LogoWhite from '../../images/logos/bfi-logo-white.svg'
 
-// TODO currently trying to implement react-spring
-
 const Header = ({currentHome}) => {
-
     const [navPadding, setnavPadding] = useState(20);  
     const [navSidePadding, setnavSidePadding] = useState(20);  
     const [navHover, setnavHover] = useState('');  
@@ -35,9 +31,7 @@ const Header = ({currentHome}) => {
         };
     }, []);
 
-    const HeaderContainer = styled.div`
-    
-    `
+    const HeaderContainer = styled.div``
 
     const StickyHeaderContainer = styled.div`
         position: relative;
@@ -52,14 +46,13 @@ const Header = ({currentHome}) => {
             }
         }
     `
-    const animateHeader = useSpring({
-        background: isSticky || headingHover || navHover ? 'rgba('+ vars.colour.white +', 1)' : 'rgba('+ vars.colour.white +', 0)'
-    });
-    const StyledHeader= styled(animated.header)`
+
+    const StyledHeader= styled.header`
         font-weight: 600;
         position: absolute;
         width: 100%;
         z-index: 99999;
+        background: rgba(${vars.colour.white}, 0);
 
         a {
             color: rgb(${vars.colour.white});
@@ -80,16 +73,31 @@ const Header = ({currentHome}) => {
                 }
             }
             &.hovered { 
+                &:not(.active) {
+                    a {
+                        &:after {
+                            display:none;
+                        }
+                    }
+                }
                 a {
-                    &:after {
-                        background-color: ${vars.colour.grey_dark};
+                    &:before {
+                        content: "";
+                        position: absolute;
+                        bottom: -1px;
+                        left: calc(50% - 10px);   
+                        border-left: 10px solid transparent;
+                        border-right: 10px solid transparent;
+                        
+                        border-bottom: 10px solid ${vars.colour.grey};             
                     }
                 }
             }
         }
 
-        &.hovered {
+        &.whiteHeader {
             border-bottom: 1px solid ${vars.colour.grey};
+            background: rgba(${vars.colour.white}, 1);
 
             a {
                 color: ${vars.colour.black};
@@ -139,12 +147,6 @@ const Header = ({currentHome}) => {
             padding-left: 15px;
         }
     `
-
-    const NavSectionsContainer = styled.div`
-        @media ${vars.breakpoint.hd} {
-            display: none;
-        }
-    `
     const NavList = styled.ul`
         list-style-type: none;
         padding: 0;
@@ -164,13 +166,18 @@ const Header = ({currentHome}) => {
         }   
     `
 
+    function HandleLeave() {
+        setheadingHover(false);
+        setnavHover(false);
+    }
+
     return (
         <>
-        <HeaderContainer>
+        <HeaderContainer onMouseLeave={() => HandleLeave()}>
             <PromoBar NavInner={NavInner} NavList={NavList} setnavHover={setnavHover} />
             <StickyHeaderContainer className={`sticky-wrapper${isSticky ? ' sticky' : ''}`} ref={ref}>
                 <div className="sticky-inner">
-                    <StyledHeader style={animateHeader} className={isSticky || headingHover || navHover ? 'hovered' : ''} onMouseOver={() => setheadingHover(true)} onMouseLeave={() => setheadingHover(false)}>
+                    <StyledHeader className={isSticky || headingHover ? 'whiteHeader' : ''} onMouseOver={() => setheadingHover(true)}>
                         <Container noMargin={true}>
                             <NavInner>
                                 <LogoContainer>
@@ -189,7 +196,7 @@ const Header = ({currentHome}) => {
                             </NavInner>
                         </Container>
                     </StyledHeader>
-                    <SubNav currentHome={currentHome} setnavHover={setnavHover} navHover={navHover} NavInner={NavInner} NavList={NavList} setheadingHover={setheadingHover} />
+                    <SubNav currentHome={currentHome} setnavHover={setnavHover} navHover={navHover} NavInner={NavInner} NavList={NavList} />
                 </div>      
             </StickyHeaderContainer>
         </HeaderContainer>
