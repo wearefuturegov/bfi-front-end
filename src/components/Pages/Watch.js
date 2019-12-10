@@ -9,15 +9,17 @@ import HomeBanner from '../bfi-components/HomeBanner'
 
 import WatchBannerImg from '../../images/home-banners/watch-banner.jpg';
 
+import BFIPlayerBanner from "./watch/BFIPlayerBanner/BFIPlayerBanner";
+
 const Watch = () => {
-    const [isLoading, setisLoading] = useState(true);
+    const [isLoaded, setisLoaded] = useState(false);
 
     useEffect(() => {
-        setisLoading(false);
+        setisLoaded(true);
     }, [])
 
     return (
-        !isLoading ? 
+        isLoaded ? 
         <> 
             <HomeBanner title="Watch a new film, rediscover your old favourites, and get inspired." image={WatchBannerImg} />
             
@@ -33,6 +35,7 @@ const Watch = () => {
 
             <Container>
                 <Heading as="h2">Watch at home</Heading>
+                <BFIPlayerBanner />
             </Container>
 
             <Container>

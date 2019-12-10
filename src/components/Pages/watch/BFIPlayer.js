@@ -3,7 +3,7 @@ import React from 'react';
 import Container from '../../bfi-components/Container'
 import Heading from '../../bfi-components/Heading'
 
-const Watch = () => {
+const BFIPlayer = () => {
     return (
         <Container>
             <Heading as="h2">BFI Player</Heading>
@@ -11,4 +11,4 @@ const Watch = () => {
     )
 }
 
-export default Watch;
+export default BFIPlayer;
