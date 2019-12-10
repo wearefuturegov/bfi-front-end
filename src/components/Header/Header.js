@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react'
-import styled, { keyframes } from 'styled-components';
+import styled from 'styled-components';
 import * as vars from '../../variables.js';
 
 import NavSections from './NavSections'
@@ -8,12 +8,12 @@ import SubNav from './SubNav'
 
 import Container from '../bfi-components/Container';
 import { Link } from 'react-router-dom';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faSearch } from '@fortawesome/free-solid-svg-icons'
-import LogoBlack from '../../images/logos/bfi-logo-black.svg'
-import LogoWhite from '../../images/logos/bfi-logo-white.svg'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faSearch } from '@fortawesome/free-solid-svg-icons';
+import LogoBlack from '../../images/logos/bfi-logo-black.svg';
+import LogoWhite from '../../images/logos/bfi-logo-white.svg';
 
-const Header = ({currentHome}) => {
+const Header = ({currentHome, whiteHeader}) => {
     const [navPadding, setnavPadding] = useState(20);  
     const [navSidePadding, setnavSidePadding] = useState(20);  
     const [navHover, setnavHover] = useState('');  
@@ -32,6 +32,11 @@ const Header = ({currentHome}) => {
     }, []);
 
     const HeaderContainer = styled.div``
+    const HeaderBuffer = styled.div`
+        width: 100%;
+        height: 30px; 
+        background: none;
+    `
 
     const StickyHeaderContainer = styled.div`
         position: relative;
@@ -177,12 +182,12 @@ const Header = ({currentHome}) => {
             <PromoBar NavInner={NavInner} NavList={NavList} setnavHover={setnavHover} />
             <StickyHeaderContainer className={`sticky-wrapper${isSticky ? ' sticky' : ''}`} ref={ref}>
                 <div className="sticky-inner">
-                    <StyledHeader className={isSticky || headingHover ? 'whiteHeader' : ''} onMouseOver={() => setheadingHover(true)}>
+                    <StyledHeader className={isSticky || headingHover || whiteHeader ? 'whiteHeader' : ''} onMouseOver={() => setheadingHover(true)}>
                         <Container noMargin={true}>
                             <NavInner>
                                 <LogoContainer>
                                     <Link to="/">
-                                        <BFILogo src={isSticky || headingHover ? LogoBlack : LogoWhite} alt="BFI Logo" />
+                                        <BFILogo src={isSticky || headingHover || whiteHeader ? LogoBlack : LogoWhite} alt="BFI Logo" />
                                     </Link>
                                 </LogoContainer>
                                 <NavSectionContainer>
@@ -199,6 +204,7 @@ const Header = ({currentHome}) => {
                     <SubNav currentHome={currentHome} setnavHover={setnavHover} navHover={navHover} NavInner={NavInner} NavList={NavList} />
                 </div>      
             </StickyHeaderContainer>
+            <HeaderBuffer />
         </HeaderContainer>
         </>
     )

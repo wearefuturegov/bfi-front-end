@@ -86,7 +86,7 @@ ImageBanner.defaultProps = {
 
 ImageBanner.propTypes = {
     colour: PropTypes.string,
-    image: PropTypes.object,
+    image: PropTypes.string,
     image_position: PropTypes.string,
     image_origin: PropTypes.string,
     image_size: PropTypes.string,
