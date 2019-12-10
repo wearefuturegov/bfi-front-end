@@ -14,16 +14,6 @@ import LogoBlack from '../../images/logos/bfi-logo-black.svg'
 import LogoWhite from '../../images/logos/bfi-logo-white.svg'
 
 const Header = ({currentHome}) => {
-
-    const headerAnimation = keyframes`
-        0% {
-            background: rgba(${vars.colour.white}, 0);
-        }
-        100% {
-            background: rgba(${vars.colour.white}, 1);
-        }
-    `;
-
     const [navPadding, setnavPadding] = useState(20);  
     const [navSidePadding, setnavSidePadding] = useState(20);  
     const [navHover, setnavHover] = useState('');  
@@ -40,11 +30,6 @@ const Header = ({currentHome}) => {
             window.removeEventListener('scroll', () => handleScroll);
         };
     }, []);
-
-
-    useEffect(() => {
-        console.log(navHover)
-    }, [navHover])
 
     const HeaderContainer = styled.div``
 
@@ -95,8 +80,7 @@ const Header = ({currentHome}) => {
             }
         }
 
-        &.hovered {
-            animation: 0.5s ${headerAnimation};
+        &.whiteHeader {
             border-bottom: 1px solid ${vars.colour.grey};
             background: rgba(${vars.colour.white}, 1);
 
@@ -148,12 +132,6 @@ const Header = ({currentHome}) => {
             padding-left: 15px;
         }
     `
-
-    const NavSectionsContainer = styled.div`
-        @media ${vars.breakpoint.hd} {
-            display: none;
-        }
-    `
     const NavList = styled.ul`
         list-style-type: none;
         padding: 0;
@@ -184,7 +162,7 @@ const Header = ({currentHome}) => {
             <PromoBar NavInner={NavInner} NavList={NavList} setnavHover={setnavHover} />
             <StickyHeaderContainer className={`sticky-wrapper${isSticky ? ' sticky' : ''}`} ref={ref}>
                 <div className="sticky-inner">
-                    <StyledHeader className={isSticky || headingHover || navHover ? 'hovered' : ''} onMouseOver={() => setheadingHover(true)}>
+                    <StyledHeader className={isSticky || headingHover ? 'whiteHeader' : ''} onMouseOver={() => setheadingHover(true)}>
                         <Container noMargin={true}>
                             <NavInner>
                                 <LogoContainer>
@@ -203,7 +181,7 @@ const Header = ({currentHome}) => {
                             </NavInner>
                         </Container>
                     </StyledHeader>
-                    <SubNav currentHome={currentHome} setnavHover={setnavHover} navHover={navHover} NavInner={NavInner} NavList={NavList} setheadingHover={setheadingHover} />
+                    <SubNav currentHome={currentHome} setnavHover={setnavHover} navHover={navHover} NavInner={NavInner} NavList={NavList} />
                 </div>      
             </StickyHeaderContainer>
         </HeaderContainer>
