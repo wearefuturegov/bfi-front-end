@@ -46,6 +46,7 @@ const Header = ({currentHome}) => {
             }
         }
     `
+
     const StyledHeader= styled.header`
         font-weight: 600;
         position: absolute;
@@ -72,9 +73,23 @@ const Header = ({currentHome}) => {
                 }
             }
             &.hovered { 
+                &:not(.active) {
+                    a {
+                        &:after {
+                            display:none;
+                        }
+                    }
+                }
                 a {
-                    &:after {
-                        background-color: ${vars.colour.grey_dark};
+                    &:before {
+                        content: "";
+                        position: absolute;
+                        bottom: 0;
+                        left: calc(50% - 10px);   
+                        border-left: 10px solid transparent;
+                        border-right: 10px solid transparent;
+                        
+                        border-bottom: 10px solid ${vars.colour.grey};             
                     }
                 }
             }

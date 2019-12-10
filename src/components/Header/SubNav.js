@@ -42,10 +42,10 @@ const SubNav = ({currentHome, navHover, NavInner, NavList}) => {
                 opacity: 1;
                 transform: translateY(0px);
                 animation: 0.5s ${fadeInDownAnimation};
-                background-color: ${vars.colour.grey_light}
+                background-color: ${vars.colour.grey}
             }
             &.active  {
-                background-color: ${vars.colour.grey}
+                // background-color: ${vars.colour.grey}
             }
         }
         @media ${vars.breakpoint.desktop} {
