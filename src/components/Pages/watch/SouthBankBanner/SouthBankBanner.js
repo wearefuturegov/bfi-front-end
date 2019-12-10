@@ -11,23 +11,13 @@ import BannerImg3 from './southbank-banner-img-3.jpg';
 import BannerImg4 from './southbank-banner-img-4.jpg';
 import BannerImg5 from './southbank-banner-img-5.jpg';
 
-const SideImage = styled.img`
-    position: absolute;
-    right: 0;
-    top: 0;
-    width: 50%;
-    height: auto;
-    min-height: 100%;
-`
-
 const SouthBankBanner = () => {
     return (
         <>
-        <ImageBanner colour="pink">
+        <ImageBanner colour="pink" image={BannerImg1}>
             <Heading as="h2" style="h1">Watch BfI Picked contemporary and classic films in cinema</Heading>
             
             <button>Event Calendar</button>
-            <SideImage src={BannerImg1} alt="" />
         </ImageBanner>
         <ImageBanner colour="pink" image={BannerImg2} image_size="large" image_position="left center" text_right={true}>
             <Heading as="h2" style="h1">Access books, docs, journals about film and TV in our library</Heading>
