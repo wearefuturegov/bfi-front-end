@@ -32,9 +32,15 @@ export default withRouter(function App({ location }) {
   const history = createBrowserHistory();
   const rootElement = document.getElementById("root");
   const [currentHome, setCurrentHome] = useState(location.pathname);
+  const [whiteHeader, setwhiteHeader] = useState(false);
 
   useEffect(() => {
     const { pathname } = location;
+    if (pathname.split('/')[2]) {
+      setwhiteHeader(true);
+    } else {
+      setwhiteHeader(false);
+    }
     if (pathname.split('/')[1] === '') {
       setCurrentHome('watch');
       document.body.classList = ('watch')
@@ -42,9 +48,8 @@ export default withRouter(function App({ location }) {
       setCurrentHome(pathname.split('/')[1]);
       document.body.classList = (pathname.split('/')[1])
     }
-       
+    
   }, [location.pathname]);
-
 
   const NotFound = ({ location }) => (
     <Container>
@@ -55,7 +60,7 @@ export default withRouter(function App({ location }) {
   return(
     <>
     <GlobalStyle />
-    <Header currentHome={currentHome}/>
+    <Header currentHome={currentHome} whiteHeader={whiteHeader}/>
     <Switch>
       <Route path="/" exact component={Watch} />
         <Route path="/watch/bfi-player" exact component={BFIPlayer} />

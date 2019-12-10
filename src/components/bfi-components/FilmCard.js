@@ -131,13 +131,9 @@ const FilmCard = (props) => {
 
                     <div className="filmcardinformation__links">
                         { props.onSouthbank &&
-                            <>
-                                <FilmTag>SouthBank</FilmTag>
-                                {/* <a href={props.onSouthbank} title="Book a ticket to this film at BFI SouthBank">SouthBank</a> */}
-                            </>
+                            <FilmTag>SouthBank</FilmTag>
                         }
                         { props.onPlayer && 
-                            // <a href={props.onPlayer} title="Watch this film on BFI Player">Player</a>
                             <FilmTag>Player</FilmTag>
                         }
                     </div>

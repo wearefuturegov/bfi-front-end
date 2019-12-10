@@ -17,6 +17,7 @@ const HomeBanner = ({title, image}) => {
         background-size: cover;
         background-position: 50% 50%;
         color: rgb(${vars.colour.white});
+        margin-top: -30px;
 
         h1 {
             max-width: 80%;
