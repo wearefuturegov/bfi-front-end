@@ -28,7 +28,7 @@ export class FilmGrid extends Component {
                 />
                 <FilmCard 
                     uuid="c4de98c5-d1af-5671-a66f-6d2dd6ebf999"
-                    title="Singin’ in the Rain 2; electric bugaloo" 
+                    title="Singin’ in the Rain 2; electric boogaloo" 
                     image={"https://www.fillmurray.com/" + ((800) + Math.floor(Math.random() * Math.floor(10)) + "/" + (450 + Math.floor(Math.random() * Math.floor(10))))}
                 />
                 <FilmCard 
@@ -47,7 +47,7 @@ export class FilmGrid extends Component {
                 <FilmCard 
                     uuid="5f768a0b-ac36-55b2-a97b-2c67c0ee1520"
                     subInfo="Family friendly classic" 
-                    title="I Killed My Lesbian Wife, Hung Her on a Meathook, and Now I Have a Three Picture Deal at Disney" 
+                    title="This is an example of a really long title, not many film titles will be this long, but good to be safe." 
                     image={"https://www.fillmurray.com/" + ((800) + Math.floor(Math.random() * Math.floor(10)) + "/" + (450 + Math.floor(Math.random() * Math.floor(10))))}
                 />
                 <FilmCard 
