@@ -84,7 +84,7 @@ const Header = ({currentHome}) => {
                     &:before {
                         content: "";
                         position: absolute;
-                        bottom: 0;
+                        bottom: -1px;
                         left: calc(50% - 10px);   
                         border-left: 10px solid transparent;
                         border-right: 10px solid transparent;
