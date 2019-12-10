@@ -23,17 +23,18 @@ export class FilmGrid extends Component {
                 />
                 <FilmCard 
                     uuid="f2142b94-8e66-581d-88d3-d7e2fc5a2f17" 
-                    title="Test" 
-                    image={"https://www.fillmurray.com/" + ((800) + Math.floor(Math.random() * Math.floor(10)) + "/" + (450 + Math.floor(Math.random() * Math.floor(10))))}
+                    title="The Wizard Of Oz" 
+                    image="https://whatson.bfi.org.uk/ArticleMedia/Images/WhatsOn%20images/March%202013/wizard-of-oz-1925-01.jpg"
                 />
                 <FilmCard 
                     uuid="c4de98c5-d1af-5671-a66f-6d2dd6ebf999"
-                    title="Singin’ in the Rain 2; electric boogaloo" 
-                    image={"https://www.fillmurray.com/" + ((800) + Math.floor(Math.random() * Math.floor(10)) + "/" + (450 + Math.floor(Math.random() * Math.floor(10))))}
+                    title="Chitty Chitty Bang Bang" 
+                    image="https://whatson.bfi.org.uk/ArticleMedia/Images/WhatsOn%20images/201912/chitty-chitty-bang-bang-01.jpg"
                 />
                 <FilmCard 
-                    title="The Test" 
+                    title="Calamity Jane" 
                     uuid="964d122a-13a9-50c6-ba7b-efe146a230b6"
+                    image="https://whatson.bfi.org.uk/ArticleMedia/Images/WhatsOn%20images/201912/calamity-jane-01.jpg"
                 />
                 <FilmCard 
                     uuid="06347a64-5abd-59de-a6b9-be0d4a9e31e1"
@@ -41,14 +42,14 @@ export class FilmGrid extends Component {
                     subInfo="Newly added"
                     onPlayer="https://player.bfi.org.uk/rentals/film/watch-singin-in-the-rain-1951-online"
                     onSouthbank="https://player.bfi.org.uk/rentals/film/watch-singin-in-the-rain-1951-online"
-                    image={"https://www.fillmurray.com/" + ((800) + Math.floor(Math.random() * Math.floor(10)) + "/" + (450 + Math.floor(Math.random() * Math.floor(10))))}
+                    image="https://whatson.bfi.org.uk/ArticleMedia/Images/WhatsOn%20images/201912/west-side-story-01.jpg"
                 />
-                <FilmCard />       
+                <FilmCard title="The Godfather" />       
                 <FilmCard 
                     uuid="5f768a0b-ac36-55b2-a97b-2c67c0ee1520"
                     subInfo="Family friendly classic" 
                     title="This is an example of a really long title, not many film titles will be this long, but good to be safe." 
-                    image={"https://www.fillmurray.com/" + ((800) + Math.floor(Math.random() * Math.floor(10)) + "/" + (450 + Math.floor(Math.random() * Math.floor(10))))}
+                    image="https://www.bfi.org.uk/films-tv-people/sites/bfi.org.uk.films-tv-people/files/styles/gallery_full/public/image/godfather-bfi-00n-lbb.jpg"
                 />
                 <FilmCard 
                     uuid="0040ab0f-ef0f-5c46-b34a-b3d875824a89"
