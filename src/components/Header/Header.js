@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react'
 import styled from 'styled-components';
 import * as vars from '../../variables.js';
-import {useSpring, animated} from 'react-spring'
+import {useSpring, animated} from 'react-spring';
 
 import NavSections from './NavSections'
 import PromoBar from './PromoBar';
@@ -53,8 +53,8 @@ const Header = ({currentHome}) => {
         }
     `
     const animateHeader = useSpring({
-            background: isSticky || headingHover || navHover ? 'rgba('+ vars.colour.white +', 1)' : 'rgba('+ vars.colour.white +', 0)'
-        })
+        background: isSticky || headingHover || navHover ? 'rgba('+ vars.colour.white +', 1)' : 'rgba('+ vars.colour.white +', 0)'
+    });
     const StyledHeader= styled(animated.header)`
         font-weight: 600;
         position: absolute;

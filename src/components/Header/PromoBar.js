@@ -7,7 +7,7 @@ import Container from '../bfi-components/Container';
 const PromoBar = ({NavInner, NavList, setnavHover}) => {
 
     const StyledPromoBar = styled.nav`
-        background: ${vars.colour.pink_dark};
+        background: ${vars.colour.pink};
         font-weight: 600;
         padding: 5px 0;
         ul {
@@ -17,7 +17,7 @@ const PromoBar = ({NavInner, NavList, setnavHover}) => {
             justify-content: center;
             a {
                 padding: 5px 20px;
-                color: rgb(${vars.colour.white});
+                color: ${vars.colour.black};
             }
         }
     `
