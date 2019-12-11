@@ -46,6 +46,10 @@ const Skeleton = (props) => {
         height: ${props.heroHeight};
         margin-bottom: 50px;
         margin-top: 50px;
+
+        &:first-of-type {
+            margin-top: -90px;
+        }
         
         &:empty::after {
             content:"";
@@ -63,7 +67,7 @@ const Skeleton = (props) => {
                 linear-gradient(rgb(${vars.colour.white}) ${props.lineHeight}, transparent 0), 
                 radial-gradient(circle calc(${props.titleHeight} / 2), rgb(${vars.colour.white}) 0%, transparent 0), 
                 linear-gradient(rgb(${vars.colour.white}) 0px, transparent 0), 
-                linear-gradient(${vars.colour.grey} ${props.heroHeight}, 
+                linear-gradient(${vars.colour.grey_dark} ${props.heroHeight}, 
                 transparent 0);
 
             background-size: 
@@ -140,7 +144,7 @@ Skeleton.defaultProps = {
     line2Width: "65%",
     line2Position: "215px",
 
-    heroHeight: "300px",
+    heroHeight: "400px",
     heroTitleWidth: "40%",
     heroLine1Width: "30%",
     heroLine2Width: "27%"

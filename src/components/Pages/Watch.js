@@ -13,10 +13,12 @@ import WatchBannerImg from '../../images/home-banners/watch-banner.jpg';
 
 const Watch = () => {
     const [isLoaded, setisLoaded] = useState(false);
+    const [filmHighlights, setfilmHighlights] = useState();
+    const [hasError, setErrors] =  useState(false);
 
     useEffect(() => {
-        setisLoaded(true);
-    }, [])
+        fetchData("https://films-tv-people.explore.bfi.digital/api/works/highlights", setfilmHighlights, setisLoaded, setErrors)
+    }, []);
 
     return (
         isLoaded ? 
@@ -28,10 +30,12 @@ const Watch = () => {
                 <FilmShowingsGrid />
             </Container> */}
 
-            <Container>
-                <Heading as="h2">Watch with us</Heading>
-                <FilmGrid />
-            </Container>
+            { filmHighlights && 
+                <Container>
+                    <Heading as="h2">Watch with us</Heading>
+                    <FilmGrid filmHighlights={filmHighlights} />
+                </Container>
+            }
 
             <Container>
                 <Heading as="h2">Watch at home</Heading>
@@ -60,3 +64,13 @@ const Watch = () => {
 }
 
 export default Watch;
+
+
+export const fetchData = async (API, storeData, setisLoaded, setErrors) => {
+    setisLoaded(false);
+    const res = await fetch(API, {mode: 'cors'});
+    res
+        .json()
+        .then(res => storeData(res.data), setisLoaded(true))
+        .catch(err => setErrors(err));
+}
