@@ -13,29 +13,28 @@ import WatchBannerImg from '../../images/home-banners/watch-banner.jpg';
 
 const Watch = () => {
     const [isLoaded, setisLoaded] = useState(false);
-    const [filmHighlights, setfilmHighlights] = useState();
-    const [hasError, setErrors] =  useState(false);
 
     useEffect(() => {
-        fetchData("https://films-tv-people.explore.bfi.digital/api/works/highlights", setfilmHighlights, setisLoaded, setErrors)
+        setisLoaded(true);
     }, []);
 
     return (
-        isLoaded ? 
         <> 
-            <HomeBanner title="Watch a new film, rediscover your old favourites, and get inspired." image={WatchBannerImg} />
-            
+            { isLoaded ? 
+                <HomeBanner title="Watch a new film, rediscover your old favourites, and get inspired." image={WatchBannerImg} />
+            :
+                <Skeleton as="hero"/>
+            }
+
             {/* <Container>
                 <Heading as="h2">Now on Southbank</Heading>
                 <FilmShowingsGrid />
             </Container> */}
 
-            { filmHighlights && 
-                <Container>
-                    <Heading as="h2">Watch with us</Heading>
-                    <FilmGrid filmHighlights={filmHighlights} />
-                </Container>
-            }
+            <Container>
+                <Heading as="h2">Watch with us</Heading>
+                <FilmGrid />
+            </Container>
 
             <Container>
                 <Heading as="h2">Watch at home</Heading>
@@ -47,31 +46,7 @@ const Watch = () => {
                 <SouthBankBanner />
             </Container>
         </>
-        :
-        <>
-            <Skeleton as="hero"/>
-            <Container>
-                <Skeleton as="film"/>
-                <Skeleton as="film"/>
-                <Skeleton as="film"/>
-                <Skeleton as="film"/>
-                <Skeleton as="film"/>
-                <Skeleton as="film"/>
-                <Skeleton as="film"/>
-                <Skeleton as="film"/>
-            </Container>
-        </>
     )
 }
 
 export default Watch;
-
-
-export const fetchData = async (API, storeData, setisLoaded, setErrors) => {
-    setisLoaded(false);
-    const res = await fetch(API, {mode: 'cors'});
-    res
-        .json()
-        .then(res => storeData(res.data), setisLoaded(true))
-        .catch(err => setErrors(err));
-}

@@ -2,51 +2,49 @@ import React from 'react'
 import styled from 'styled-components';
 import * as vars from '../../variables.js';
 import { Link } from 'react-router-dom'
+import Skeleton, { SkeletonTheme } from 'react-loading-skeleton';
 
 import Heading from '../bfi-components/Heading';
 import DuoToneImage from '../bfi-components/DuoToneImage';
 
-const FilmCard = (props) => {  
 
-    var titleLength = props.title.split(" ").length;
+const StyledFilmCard = styled.div`
+    width: 100%;
+    margin: auto;
+    height: 225px;
+    position: relative;
 
-    const StyledFilmCard = styled.div`
+    &:hover {
+        cursor: pointer;
+    }
+
+    &:last-of-type {
+        margin-left: 0;
+        margin-right: auto;
+    }
+
+    img {
         width: 100%;
-        margin: auto;
-        height: 225px;
-        position: relative;
-
-        &:hover {
-            cursor: pointer;
-        }
-
-        &:last-of-type {
-            margin-left: 0;
-            margin-right: auto;
-        }
-
-        img {
-            width: 100%;
-            height: auto;
-        }
-        a {
-            color: ${vars.colour.black}
-        }
+        height: auto;
+    }
+    a {
+        color: ${vars.colour.black}
+    }
 
 
-        @media ${vars.breakpoint.tablet} {
-            width: 50%;
-            height: 200px;
-        }
-        @media ${vars.breakpoint.desktop} {
-            width: 33.33%;
-            height: 200px;
-        }
-        @media ${vars.breakpoint.hd} {
-            height: 250px;
-        }
-    `
-    const FilmCardInformation = styled.div`
+    @media ${vars.breakpoint.tablet} {
+        width: 50%;
+        height: 200px;
+    }
+    @media ${vars.breakpoint.desktop} {
+        width: 33.33%;
+        height: 200px;
+    }
+    @media ${vars.breakpoint.hd} {
+        height: 250px;
+    }
+`
+const FilmCardInformation = styled.div`
         position: absolute;
         top: 15px;
         right: 15px;
@@ -58,16 +56,6 @@ const FilmCard = (props) => {
         overflow: hidden;
         display: flex;
         flex-direction: column;
-        h4 {
-            margin: 0;
-            text-transform: uppercase;
-            word-wrap: break-word;
-            -webkit-hyphens: auto;
-            -moz-hyphens: auto;
-            hyphens: auto;
-            color: ${vars.colour.pink_dark};
-            font-size: ${(titleLength <= 2 ? '45' : (titleLength <= 4 ? '35' : (titleLength <= 6 ? '27' : (titleLength <= 14 ? '24' : '18'))))}px;
-        }
         a {
             color: ${vars.colour.pink_dark};
         }
@@ -83,18 +71,40 @@ const FilmCard = (props) => {
 
         @media ${vars.breakpoint.tablet} {
             width: calc(60% - 75px);
+        }
+        @media ${vars.breakpoint.hd} {
+            width: calc(50% - 55px);
+
+            .filmcardinformation__subinfo {
+                font-size: 16px;
+            }
+        }
+`
+
+const FilmCard = (props) => {  
+
+    var titleLength = props.title.split(" ").length;
+
+    const StlyedFilmCardInformation = styled(FilmCardInformation)`
+        h4 {
+            margin: 0;
+            text-transform: uppercase;
+            word-wrap: break-word;
+            -webkit-hyphens: auto;
+            -moz-hyphens: auto;
+            hyphens: auto;
+            color: ${vars.colour.pink_dark};
+            font-size: ${(titleLength <= 2 ? '45' : (titleLength <= 4 ? '35' : (titleLength <= 6 ? '27' : (titleLength <= 14 ? '24' : '18'))))}px;
+        }
+
+        @media ${vars.breakpoint.tablet} {
             h4 {
                 font-size: ${(titleLength <= 2 ? '27' : (titleLength <= 4 ? '25' : (titleLength <= 6 ? '22' : (titleLength <= 14 ? '16' : '14'))))}px;
             }
         }
         @media ${vars.breakpoint.hd} {
-            width: calc(50% - 55px);
-            
             h4 {
                 font-size: ${(titleLength <= 2 ? '42' : (titleLength <= 4 ? '35' : (titleLength <= 6 ? '27' : (titleLength <= 14 ? '24' : '18'))))}px;
-            }
-            .filmcardinformation__subinfo {
-                font-size: 16px;
             }
         }
     `
@@ -126,7 +136,7 @@ const FilmCard = (props) => {
             <Link to={"/watch/film/" + props.uuid}>
                 <DuoToneImage image={props.image} />
 
-                <FilmCardInformation>
+                <StlyedFilmCardInformation>
                     { props.subInfo && 
                         <span className="filmcardinformation__subinfo">{props.subInfo}</span>
                     }
@@ -141,7 +151,7 @@ const FilmCard = (props) => {
                             <FilmTag>Player</FilmTag>
                         }
                     </div>
-                </FilmCardInformation>
+                </StlyedFilmCardInformation>
             </Link>
         </StyledFilmCard>
     )
@@ -157,3 +167,45 @@ FilmCard.defaultProps = {
 }
 
 export default FilmCard
+
+
+
+
+const FilmSkeleton = styled.div`
+    height: 100%;
+    width: 100%;
+    background: ${vars.colour.grey};
+    border: 1px solid ${vars.colour.grey_dark};
+    
+    .react-loading-skeleton {
+        height: 15px
+        margin-bottom: 10px;
+        background-color: ${vars.colour.pink_dark};
+        background-image: linear-gradient(90deg, ${vars.colour.pink_dark}, ${vars.colour.pink}, ${vars.colour.pink_dark});
+    }
+    .skeleton_tag {
+        .react-loading-skeleton {
+            margin-top: 60px;
+            margin-right: 5px;
+            width: 20px;
+            height: 10px;
+            display: inline-block;
+        }
+    }
+`
+
+export const FilmCardSkeleton = () => {
+    return( 
+        <StyledFilmCard>
+            <FilmSkeleton color={vars.colour.pink_dark} highlightColor={vars.colour.pink_light}>
+                <FilmCardInformation>
+                    <Skeleton />
+                    <Skeleton width={75} />
+                    <div className="skeleton_tag">
+                        <Skeleton /><Skeleton />
+                    </div>
+                </FilmCardInformation>
+            </FilmSkeleton>
+        </StyledFilmCard>
+    )
+}
