@@ -45,11 +45,7 @@ const Skeleton = (props) => {
         width: 100%;
         height: ${props.heroHeight};
         margin-bottom: 50px;
-        margin-top: 50px;
-
-        &:first-of-type {
-            margin-top: -90px;
-        }
+        margin-top: -30px;
         
         &:empty::after {
             content:"";
@@ -92,35 +88,13 @@ const Skeleton = (props) => {
         }
     `
     const FilmSkeleton = styled('div')`
-        width: 25%;
+        width: calc(25% - 2px);
         height: ${props.cardHeight};
         display: inline-block;
         margin: 0;
         margin-top: -3px;
-        
-        &:empty::after {
-            content:"";
-            display:block;
-            width: 100%;
-            height: 100%;
-            border-radius: 0px;
-            border: 1px solid #999;
-
-            background-image: linear-gradient(90deg, rgba(211, 211, 211, 0) 0, rgba(211, 211, 211, 0.8) 50%, rgba(211, 211, 211, 0) 100%), linear-gradient(rgb(${vars.colour.white}) ${props.titleHeight}, transparent 0), linear-gradient(rgb(${vars.colour.white}) ${props.lineHeight}, transparent 0), linear-gradient(rgb(${vars.colour.white}) ${props.lineHeight}, transparent 0), radial-gradient(circle calc(${props.titleHeight} / 2), rgb(${vars.colour.white}) 99%, transparent 0), linear-gradient(rgb(${vars.colour.white}) 0px, transparent 0), linear-gradient(${vars.colour.lightgrey} ${props.cardHeight}, transparent 0);
-
-            background-size: ${props.titleWidth} ${props.cardHeight}, ${props.titleWidth} ${props.titleHeight}, ${props.line1Width} ${props.lineHeight}, ${props.line2Width} ${props.lineHeight}, ${props.titleHeight} ${props.titleHeight}, 100% 0px, 100% 100%;
-            background-position:
-                -300% 0,                      //animation
-                ${props.cardPadding} ${props.titleOffset},        //title
-                ${props.cardPadding} ${props.line1Position},  //desc1
-                ${props.cardPadding} ${props.line2Position},  //desc2
-                ${props.cardPadding} ${props.cardPadding},       //avatar
-                0 0                           //card
-                ;
-
-                background-repeat: no-repeat;
-                animation: ${animateCard} ${props.animateTime} infinite;
-        }
+        background: ${vars.colour.grey};
+        border: 1px solid ${vars.colour.grey_dark};
     `
 
     return (
@@ -131,7 +105,7 @@ const Skeleton = (props) => {
 Skeleton.defaultProps = {
     as: "film",
     cardPadding: "17px",
-    cardHeight: "250px",
+    cardHeight: "180px",
     animateTime: "2s",
 
     titleHeight: "25px",

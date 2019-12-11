@@ -48,8 +48,9 @@ const Watch = () => {
             </Container>
         </>
         :
+        <>
+            <Skeleton as="hero"/>
             <Container>
-                <Skeleton as="hero"/>
                 <Skeleton as="film"/>
                 <Skeleton as="film"/>
                 <Skeleton as="film"/>
@@ -58,8 +59,8 @@ const Watch = () => {
                 <Skeleton as="film"/>
                 <Skeleton as="film"/>
                 <Skeleton as="film"/>
-                <Skeleton as="hero"/>
             </Container>
+        </>
     )
 }
 

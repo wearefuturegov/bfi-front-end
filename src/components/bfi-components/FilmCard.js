@@ -50,7 +50,7 @@ const FilmCard = (props) => {
         position: absolute;
         top: 15px;
         right: 15px;
-        height: calc(100% - 65px);
+        height: calc(100% - 75px);
         width: calc(50% - 45px);
         padding: 10px;
         background-color: ${vars.colour.pink_light};
@@ -61,6 +61,10 @@ const FilmCard = (props) => {
         h4 {
             margin: 0;
             text-transform: uppercase;
+            word-wrap: break-word;
+            -webkit-hyphens: auto;
+            -moz-hyphens: auto;
+            hyphens: auto;
             color: ${vars.colour.pink_dark};
             font-size: ${(titleLength <= 2 ? '45' : (titleLength <= 4 ? '35' : (titleLength <= 6 ? '27' : (titleLength <= 14 ? '24' : '18'))))}px;
         }
@@ -78,16 +82,16 @@ const FilmCard = (props) => {
         }
 
         @media ${vars.breakpoint.tablet} {
-            width: calc(60% - 45px);
+            width: calc(60% - 75px);
             h4 {
                 font-size: ${(titleLength <= 2 ? '27' : (titleLength <= 4 ? '25' : (titleLength <= 6 ? '22' : (titleLength <= 14 ? '16' : '14'))))}px;
             }
         }
         @media ${vars.breakpoint.hd} {
-            width: calc(50% - 45px);
+            width: calc(50% - 55px);
             
             h4 {
-                font-size: ${(titleLength <= 2 ? '45' : (titleLength <= 4 ? '35' : (titleLength <= 6 ? '27' : (titleLength <= 14 ? '24' : '18'))))}px;
+                font-size: ${(titleLength <= 2 ? '42' : (titleLength <= 4 ? '35' : (titleLength <= 6 ? '27' : (titleLength <= 14 ? '24' : '18'))))}px;
             }
             .filmcardinformation__subinfo {
                 font-size: 16px;
