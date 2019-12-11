@@ -36,7 +36,7 @@ const FilmGrid = () => {
                             onSouthbank={film.watch ?  (film.watch.bfi_southbank ? true : false) : false}
                         />
                     )
-            ): (
+            ) : (
                 <>
                 <FilmCardSkeleton />
                 <FilmCardSkeleton />
