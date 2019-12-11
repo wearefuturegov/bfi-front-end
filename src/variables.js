@@ -24,8 +24,8 @@ export const font = {
 };
 
 export const screen_size = {
-    mobile: '568px',
-    tablet: '834px',
+    mobile: '768px',
+    tablet: '959px',
     desktop: '1024px',
     desktopL: '1440px',
     hd: '2560px'

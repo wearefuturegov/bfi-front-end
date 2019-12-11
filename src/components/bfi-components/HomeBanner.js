@@ -39,6 +39,11 @@ const HomeBanner = ({title, image}) => {
                 margin-top: 100px;
             }
         }
+        @media ${vars.breakpoint.hd} {
+            h1 {
+                max-width: 60%;
+            }
+        }
     `
     return (
         <StyledHomeBanner>

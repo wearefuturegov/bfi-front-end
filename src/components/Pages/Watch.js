@@ -16,13 +16,16 @@ const Watch = () => {
 
     useEffect(() => {
         setisLoaded(true);
-    }, [])
+    }, []);
 
     return (
-        isLoaded ? 
         <> 
-            <HomeBanner title="Watch a new film, rediscover your old favourites, and get inspired." image={WatchBannerImg} />
-            
+            { isLoaded ? 
+                <HomeBanner title="Watch a new film, rediscover your old favourites, and get inspired." image={WatchBannerImg} />
+            :
+                <Skeleton as="hero"/>
+            }
+
             {/* <Container>
                 <Heading as="h2">Now on Southbank</Heading>
                 <FilmShowingsGrid />
@@ -43,19 +46,6 @@ const Watch = () => {
                 <SouthBankBanner />
             </Container>
         </>
-        :
-            <Container>
-                <Skeleton as="hero"/>
-                <Skeleton as="film"/>
-                <Skeleton as="film"/>
-                <Skeleton as="film"/>
-                <Skeleton as="film"/>
-                <Skeleton as="film"/>
-                <Skeleton as="film"/>
-                <Skeleton as="film"/>
-                <Skeleton as="film"/>
-                <Skeleton as="hero"/>
-            </Container>
     )
 }
 

@@ -27,7 +27,6 @@ const FilmPage = () => {
                 </Container>
             ) : (
                 <>
-                {console.log(filmData)}
                 <Container>
                     <Heading as="h1">{filmData.display_title}</Heading>
                     <Heading as="h4">{filmData.description}</Heading>
