@@ -2,6 +2,7 @@ import React from 'react'
 import styled from 'styled-components';
 import * as vars from '../../variables.js';
 import PropTypes from 'prop-types';
+import { darken } from 'polished'
 
 const Button = (props) => {
     const StyledButton = styled.button`
@@ -19,10 +20,15 @@ const Button = (props) => {
         -moz-box-shadow: -3px 3px 0px 0px rgb(${props.highlight});
         box-shadow: -3px 3px 0px 0px rgb(${props.highlight});
 
+        &:hover {
+            background: ${darken(0.1, 'rgb('+props.colour+')')};
+        }
         &:focus {
-            outline: 3px solid rgba(${props.highlight}, 0.75);
-
-            box-shadow: rgb(${vars.colour.white}) 0px 0px 0px 2px, rgb(${props.highlight}) 0px 0px 0px 5px !important;
+            box-shadow: 
+                    rgb(${vars.colour.white}) 
+                    0px 0px 0px 2px, 
+                    rgb(${props.highlight === vars.colour.white ? props.colour : props.highlight}) 
+                    0px 0px 0px 5px !important;
             outline: none !important;
         }
         &:active {

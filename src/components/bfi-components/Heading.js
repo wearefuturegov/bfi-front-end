@@ -28,11 +28,13 @@ export const Heading = (props) => {
 }
 
 Heading.defaultProps = {
-    as: "h1"
+    as: "h1",
+    style: ""
 }
 
 Heading.propTypes = {
-    as: PropTypes.string
+    as: PropTypes.string,
+    style: PropTypes.string
 }
 
 export default Heading
