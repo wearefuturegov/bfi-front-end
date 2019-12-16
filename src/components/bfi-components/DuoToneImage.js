@@ -5,7 +5,7 @@ import * as vars from '../../variables.js';
 
 const DuoToneImage = (props) => {
     const DuoToneImageWrapper = styled.div`
-        background-color:    ${props.highlightColour};
+        background-color:    rgb(${props.highlightColour});
         display:             flex;
         flex:                1 1 100%;
         height:              100%;
@@ -31,7 +31,7 @@ const DuoToneImage = (props) => {
                 opacity:             1;
             }
             &::before {
-                background-color:    ${props.bgColour};
+                background-color:    rgb(${props.bgColour});
                 bottom:              0;
                 content:             '';
                 height:              100%;

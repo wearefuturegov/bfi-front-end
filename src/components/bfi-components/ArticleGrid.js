@@ -16,7 +16,8 @@ const StyledArticleGrid = styled.div`
 export class ArticleGrid extends Component {
     render() {
         return (
-            <StyledArticleGrid>{this.props.children}
+            <StyledArticleGrid>
+                {this.props.children}
                 {/* <ArticleSummary 
                     size="large" 
                     link="https://www.bfi.org.uk/news-opinion/sight-sound-magazine/reviews-recommendations/sorry-we-missed-you-ken-loach-gig-economy-paul-laverty"
