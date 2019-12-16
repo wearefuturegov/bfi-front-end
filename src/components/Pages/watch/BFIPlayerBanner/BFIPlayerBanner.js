@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import * as vars from '../../../../variables.js';
 
 import Heading from '../../../bfi-components/Heading'
+import Button from '../../../bfi-components/Button'
 import ImageBanner from '../../../bfi-components/ImageBanner';
 
 import LogoSrc from '../../../../images/logos/bfiplayer-logo-white.svg';
@@ -20,12 +21,12 @@ const BFIPlayerBanner = () => {
             <Heading as="h2" style="h1">Watch the greatest global cinema</Heading>
             <p>From £2.50 per film, or £4.99 a month.</p>
             
-            <button>Try 14 days free</button>
+            <Button>Try 14 days free</Button>
         </ImageBanner>
         <ImageBanner colour="pink" image={BannerImg2} image_position="left center" text_right={true} image_origin="content-box">
             <Heading as="h2" style="h1">Stream on your phone, tablet, laptop and TV.</Heading>
             
-            <button>Try 14 days free</button>
+            <Button colour={vars.colour.pink_dark} highlight={vars.colour.white}>Try 14 days free</Button>
         </ImageBanner>
         </>
     )

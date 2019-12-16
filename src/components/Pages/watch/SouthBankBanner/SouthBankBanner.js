@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import * as vars from '../../../../variables.js';
 
 import Heading from '../../../bfi-components/Heading'
+import Button from '../../../bfi-components/Button'
 import ImageBanner from '../../../bfi-components/ImageBanner';
 
 import BannerImg1 from './southbank-banner-img-1.jpg';
@@ -17,7 +18,7 @@ const SouthBankBanner = () => {
         <ImageBanner colour="pink" image={BannerImg1}>
             <Heading as="h2" style="h1">Watch BfI Picked contemporary and classic films in cinema</Heading>
             
-            <button>Event Calendar</button>
+            <Button colour={vars.colour.pink_dark} highlight={vars.colour.white}>Event Calendar</Button>
         </ImageBanner>
         <ImageBanner colour="pink" image={BannerImg2} image_size="large" image_position="left center" text_right={true}>
             <Heading as="h2" style="h1">Access books, docs, journals about film and TV in our library</Heading>
