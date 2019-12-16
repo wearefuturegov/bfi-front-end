@@ -4,6 +4,7 @@ import { createBrowserHistory } from "history";
 import { createGlobalStyle } from 'styled-components'
 
 import Header from './components/Header/Header';
+import Footer from './components/Footer/Footer';
 import Container from './components/bfi-components/Container';
 import Heading from './components/bfi-components/Heading';
 
@@ -74,6 +75,7 @@ export default withRouter(function App({ location }) {
 
       <Route component={NotFound} />
     </Switch>
+    <Footer />
     </>
   );
 });

@@ -177,7 +177,6 @@ const Header = ({currentHome, whiteHeader}) => {
     }
 
     return (
-        <>
         <HeaderContainer onMouseLeave={() => HandleLeave()}>
             <PromoBar NavInner={NavInner} NavList={NavList} setnavHover={setnavHover} />
             <StickyHeaderContainer className={`sticky-wrapper${isSticky ? ' sticky' : ''}`} ref={ref}>
@@ -206,7 +205,6 @@ const Header = ({currentHome, whiteHeader}) => {
             </StickyHeaderContainer>
             <HeaderBuffer />
         </HeaderContainer>
-        </>
     )
 }
 
