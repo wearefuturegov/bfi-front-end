@@ -79,7 +79,7 @@ export class FilmShowingsGrid extends Component {
         return (
             <StyledFilmShowingsGrid>
                 <TabBar options={[
-                                    { title: "This week", active: true },
+                                    { title: "Today", active: true },
                                     { title: "BFI Picks", },
                                     { title: "Under 25" }
                                     ]} />
