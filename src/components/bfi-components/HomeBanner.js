@@ -9,7 +9,7 @@ const HomeBanner = ({title, image}) => {
     const StyledHomeBanner = styled.div`
         width: 100%;
         padding: 50px 0;
-        background: ${vars.colour.black} no-repeat center center fixed;
+        background: rgb(${vars.colour.black}) no-repeat center center fixed;
         background: url(${image});
         -webkit-background-size: cover;
         -moz-background-size: cover;

@@ -6,7 +6,7 @@ import PropTypes from 'prop-types';
 const TabBar = ({options}) => {
     const StyledTabBar = styled.div`
         width: 100%;
-        border-bottom: 1px solid ${vars.colour.pink_dark};
+        border-bottom: 1px solid rgb(${vars.colour.pink_dark});
         margin-bottom: 25px;
     `
     const TabBarButton = styled.div`
@@ -17,13 +17,13 @@ const TabBar = ({options}) => {
         cursor: pointer;
 
         &:hover {
-            color: ${vars.colour.grey_dark};
+            color: rgb(${vars.colour.grey_dark});
         }
         
         &.selected {
-            color: ${vars.colour.pink_dark};
+            color: rgb(${vars.colour.pink_dark});
             &:hover {
-                color: ${vars.colour.pink};
+                color: rgb(${vars.colour.pink});
             }
         }
     `

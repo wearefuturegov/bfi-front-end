@@ -5,8 +5,8 @@ import PropTypes from 'prop-types';
 
 const ImageBanner = (props) => {
     const StyledImageBanner = styled.div`
-        background-color: ${props.colour === 'pink' ? vars.colour.pink : props.colour};
-        color: ${props.colour === 'pink' ? vars.colour.pink_dark : '#fff'};
+        background-color: rgb(${props.colour === 'pink' ? vars.colour.pink : props.colour});
+        color: rgb(${props.colour === 'pink' ? vars.colour.pink_dark : '255, 255, 255'});
         padding: ${props.padding}px;
         position: relative;
         overflow: hidden;

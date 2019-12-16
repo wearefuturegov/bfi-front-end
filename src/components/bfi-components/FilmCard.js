@@ -28,7 +28,7 @@ const StyledFilmCard = styled.div`
         height: auto;
     }
     a {
-        color: ${vars.colour.black}
+        color: rgb(${vars.colour.black})
     }
 
 
@@ -51,13 +51,13 @@ const FilmCardInformation = styled.div`
         height: calc(100% - 75px);
         width: calc(50% - 45px);
         padding: 10px;
-        background-color: ${vars.colour.pink_light};
+        background-color: rgb(${vars.colour.pink_light});
         background-color: rgba(${vars.colour.pink_light}, 0.95);
         overflow: hidden;
         display: flex;
         flex-direction: column;
         a {
-            color: ${vars.colour.pink_dark};
+            color: rgb(${vars.colour.pink_dark});
         }
         .filmcardinformation__subinfo {
             margin-bottom: 5px;
@@ -93,7 +93,7 @@ const FilmCard = (props) => {
             -webkit-hyphens: auto;
             -moz-hyphens: auto;
             hyphens: auto;
-            color: ${vars.colour.pink_dark};
+            color: rgb(${vars.colour.pink_dark});
             font-size: ${(titleLength <= 2 ? '45' : (titleLength <= 4 ? '35' : (titleLength <= 6 ? '27' : (titleLength <= 14 ? '24' : '18'))))}px;
         }
 
@@ -115,7 +115,7 @@ const FilmCard = (props) => {
         margin-right: 6px;
         vertical-align: middle;
         border-radius: 5px;
-        background: ${vars.colour.pink_dark};
+        background: rgb(${vars.colour.pink_dark});
         color: rgb(${vars.colour.white});
 
         @media ${vars.breakpoint.tablet} {
@@ -174,14 +174,14 @@ export default FilmCard
 const FilmSkeleton = styled.div`
     height: 100%;
     width: 100%;
-    background: ${vars.colour.grey};
-    border: 1px solid ${vars.colour.grey_dark};
+    background: rgb(${vars.colour.grey});
+    border: 1px solid rgb(${vars.colour.grey_dark});
     
     .react-loading-skeleton {
         height: 15px
         margin-bottom: 10px;
-        background-color: ${vars.colour.pink_dark};
-        background-image: linear-gradient(90deg, ${vars.colour.pink_dark}, ${vars.colour.pink}, ${vars.colour.pink_dark});
+        background-color: rgb(${vars.colour.pink_dark});
+        background-image: linear-gradient(90deg, rgb(${vars.colour.pink_dark}), rgb(${vars.colour.pink}), rgb(${vars.colour.pink_dark}));
     }
     .skeleton_tag {
         .react-loading-skeleton {

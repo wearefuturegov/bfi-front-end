@@ -15,7 +15,7 @@ const PlayerLogo = styled.img`
 const BFIPlayerBanner = () => {
     return (
         <>
-        <ImageBanner colour="#000" image={BannerImg1} image_position="right top" image_origin="content-box">
+        <ImageBanner colour="0, 0, 0" image={BannerImg1} image_position="right top" image_origin="content-box">
             <PlayerLogo src={LogoSrc} alt="BFI Player" />
             <Heading as="h2" style="h1">Watch the greatest global cinema</Heading>
             <p>From £2.50 per film, or £4.99 a month.</p>

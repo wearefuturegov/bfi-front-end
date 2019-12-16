@@ -13,7 +13,7 @@ const ArticleSummary = ({size, link, title, desc, author, date, image}) => {
         padding-bottom: 10px;
 
         a {
-            color: ${vars.colour.black};
+            color: rgb(${vars.colour.black});
             text-decoration: none;
             display: block;
         }

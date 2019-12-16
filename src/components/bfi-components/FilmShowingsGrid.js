@@ -13,7 +13,7 @@ const StyledFilmShowingsGrid = styled.div`
 
 const FilmShowingsHighlight = styled.div`
     width: 33.33%;
-    background: ${vars.colour.pink};
+    background: rgb(${vars.colour.pink});
 
     h3 {
         text-align: center;

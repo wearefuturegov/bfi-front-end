@@ -12,7 +12,7 @@ const fadeInDownAnimation = keyframes`${fadeInDown}`;
 const SubNav = ({currentHome, navHover, NavInner, NavList}) => {
     const StyledSubNav = styled.nav`
         text-align: center;
-        background: ${vars.colour.grey};
+        background: rgb(${vars.colour.grey});
         opacity: 1;
         font-weight: 600;
         display: none;
@@ -28,7 +28,7 @@ const SubNav = ({currentHome, navHover, NavInner, NavList}) => {
         li {
             a {
                 padding: 15px 15px;
-                color: ${vars.colour.black};
+                color: rgb(${vars.colour.black});
             }
         }
 
@@ -42,10 +42,10 @@ const SubNav = ({currentHome, navHover, NavInner, NavList}) => {
                 opacity: 1;
                 transform: translateY(0px);
                 animation: 0.5s ${fadeInDownAnimation};
-                background-color: ${vars.colour.grey}
+                background-color: rgb(${vars.colour.grey})
             }
             &.active  {
-                // background-color: ${vars.colour.grey}
+                // background-color: rgb(${vars.colour.grey})
             }
         }
         @media ${vars.breakpoint.desktop} {
@@ -98,7 +98,7 @@ const SubNav = ({currentHome, navHover, NavInner, NavList}) => {
         a {
             padding: 5px 0;
             display: block;
-            color: ${vars.colour.black};
+            color: rgb(${vars.colour.black});
         }
     `
     const MobileMenuButton = styled.button`

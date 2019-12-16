@@ -94,27 +94,27 @@ const Header = ({currentHome, whiteHeader}) => {
                         border-left: 10px solid transparent;
                         border-right: 10px solid transparent;
                         
-                        border-bottom: 10px solid ${vars.colour.grey};             
+                        border-bottom: 10px solid rgb(${vars.colour.grey});             
                     }
                 }
             }
         }
 
         &.whiteHeader {
-            border-bottom: 1px solid ${vars.colour.grey};
+            border-bottom: 1px solid rgb(${vars.colour.grey});
             background: rgba(${vars.colour.white}, 1);
 
             a {
-                color: ${vars.colour.black};
+                color: rgb(${vars.colour.black});
             }
             li {
                 a {
-                    color: ${vars.colour.black}
+                    color: rgb(${vars.colour.black})
                 }
                 &.active {
                     a {
                         &:after {
-                            background-color: ${vars.colour.black};
+                            background-color: rgb(${vars.colour.black});
                         }
                     }
                 }

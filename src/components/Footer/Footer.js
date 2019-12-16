@@ -9,7 +9,7 @@ import LogoWhite from '../../images/logos/bfi-logo-white.svg';
 const Footer = () => {
     
     const FooterContainer = styled.footer`
-        background: ${vars.colour.black};
+        background: rgb(${vars.colour.black});
         color: rgb(${vars.colour.white});
         display: flex;
         

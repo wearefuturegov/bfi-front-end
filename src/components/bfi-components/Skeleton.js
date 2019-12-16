@@ -63,7 +63,7 @@ const Skeleton = (props) => {
                 linear-gradient(rgb(${vars.colour.white}) ${props.lineHeight}, transparent 0), 
                 radial-gradient(circle calc(${props.titleHeight} / 2), rgb(${vars.colour.white}) 0%, transparent 0), 
                 linear-gradient(rgb(${vars.colour.white}) 0px, transparent 0), 
-                linear-gradient(${vars.colour.grey_dark} ${props.heroHeight}, 
+                linear-gradient(rgb(${vars.colour.grey_dark}) ${props.heroHeight}, 
                 transparent 0);
 
             background-size: 
@@ -93,8 +93,8 @@ const Skeleton = (props) => {
         display: inline-block;
         margin: 0;
         margin-top: -3px;
-        background: ${vars.colour.grey};
-        border: 1px solid ${vars.colour.grey_dark};
+        background: rgb(${vars.colour.grey});
+        border: 1px solid rgb(${vars.colour.grey_dark});
     `
 
     return (
