@@ -26,10 +26,10 @@ const Watch = () => {
                 <Skeleton as="hero"/>
             }
 
-            {/* <Container>
+            <Container>
                 <Heading as="h2">Now on Southbank</Heading>
                 <FilmShowingsGrid />
-            </Container> */}
+            </Container>
 
             <Container>
                 <Heading as="h2">Watch with us</Heading>
