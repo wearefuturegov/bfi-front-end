@@ -27,13 +27,13 @@ export const screen_size = {
     mobile: '768px',
     tablet: '959px',
     desktop: '1024px',
-    desktopL: '1440px',
-    hd: '2560px'
+    hd: '1440px',
+    super_hd: '2560px'
 };
 
 export const breakpoint = {
     tablet: `(min-width: ${screen_size.mobile})`,
     desktop: `(min-width: ${screen_size.tablet})`,
-    desktopL: `(min-width: ${screen_size.desktop})`,
-    hd: `(min-width: ${screen_size.desktopL})`
+    hd: `(min-width: ${screen_size.desktop})`,
+    super_hd: `(min-width: ${screen_size.hd})`
 };

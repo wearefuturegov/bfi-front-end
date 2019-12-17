@@ -17,7 +17,7 @@ const HomeBanner = ({title, image}) => {
         background-size: cover;
         background-position: 50% 50%;
         color: rgb(${vars.colour.white});
-        margin-top: -30px;
+        margin-top: 0px;
 
         h1 {
             max-width: 80%;
@@ -39,7 +39,7 @@ const HomeBanner = ({title, image}) => {
                 margin-top: 100px;
             }
         }
-        @media ${vars.breakpoint.hd} {
+        @media ${vars.breakpoint.super_hd} {
             h1 {
                 max-width: 60%;
             }

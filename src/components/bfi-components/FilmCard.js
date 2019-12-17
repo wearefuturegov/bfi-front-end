@@ -40,7 +40,7 @@ const StyledFilmCard = styled.div`
         width: 33.33%;
         height: 200px;
     }
-    @media ${vars.breakpoint.hd} {
+    @media ${vars.breakpoint.super_hd} {
         height: 250px;
     }
 `
@@ -72,7 +72,7 @@ const FilmCardInformation = styled.div`
         @media ${vars.breakpoint.tablet} {
             width: calc(60% - 75px);
         }
-        @media ${vars.breakpoint.hd} {
+        @media ${vars.breakpoint.super_hd} {
             width: calc(50% - 55px);
 
             .filmcardinformation__subinfo {
@@ -102,7 +102,7 @@ const FilmCard = (props) => {
                 font-size: ${(titleLength <= 2 ? '27' : (titleLength <= 4 ? '25' : (titleLength <= 6 ? '22' : (titleLength <= 14 ? '16' : '14'))))}px;
             }
         }
-        @media ${vars.breakpoint.hd} {
+        @media ${vars.breakpoint.super_hd} {
             h4 {
                 font-size: ${(titleLength <= 2 ? '42' : (titleLength <= 4 ? '35' : (titleLength <= 6 ? '27' : (titleLength <= 14 ? '24' : '18'))))}px;
             }
@@ -124,7 +124,7 @@ const FilmCard = (props) => {
             margin-right: 4px;
         }
 
-        @media ${vars.breakpoint.hd} {
+        @media ${vars.breakpoint.super_hd} {
             font-size: 14px;
             padding: 2px 10px;
             margin-right: 6px;

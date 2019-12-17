@@ -2,12 +2,15 @@ import React, { useState, useEffect } from 'react';
 import Moment from 'react-moment';
 import 'moment-timezone';
 
-import Container from '../../bfi-components/Container'
-import { Heading, HeadingBuffer } from '../../bfi-components/Heading'
-import FilmPageMeta from './FilmPageMeta'
-import ArticleSummary from '../../bfi-components/ArticleSummary'
+import Container from '../../bfi-components/Container';
+import Heading from '../../bfi-components/Heading';
+import IntroText from '../../bfi-components/IntroText';
+
+import FilmPageMeta from './FilmPageMeta';
+import ArticleSummary from '../../bfi-components/ArticleSummary';
 import ArticleGrid from '../../bfi-components/ArticleGrid';
 
+import FilmHero from '../../bfi-components/FilmHero';
 
 const FilmPage = () => {
     const [filmData, setfilmData] = useState({ summary_credits: [], articles: [] });
@@ -20,19 +23,24 @@ const FilmPage = () => {
 
     return (
         <>
-            <HeadingBuffer />
             { loading === true ? (
                 <Container>
                     <p>Loading...</p>
                 </Container>
             ) : (
                 <>
+                {console.log(filmData)}
+                <FilmHero title={filmData.display_title} image={filmData.images} />
+                <Container margin="small" withSidebar sidebarSide="left">
+                    <section>
+                        <IntroText>{filmData.description}</IntroText>
+                    </section>
+                    <section>
+                        <FilmPageMeta director={filmData.summary_credits.directed_by} year={filmData.year} featuring={filmData.summary_credits.featuring} />
+                    </section>        
+                </Container>
+
                 <Container>
-                    <Heading as="h1">{filmData.display_title}</Heading>
-                    <Heading as="h4">{filmData.description}</Heading>
-                    {filmData.images &&
-                        <img src={filmData.images[0].url} alt="" width="500px" />
-                    }
                     {filmData.watch &&
                         filmData.watch.bfi_player ? (
                             <p><a href={filmData.watch.bfi_player[0].url} target="_blank" title="Watch on BFI Player">Watch on BFI Player</a></p>
@@ -52,9 +60,6 @@ const FilmPage = () => {
                             <p>Not showing at Southbank</p>
                         )
                     }
-                    
-
-                    <FilmPageMeta director={filmData.summary_credits.directed_by} year={filmData.year} featuring={filmData.summary_credits.featuring} />
                 </Container>
 
                 { filmData.articles &&

@@ -29,6 +29,9 @@ export default withRouter(function App({ location }) {
     body {
       font-family: 'Open Sans', sans-serif;
     }
+    p {
+      margin-top: 0;
+    }
   `
   const history = createBrowserHistory();
   const rootElement = document.getElementById("root");
@@ -37,7 +40,7 @@ export default withRouter(function App({ location }) {
 
   useEffect(() => {
     const { pathname } = location;
-    if (pathname.split('/')[2]) {
+    if (pathname.split('/')[2] && pathname.split('/')[2] !== 'film') {
       setwhiteHeader(true);
     } else {
       setwhiteHeader(false);

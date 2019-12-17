@@ -31,7 +31,7 @@ const ImageBanner = (props) => {
             //     bottom: ${props.padding}px;
             // }
         }
-        @media ${vars.breakpoint.hd} {
+        @media ${vars.breakpoint.super_hd} {
             padding: ${(props.padding*2)}px;
 
             // button {

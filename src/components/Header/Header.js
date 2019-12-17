@@ -32,11 +32,6 @@ const Header = ({currentHome, whiteHeader}) => {
     }, []);
 
     const HeaderContainer = styled.div``
-    const HeaderBuffer = styled.div`
-        width: 100%;
-        height: 30px; 
-        background: none;
-    `
 
     const StickyHeaderContainer = styled.div`
         position: relative;
@@ -182,7 +177,7 @@ const Header = ({currentHome, whiteHeader}) => {
             <StickyHeaderContainer className={`sticky-wrapper${isSticky ? ' sticky' : ''}`} ref={ref}>
                 <div className="sticky-inner">
                     <StyledHeader className={isSticky || headingHover || whiteHeader ? 'whiteHeader' : ''} onMouseOver={() => setheadingHover(true)}>
-                        <Container noMargin={true}>
+                        <Container margin="none">
                             <NavInner>
                                 <LogoContainer>
                                     <Link to="/">
@@ -203,7 +198,6 @@ const Header = ({currentHome, whiteHeader}) => {
                     <SubNav currentHome={currentHome} setnavHover={setnavHover} navHover={navHover} NavInner={NavInner} NavList={NavList} />
                 </div>      
             </StickyHeaderContainer>
-            <HeaderBuffer />
         </HeaderContainer>
     )
 }

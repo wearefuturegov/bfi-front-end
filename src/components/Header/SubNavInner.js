@@ -9,7 +9,7 @@ const SubNavInner = ({subMenuName, SubNavItems, StyledSubNav, NavInner, NavList,
     return (
         <>
             <StyledSubNav className={(currentHome === slugify(subMenuName) ? ' active' : '') + (navHover ? ' subNavShow' : '')}>
-                <Container noMargin={true}>
+                <Container margin="none">
                     <NavInner>
                         <NavList>
                             { SubNavItems.map((link) => (

@@ -24,7 +24,7 @@ const PromoBar = ({NavInner, NavList, setnavHover}) => {
 
     return (
         <StyledPromoBar onMouseOver={() => setnavHover('')}>
-            <Container noMargin={true}>
+            <Container margin="none">
                 <NavInner>
                     <NavList>
                         <li><a href="https://whatson.bfi.org.uk/Online/" target="_blank" rel="noopener noreferrer">Buy tickets</a></li>

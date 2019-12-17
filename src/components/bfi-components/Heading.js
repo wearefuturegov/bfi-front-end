@@ -17,7 +17,7 @@ export const Heading = (props) => {
         @media ${vars.breakpoint.desktop} {
             font-size: ${props.as === 'h1' || props.style === 'h1' ? '33px' : (props.as === 'h2' ? '27px' : (props.as === 'h3' ? '22px' : '20px'))};
         }
-        @media ${vars.breakpoint.hd} {
+        @media ${vars.breakpoint.super_hd} {
             font-size: ${props.as === 'h1' || props.style === 'h1' ? '37px' : (props.as === 'h2' ? '32px' : (props.as === 'h3' ? '27px' : '24px'))};
         }
     `
@@ -43,7 +43,7 @@ export default Heading
 export const HeadingBuffer = () => {
     const HeadingBuffer = styled.div`
         width: 100%;
-        height: 35px;
+        height: 29px;
     `
     return (
         <HeadingBuffer />
