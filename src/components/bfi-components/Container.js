@@ -63,7 +63,7 @@ Container.defaultProps = {
 
 Container.propTypes = {
     margin: PropTypes.string,
-    withSidebar: PropTypes.object,
+    withSidebar: PropTypes.bool,
     sidebarSide: PropTypes.string,
 }
 
