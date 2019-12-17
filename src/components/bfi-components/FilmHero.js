@@ -21,7 +21,7 @@ const FilmHero = (props) => {
     const FilmHeroOverlay = styled.div`
         position: absolute;
         width: 100%;
-        height: 100%;
+        height: calc(100% - 3px);
         top: 0;
         left: 0;
         background: linear-gradient(to bottom, rgba(${vars.colour.black}, 0.3), rgba(${vars.colour.black}, 0.7));

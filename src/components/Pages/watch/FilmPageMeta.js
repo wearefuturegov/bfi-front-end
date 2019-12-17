@@ -12,8 +12,8 @@ const BoldText = styled.span`
 const FilmPageMeta = (props) => {  
     return (
         <FilmPageMetaContainer>
+            <p>{props.location}, {props.year}</p>
             <p><BoldText>Director:</BoldText> {props.director}</p>
-            <p><BoldText>Year released:</BoldText> {props.year}</p>
             <p><BoldText>Featuring:</BoldText> {props.featuring}</p>
         </FilmPageMetaContainer>
     )

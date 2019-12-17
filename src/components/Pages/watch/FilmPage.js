@@ -29,14 +29,13 @@ const FilmPage = () => {
                 </Container>
             ) : (
                 <>
-                {console.log(filmData)}
                 <FilmHero title={filmData.display_title} image={filmData.images} />
                 <Container margin="small" withSidebar sidebarSide="left">
                     <section>
                         <IntroText>{filmData.description}</IntroText>
                     </section>
                     <section>
-                        <FilmPageMeta director={filmData.summary_credits.directed_by} year={filmData.year} featuring={filmData.summary_credits.featuring} />
+                        <FilmPageMeta director={filmData.summary_credits.directed_by} location={filmData.summary_credits.production_countries} year={filmData.year} featuring={filmData.summary_credits.featuring} />
                     </section>        
                 </Container>
 
