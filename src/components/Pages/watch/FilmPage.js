@@ -66,7 +66,7 @@ const FilmPage = () => {
                         <Container>
                             <Heading as="h2">Read more about {filmData.display_title}</Heading>
                             <ArticleGrid>
-                                {filmData.articles.map((article, key) =>
+                                {filmData.articles.slice(0, 4).map((article, key) =>
                                     <ArticleSummary 
                                         key={key}
                                         link={article.url} 
