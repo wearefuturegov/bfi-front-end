@@ -1,16 +1,21 @@
 import React, { useState, useEffect } from 'react';
+import * as vars from '../../../variables.js';
 import Moment from 'react-moment';
 import 'moment-timezone';
 
 import Container from '../../bfi-components/Container';
 import Heading from '../../bfi-components/Heading';
 import IntroText from '../../bfi-components/IntroText';
+import Button from '../../bfi-components/Button';
+import BFIPlayerCTA from '../../bfi-components/BFIPlayerCTA';
 
 import FilmPageMeta from './FilmPageMeta';
 import ArticleSummary from '../../bfi-components/ArticleSummary';
 import ArticleGrid from '../../bfi-components/ArticleGrid';
 
 import FilmHero from '../../bfi-components/FilmHero';
+
+import PlayerLogoSrc from '../../../images/logos/bfiplayer-logo-white.svg';
 
 const FilmPage = () => {
     const [filmData, setfilmData] = useState({ summary_credits: [], articles: [] });
@@ -41,23 +46,24 @@ const FilmPage = () => {
 
                 <Container>
                     {filmData.watch &&
-                        filmData.watch.bfi_player ? (
-                            <p><a href={filmData.watch.bfi_player[0].url} target="_blank" title="Watch on BFI Player">Watch on BFI Player</a></p>
-                        ) : (
-                            <p>Not avaliable on BFI Player</p>
-                        )
-                    }
-                    {filmData.watch &&
-                        filmData.watch.bfi_southbank ? (
+                        <>
+                        {filmData.watch.bfi_player ? 
+                            <BFIPlayerCTA>
+                                <Button url={filmData.watch.bfi_player[0].url} title="Watch on BFI Player" colour={vars.colour.pink_dark} highlight={vars.colour.pink}>
+                                    Watch on <img src={PlayerLogoSrc} alt="BFI Player" />
+                                </Button>
+                            </BFIPlayerCTA>
+                        :null}
+
+                        {filmData.watch.bfi_southbank ?
                             <>
                                 <p><a href={filmData.watch.bfi_southbank[0].additional_info_url} target="_blank" title="Find out more">View on Southbank</a></p>
                                 {filmData.watch.bfi_southbank.map((showing) =>
                                     <p key={showing.performance_id}><a href={showing.booking_url} target="_blank" title="Book this showing"><Moment>{showing.datetime}</Moment></a></p>
                                 )}
                             </>
-                        ) : (
-                            <p>Not showing at Southbank</p>
-                        )
+                        :null}
+                        </>
                     }
                 </Container>
 

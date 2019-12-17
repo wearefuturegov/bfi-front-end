@@ -39,18 +39,26 @@ const Button = (props) => {
     `
 
     return (
-        <StyledButton>{props.children}</StyledButton>   
+        props.url ? 
+            <a tabIndex="-1" href={props.url} title={props.title} target="_blank">
+                <StyledButton>{props.children}</StyledButton> 
+            </a>
+        : 
+            <StyledButton>{props.children}</StyledButton> 
+        
     )
 }
 
 Button.defaultProps = {
     colour: vars.colour.pink,
-    highlight: vars.colour.pink_dark
+    highlight: vars.colour.pink_dark,
+    url: ''
 }
 
 Button.propTypes = {
     colour: PropTypes.string,
-    highlight: PropTypes.string
+    highlight: PropTypes.string,
+    url: PropTypes.string
 }
 
 export default Button
