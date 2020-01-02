@@ -11,6 +11,7 @@ const NavSections = ({currentHome, NavInner, NavList, setnavHover, navHover, nav
         font-weight: 600;
         width: 100%;
         z-index: 99999;
+        display: none;
 
         li { 
             a {
@@ -27,6 +28,21 @@ const NavSections = ({currentHome, NavInner, NavList, setnavHover, navHover, nav
 
         @media ${vars.breakpoint.tablet} {
             position: relative;
+            display: block;
+            top: 6px;
+            li {
+                a {
+                    padding: ${navPadding-5}px ${navSidePadding-5}px;
+                }
+            }
+        }
+        @media ${vars.breakpoint.desktop} {
+            top: 0;
+            li {
+                a {
+                    padding: ${navPadding}px ${navSidePadding}px;
+                }
+            }
         }
     `
     return (

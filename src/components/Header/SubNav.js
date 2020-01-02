@@ -37,6 +37,7 @@ const SubNav = ({currentHome, navHover, NavInner, NavList}) => {
         @media ${vars.breakpoint.tablet} {
             opacity: 0;
             transform: translateY(-58px);
+            display: block;
             
             &.subNavShow  {
                 opacity: 1;
@@ -48,9 +49,7 @@ const SubNav = ({currentHome, navHover, NavInner, NavList}) => {
                 // background-color: rgb(${vars.colour.grey})
             }
         }
-        @media ${vars.breakpoint.desktop} {
-            display: block;
-        }
+
     `
     const MobileMenu = styled.nav`
         padding: 15px 15px;

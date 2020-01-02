@@ -64,11 +64,19 @@ const Header = ({currentHome, whiteHeader}) => {
                     &:after {
                         content: "";
                         height: 2px;
-                        width: calc(100% - ${navSidePadding*2}px);
-                        background-color: rgb(${vars.colour.white});
                         position: absolute;
-                        bottom: ${navPadding-5}px;
-                        left: ${navSidePadding}px;                        
+                        background-color: rgb(${vars.colour.white});
+
+                        @media ${vars.breakpoint.tablet} {
+                            width: calc(100% - ${(navSidePadding-5)*2}px);
+                            bottom: ${(navPadding-5)-5}px;
+                            left: ${(navSidePadding-5)}px;  
+                        }
+                        @media ${vars.breakpoint.desktop} {
+                            width: calc(100% - ${navSidePadding*2}px);
+                            bottom: ${navPadding-5}px;
+                            left: ${navSidePadding}px;  
+                        }
                     }
                 }
             }
@@ -89,7 +97,14 @@ const Header = ({currentHome, whiteHeader}) => {
                         border-left: 10px solid transparent;
                         border-right: 10px solid transparent;
                         
-                        border-bottom: 10px solid rgb(${vars.colour.grey});             
+                        border-bottom: 10px solid rgb(${vars.colour.grey});  
+
+                        @media ${vars.breakpoint.tablet} {
+                            bottom: -7px;
+                        }
+                        @media ${vars.breakpoint.desktop} {
+                            bottom: -1px;
+                        }
                     }
                 }
             }
@@ -151,6 +166,7 @@ const Header = ({currentHome, whiteHeader}) => {
         list-style-type: none;
         padding: 0;
         margin: 0;
+        font-size: ${vars.font.base_size};
         li {
             display: inline-block;
             padding: 0;
@@ -158,12 +174,21 @@ const Header = ({currentHome, whiteHeader}) => {
             a {
                 display: block;
                 text-decoration: none;
-                padding: 20px 15px;
                 &:hover {
                     text-decoration: underline;
                 }
             }
         }   
+
+        @media ${vars.breakpoint.tablet} {
+            font-size: 14px;
+        }
+        @media ${vars.breakpoint.desktop} {
+            font-size: ${vars.font.base_size};
+        }
+        @media ${vars.breakpoint.super_hd} {
+            font-size: 18px;
+        }
     `
 
     function HandleLeave() {

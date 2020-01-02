@@ -10,6 +10,7 @@ const PromoBar = ({NavInner, NavList, setnavHover}) => {
         background: rgb(${vars.colour.pink});
         font-weight: 600;
         padding: 5px 0;
+        display: none;
         ul {
             display: flex;
             width: 100%;
@@ -19,6 +20,9 @@ const PromoBar = ({NavInner, NavList, setnavHover}) => {
                 padding: 5px 20px;
                 color: rgb(${vars.colour.black});
             }
+        }
+        @media ${vars.breakpoint.tablet} {
+            display: block;
         }
     `
 

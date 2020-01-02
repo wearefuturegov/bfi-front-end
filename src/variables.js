@@ -20,15 +20,15 @@ export const colour = {
 
 export const font = {
     heading: "'Archivo Black', sans-serif",
-    body: "'Open Sans', sans-serif"
+    body: "'Open Sans', sans-serif",
+    base_size: "16px"
 };
 
 export const screen_size = {
     mobile: '768px',
     tablet: '959px',
     desktop: '1024px',
-    hd: '1440px',
-    super_hd: '2560px'
+    hd: '1440px'
 };
 
 export const breakpoint = {
