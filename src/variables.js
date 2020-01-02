@@ -3,7 +3,7 @@ export const colour = {
     white: '255, 255, 255',
     grey: '232, 229, 229',
     grey_light: '246, 246, 246',
-    grey_dark: '141, 139, 140',
+    grey_dark: '118, 116, 116',
 
     green: '0, 66, 37',
     green_light: '117, 181, 153',

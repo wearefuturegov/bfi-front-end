@@ -32,7 +32,7 @@ const Button = (props) => {
             outline: none !important;
         }
         &:active {
-            box-shadow: none;
+            box-shadow: none !important;
             top: 3px;
             margin-left: 0;
         }
