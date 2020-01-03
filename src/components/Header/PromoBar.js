@@ -10,19 +10,31 @@ const PromoBar = ({NavInner, NavList, setnavHover}) => {
         background: rgb(${vars.colour.pink});
         font-weight: 600;
         padding: 5px 0;
-        display: none;
+
         ul {
             display: flex;
             width: 100%;
             align-items: center;
             justify-content: center;
+            li {
+                width: 33%;
+            }
             a {
-                padding: 5px 20px;
+                padding: 3px 10px;
+                text-align: center;
                 color: rgb(${vars.colour.black});
             }
         }
         @media ${vars.breakpoint.tablet} {
-            display: block;
+            ul {
+                li {
+                    width: auto;
+                }
+                a {
+                    padding: 5px 20px;
+                    text-align: left;
+                }
+            }
         }
     `
 

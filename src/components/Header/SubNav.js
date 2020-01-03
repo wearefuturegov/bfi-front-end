@@ -1,13 +1,13 @@
-import React, { useState } from 'react';
+import React from 'react';
 import styled, { keyframes } from 'styled-components';
 import * as vars from '../../variables.js';
 
 import SubNavItems from './SubNavItems'
 import SubNavInner  from './SubNavInner'
 
-import { fadeInDown } from 'react-animations'
+import { slideInDown } from 'react-animations'
 
-const fadeInDownAnimation = keyframes`${fadeInDown}`;
+const slideInDownAnimation = keyframes`${slideInDown}`;
 
 const SubNav = ({currentHome, navHover, NavInner, NavList}) => {
     const StyledSubNav = styled.nav`
@@ -19,11 +19,6 @@ const SubNav = ({currentHome, navHover, NavInner, NavList}) => {
         position: absolute;
         top: 58px;
         width: 100%;
-        transform: translateY(0px);
-        -webkit-transition: all ease 1.25s;
-        -moz-transition: all ease 1.25s;
-        -o-transition: all ease 1.25s;
-        transition: all ease 1.25s;
         z-index: 10;
         li {
             a {
@@ -32,105 +27,35 @@ const SubNav = ({currentHome, navHover, NavInner, NavList}) => {
             }
         }
 
-        
-
         @media ${vars.breakpoint.tablet} {
             opacity: 0;
-            transform: translateY(-58px);
             display: block;
             
             &.subNavShow  {
                 opacity: 1;
-                transform: translateY(0px);
-                animation: 0.5s ${fadeInDownAnimation};
+                animation: 0.5s ${slideInDownAnimation};
                 background-color: rgb(${vars.colour.grey})
-            }
-            &.active  {
-                // background-color: rgb(${vars.colour.grey})
             }
         }
 
     `
-    const MobileMenu = styled.nav`
-        padding: 15px 15px;
-        background:  rgb(${vars.colour.white});
-        display: block;
-        span {
-            margin-left: 10px;
-        }
-        @media ${vars.breakpoint.tablet} {
-            display: none;
-        }
-        @media ${vars.breakpoint.desktop} {
-            display: none;
-        }
-    `
-    const MobileMenuList = styled.ul`
-        list-style-type: none;
-        padding: 0;
-        margin: 0;
-        -webkit-transition: max-height 0.3s, opacity 0.2s 0.1s, visibility 0s 0.3s;
-        -moz-transition: max-height 0.3s, opacity 0.2s 0.1s, visibility 0s 0.3s;
-        -ms-transition: max-height 0.3s, opacity 0.2s 0.1s, visibility 0s 0.3s;
-        -o-transition: max-height 0.3s, opacity 0.2s 0.1s, visibility 0s 0.3s;
-        transition: max-height 0.3s, opacity 0.2s 0.1s, visibility 0s 0.3s;
-        max-height: 0;
-        display: block;
-        overflow: hidden;
-        opacity: 0;
-        visibility: hidden;
-        &.open {
-            -webkit-transition: max-height 0.3s, opacity 0.2s, visibility 0s;
-            -moz-transition: max-height 0.3s, opacity 0.2s, visibility 0s;
-            -ms-transition: max-height 0.3s, opacity 0.2s, visibility 0s;
-            -o-transition: max-height 0.3s, opacity 0.2s, visibility 0s;
-            transition: max-height 0.3s, opacity 0.2s, visibility 0s;
-            max-height: 200px;
-            opacity: 1;
-            visibility: visible;
-        }
-        li {
-            &:first-child {
-                margin-top: 15px;
-            }
-        }
-        a {
-            padding: 5px 0;
-            display: block;
-            color: rgb(${vars.colour.black});
-        }
-    `
-    const MobileMenuButton = styled.button`
-        background: transparent;
-        border: none;
-        cursor: pointer;
-        font-weight: 600;
-    `
-    const [mobileMenuOpen, setmobileMenuOpen] = useState(false);
 
     function selectSubNav(nav) {
         switch(nav) {
             case "watch":
-                return <SubNavInner subMenuName="Watch" SubNavItems={SubNavItems.WatchLinks} StyledSubNav={StyledSubNav} NavInner={NavInner} NavList={NavList} MobileMenu={MobileMenu} MobileMenuList={MobileMenuList} MobileMenuButton={MobileMenuButton} mobileMenuOpen={mobileMenuOpen} handleMobileMenuClick={handleMobileMenuClick} navHover={navHover} currentHome={currentHome} />;
+                return <SubNavInner subMenuName="Watch" SubNavItems={SubNavItems.WatchLinks} StyledSubNav={StyledSubNav} NavInner={NavInner} NavList={NavList} navHover={navHover} currentHome={currentHome} />;
             case "explore":
-                return <SubNavInner subMenuName="Explore" SubNavItems={SubNavItems.ExploreLinks} StyledSubNav={StyledSubNav} NavInner={NavInner} NavList={NavList} MobileMenu={MobileMenu} MobileMenuList={MobileMenuList} MobileMenuButton={MobileMenuButton} mobileMenuOpen={mobileMenuOpen} handleMobileMenuClick={handleMobileMenuClick} navHover={navHover} currentHome={currentHome} />;
+                return <SubNavInner subMenuName="Explore" SubNavItems={SubNavItems.ExploreLinks} StyledSubNav={StyledSubNav} NavInner={NavInner} NavList={NavList} navHover={navHover} currentHome={currentHome} />;
             case "make":
-                return <SubNavInner subMenuName="Make" SubNavItems={SubNavItems.MakeLinks} StyledSubNav={StyledSubNav} NavInner={NavInner} NavList={NavList} MobileMenu={MobileMenu} MobileMenuList={MobileMenuList} MobileMenuButton={MobileMenuButton} mobileMenuOpen={mobileMenuOpen} handleMobileMenuClick={handleMobileMenuClick} navHover={navHover} currentHome={currentHome} />;
+                return <SubNavInner subMenuName="Make" SubNavItems={SubNavItems.MakeLinks} StyledSubNav={StyledSubNav} NavInner={NavInner} NavList={NavList} navHover={navHover} currentHome={currentHome} />;
             case "education":
-                return <SubNavInner subMenuName="Education" SubNavItems={SubNavItems.EducationLinks} StyledSubNav={StyledSubNav} NavInner={NavInner} NavList={NavList} MobileMenu={MobileMenu} MobileMenuList={MobileMenuList} MobileMenuButton={MobileMenuButton} mobileMenuOpen={mobileMenuOpen} handleMobileMenuClick={handleMobileMenuClick} navHover={navHover} currentHome={currentHome} />;
+                return <SubNavInner subMenuName="Education" SubNavItems={SubNavItems.EducationLinks} StyledSubNav={StyledSubNav} NavInner={NavInner} NavList={NavList} navHover={navHover} currentHome={currentHome} />;
             case "about-us":
-                return <SubNavInner subMenuName="About Us" SubNavItems={SubNavItems.AboutLinks} StyledSubNav={StyledSubNav} NavInner={NavInner} NavList={NavList} MobileMenu={MobileMenu} MobileMenuList={MobileMenuList} MobileMenuButton={MobileMenuButton} mobileMenuOpen={mobileMenuOpen} handleMobileMenuClick={handleMobileMenuClick} navHover={navHover} currentHome={currentHome} />;
+                return <SubNavInner subMenuName="About Us" SubNavItems={SubNavItems.AboutLinks} StyledSubNav={StyledSubNav} NavInner={NavInner} NavList={NavList} navHover={navHover} currentHome={currentHome} />;
             case "support-and-join":
-                return <SubNavInner subMenuName="Support & Join" SubNavItems={SubNavItems.SupportLinks} StyledSubNav={StyledSubNav} NavInner={NavInner} NavList={NavList} MobileMenu={MobileMenu} MobileMenuList={MobileMenuList} MobileMenuButton={MobileMenuButton} mobileMenuOpen={mobileMenuOpen} handleMobileMenuClick={handleMobileMenuClick} navHover={navHover} currentHome={currentHome} />;
+                return <SubNavInner subMenuName="Support & Join" SubNavItems={SubNavItems.SupportLinks} StyledSubNav={StyledSubNav} NavInner={NavInner} NavList={NavList} navHover={navHover} currentHome={currentHome} />;
             default:
                 return null;
-        }
-    }
-    const handleMobileMenuClick = () => {
-        if(mobileMenuOpen) {
-            setmobileMenuOpen(false);
-        } else {
-            setmobileMenuOpen(true);
         }
     }
 

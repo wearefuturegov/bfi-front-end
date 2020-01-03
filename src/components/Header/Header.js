@@ -5,11 +5,12 @@ import * as vars from '../../variables.js';
 import NavSections from './NavSections'
 import PromoBar from './PromoBar';
 import SubNav from './SubNav'
+import MobileMenu from './MobileMenu'
 
 import Container from '../bfi-components/Container';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faSearch } from '@fortawesome/free-solid-svg-icons';
+import { faSearch, faBars, faTimes } from '@fortawesome/free-solid-svg-icons';
 import LogoBlack from '../../images/logos/bfi-logo-black.svg';
 import LogoWhite from '../../images/logos/bfi-logo-white.svg';
 
@@ -20,6 +21,7 @@ const Header = ({currentHome, whiteHeader}) => {
     const [headingHover, setheadingHover] = useState(false);  
     const [isSticky, setSticky] = useState(false);
     const ref = useRef(null);
+    const [mobileMenuOpen, setmobileMenuOpen] = useState(false);
 
     const handleScroll = () => {
         setSticky(ref.current.getBoundingClientRect().top <= 0);
@@ -54,7 +56,7 @@ const Header = ({currentHome, whiteHeader}) => {
         z-index: 99999;
         background: rgba(${vars.colour.white}, 0);
 
-        a {
+        a, button {
             color: rgb(${vars.colour.white});
         }
         li {
@@ -114,7 +116,7 @@ const Header = ({currentHome, whiteHeader}) => {
             border-bottom: 1px solid rgb(${vars.colour.grey});
             background: rgba(${vars.colour.white}, 1);
 
-            a {
+            a, button {
                 color: rgb(${vars.colour.black});
             }
             li {
@@ -156,10 +158,29 @@ const Header = ({currentHome, whiteHeader}) => {
 
     const SearchButton = styled.div`
         margin-left: auto;
-        display: inline-flex;
+        display: none;
         a {
             padding: ${navPadding}px 0px;
             padding-left: 15px;
+        }
+        @media ${vars.breakpoint.tablet} {
+            display: inline-flex;
+        }
+    `
+    const MobileMenuButton = styled.button`
+        margin-left: auto;
+        display: inline-flex;
+        background: transparent;
+        border: none;
+        cursor: pointer;
+        padding: ${navPadding}px ${navPadding/2}px;
+
+        svg {
+            margin-top: 1px;
+            margin-right 5px;
+        }
+        @media ${vars.breakpoint.tablet} {
+            display: none;
         }
     `
     const NavList = styled.ul`
@@ -195,6 +216,14 @@ const Header = ({currentHome, whiteHeader}) => {
         setheadingHover(false);
         setnavHover(false);
     }
+    
+    function handleMobileMenuClick() {
+        if(mobileMenuOpen) {
+            setmobileMenuOpen(false);
+        } else {
+            setmobileMenuOpen(true);
+        }
+    }
 
     return (
         <HeaderContainer onMouseLeave={() => HandleLeave()}>
@@ -217,10 +246,15 @@ const Header = ({currentHome, whiteHeader}) => {
                                         <FontAwesomeIcon icon={faSearch} />
                                     </a>
                                 </SearchButton>
+                                <MobileMenuButton onClick={handleMobileMenuClick}>
+                                    <FontAwesomeIcon icon={mobileMenuOpen ? faTimes : faBars} />
+                                    {mobileMenuOpen ? 'Close' : 'Menu'}
+                                </MobileMenuButton>
                             </NavInner>
                         </Container>
                     </StyledHeader>
                     <SubNav currentHome={currentHome} setnavHover={setnavHover} navHover={navHover} NavInner={NavInner} NavList={NavList} />
+                    <MobileMenu mobileMenuOpen={mobileMenuOpen} setmobileMenuOpen={setmobileMenuOpen} currentHome={currentHome} setnavHover={setnavHover} navHover={navHover} NavInner={NavInner} NavList={NavList} />
                 </div>      
             </StickyHeaderContainer>
         </HeaderContainer>
