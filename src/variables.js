@@ -6,11 +6,11 @@ export const colour = {
     grey_dark: '118, 116, 116',
 
     green: '0, 66, 37',
-    green_light: '117, 181, 153',
+    green_light: '136, 191, 150',
     green_dark: '23, 40, 32',
 
     blue: '3, 29, 69',
-    blue_light: '138, 177, 238',
+    blue_light: '138, 202, 238',
     blue_dark: '26, 32, 41',
 
     pink: '240, 197, 200',
