@@ -1,11 +1,18 @@
 import React, { useState } from 'react';
 import styled, { keyframes } from 'styled-components';
 import * as vars from '../../variables.js';
+import posed, { PoseGroup } from 'react-pose';
 
 import SubNavItems from './SubNavItems';
 import MobileMenuBlock  from './MobileMenuBlock';
 
-const StyledMobileMenu = styled.div`
+// TODO - for some reason this animation is not working
+const ShowMenu = posed.nav({
+    exit: { opacity: 0 },
+    enter: { opacity: 1 }
+});
+
+const StyledMobileMenu = styled(ShowMenu)`
     width: 100%;
     background: rgb(${vars.colour.white});
     z-index: 10;
@@ -25,7 +32,7 @@ const StyledMobileMenu = styled.div`
 
 const MobileMenu = ({mobileMenuOpen}) => {
     return (
-        <>
+        <PoseGroup>
             {mobileMenuOpen &&
                 <StyledMobileMenu key="menu">
                     <MobileMenuBlock subMenuName="Watch" SubNavItems={SubNavItems.WatchLinks} />
@@ -36,7 +43,7 @@ const MobileMenu = ({mobileMenuOpen}) => {
                     <MobileMenuBlock subMenuName="Support & Join" SubNavItems={SubNavItems.SupportLinks} />
                 </StyledMobileMenu>
             }
-        </>
+        </PoseGroup>
     )
 }
 
