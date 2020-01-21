@@ -162,6 +162,10 @@ const Header = ({currentHome, whiteHeader}) => {
         a {
             padding: ${navPadding}px 0px;
             padding-left: 15px;
+            text-decoration: none;
+        }
+        svg {
+            margin-right: 10px;
         }
         @media ${vars.breakpoint.tablet} {
             display: inline-flex;
@@ -230,12 +234,12 @@ const Header = ({currentHome, whiteHeader}) => {
             <PromoBar NavInner={NavInner} NavList={NavList} setnavHover={setnavHover} />
             <StickyHeaderContainer className={`sticky-wrapper${isSticky ? ' sticky' : ''}`} ref={ref}>
                 <div className="sticky-inner">
-                    <StyledHeader className={isSticky || headingHover || whiteHeader ? 'whiteHeader' : ''} onMouseOver={() => setheadingHover(true)}>
+                    <StyledHeader className={isSticky || headingHover || whiteHeader || mobileMenuOpen ? 'whiteHeader' : ''} onMouseOver={() => setheadingHover(true)}>
                         <Container margin="none">
                             <NavInner>
                                 <LogoContainer>
                                     <Link to="/">
-                                        <BFILogo src={isSticky || headingHover || whiteHeader ? LogoBlack : LogoWhite} alt="BFI Logo" />
+                                        <BFILogo src={isSticky || headingHover || whiteHeader || mobileMenuOpen ? LogoBlack : LogoWhite} alt="BFI Logo" />
                                     </Link>
                                 </LogoContainer>
                                 <NavSectionContainer>
@@ -244,6 +248,7 @@ const Header = ({currentHome, whiteHeader}) => {
                                 <SearchButton>
                                     <a href="https://www.bfi.org.uk/search/search-bfi/I'm%20looking%20for..." target="_blank" rel="noopener noreferrer">
                                         <FontAwesomeIcon icon={faSearch} />
+                                        Search
                                     </a>
                                 </SearchButton>
                                 <MobileMenuButton onClick={handleMobileMenuClick}>
@@ -254,7 +259,7 @@ const Header = ({currentHome, whiteHeader}) => {
                         </Container>
                     </StyledHeader>
                     <SubNav currentHome={currentHome} setnavHover={setnavHover} navHover={navHover} NavInner={NavInner} NavList={NavList} />
-                    <MobileMenu mobileMenuOpen={mobileMenuOpen} setmobileMenuOpen={setmobileMenuOpen} currentHome={currentHome} setnavHover={setnavHover} navHover={navHover} NavInner={NavInner} NavList={NavList} />
+                    <MobileMenu mobileMenuOpen={mobileMenuOpen} />
                 </div>      
             </StickyHeaderContainer>
         </HeaderContainer>

@@ -6,13 +6,11 @@ import posed, { PoseGroup } from 'react-pose';
 import SubNavItems from './SubNavItems';
 import MobileMenuBlock  from './MobileMenuBlock';
 
-// TODO - for some reason this animation is not working
-const ShowMenu = posed.nav({
-    exit: { opacity: 0 },
-    enter: { opacity: 1 }
-});
+import { slideInDown } from 'react-animations'
 
-const StyledMobileMenu = styled(ShowMenu)`
+const slideInDownAnimation = keyframes`${slideInDown}`;
+
+const StyledMobileMenu = styled.nav`
     width: 100%;
     background: rgb(${vars.colour.white});
     z-index: 10;
@@ -21,6 +19,8 @@ const StyledMobileMenu = styled(ShowMenu)`
     max-height: calc(100vh - 60px);
     overflow: scroll;
     border-bottom: 1px solid rgb(${vars.colour.grey});
+    animation: 0.5s ${slideInDownAnimation};
+
 
     @media ${vars.breakpoint.tablet} {
         display: none;
@@ -32,18 +32,18 @@ const StyledMobileMenu = styled(ShowMenu)`
 
 const MobileMenu = ({mobileMenuOpen}) => {
     return (
-        <PoseGroup>
-            {mobileMenuOpen &&
-                <StyledMobileMenu key="menu">
-                    <MobileMenuBlock subMenuName="Watch" SubNavItems={SubNavItems.WatchLinks} />
-                    <MobileMenuBlock subMenuName="Explore" SubNavItems={SubNavItems.ExploreLinks} />
-                    <MobileMenuBlock subMenuName="Make" SubNavItems={SubNavItems.MakeLinks} />
-                    <MobileMenuBlock subMenuName="Education" SubNavItems={SubNavItems.EducationLinks} />
-                    <MobileMenuBlock subMenuName="About Us" SubNavItems={SubNavItems.AboutLinks} />
-                    <MobileMenuBlock subMenuName="Support & Join" SubNavItems={SubNavItems.SupportLinks} />
-                </StyledMobileMenu>
+        <>
+            {mobileMenuOpen && 
+            <StyledMobileMenu key="menu">
+                <MobileMenuBlock subMenuName="Watch" SubNavItems={SubNavItems.WatchLinks} />
+                <MobileMenuBlock subMenuName="Explore" SubNavItems={SubNavItems.ExploreLinks} />
+                <MobileMenuBlock subMenuName="Make" SubNavItems={SubNavItems.MakeLinks} />
+                <MobileMenuBlock subMenuName="Education" SubNavItems={SubNavItems.EducationLinks} />
+                <MobileMenuBlock subMenuName="About Us" SubNavItems={SubNavItems.AboutLinks} />
+                <MobileMenuBlock subMenuName="Support &amp; Join" SubNavItems={SubNavItems.SupportLinks} />
+            </StyledMobileMenu>
             }
-        </PoseGroup>
+        </>
     )
 }
 
